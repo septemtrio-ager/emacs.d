@@ -25,4 +25,8 @@
 
   ;; python-modeで利用する
   (add-hook 'python-mode-hook 'electric-spacing-mode)
+  
+  ;; arduino-modeで利用する
+  ;; 使いたかったけど対応してなかった
+  ;; (add-hook 'arduino-mode-hook 'electric-spacing-mode)
   )

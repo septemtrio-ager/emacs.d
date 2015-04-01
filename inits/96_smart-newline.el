@@ -31,4 +31,7 @@
 
   ;; css-modeで利用する
   (add-hook 'css-mode-hook 'smart-newline-mode)
+
+  ;; arduino-modeで利用する
+  (add-hook 'arduino-mode-hook 'smart-newline-mode)
   )
