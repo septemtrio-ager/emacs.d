@@ -12,36 +12,36 @@
 
 ;; ===================================================================
 
-;;(el-get-bundle tabbar
-  
-(require 'tabbar nil t)
+(el-get-bundle tabbar)
 
-    ;; tabbarを有効にする
-    (tabbar-mode 1)
+(require 'tabbar)
 
-    ;; 左に表示されるボタンを無効化
-    (dolist (btn '(tabbar-buffer-home-button
-               tabbar-scroll-left-button
-               tabbar-scroll-right-button))
-        (set btn (cons (cons "" nil)
-                 (cons "" nil))))
+;; tabbarを有効にする
+(tabbar-mode 1)
 
-    ;; グループ化しない
-    (setq tabbar-buffer-groups-function nil)
+;; 左に表示されるボタンを無効化
+(dolist (btn '(tabbar-buffer-home-button
+	       tabbar-scroll-left-button
+	       tabbar-scroll-right-button))
+  (set btn (cons (cons "" nil)
+		 (cons "" nil))))
 
-    ;; 「*」で始まるバッファをタブとして表示しない
-    (defun my-tabbar-buffer-list ()
+;; グループ化しない
+(setq tabbar-buffer-groups-function nil)
+
+;; 「*」で始まるバッファをタブとして表示しない
+(defun my-tabbar-buffer-list ()
   (delq nil
-        (mapcar #'(lambda (b)
-                    (cond
-                     ;; Always include the current buffer.
-                     ((eq (current-buffer) b) b)
-                     ((buffer-file-name b) b)
-                     ((char-equal ?\  (aref (buffer-name b) 0)) nil)
+	(mapcar #'(lambda (b)
+		    (cond
+		     ;; Always include the current buffer.
+		     ((eq (current-buffer) b) b)
+		     ((buffer-file-name b) b)
+		     ((char-equal ?\  (aref (buffer-name b) 0)) nil)
 		     ((equal "*scratch*" (buffer-name b)) b)       ; *scratch*バッファは表示する
 		     ((char-equal ?* (aref (buffer-name b) 0)) nil) ; それ以外の * で始まるバッファは表示しない
-                     ((buffer-live-p b) b)))
-                (buffer-list))))
+		     ((buffer-live-p b) b)))
+		(buffer-list))))
 (setq tabbar-buffer-list-function 'my-tabbar-buffer-list)
 
 ;; Ctrl-Tab, Ctrl-Shift-Tab でタブを切り替える
@@ -85,4 +85,3 @@
 (set-face-attribute
  'tabbar-button nil
  :box nil)
-;;)
