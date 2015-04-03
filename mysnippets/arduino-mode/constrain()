@@ -1,6 +1,6 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: digitalWrite()
-# key: digitalWrite
+# name: constrain()
+# key: constrain
 # binding: direct-keybinding
 # --
-digitalWrite(${1:pin}, ${2:value});$0
+constrain(${1:x}, ${2:a}, ${3:b});$0

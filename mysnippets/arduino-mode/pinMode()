@@ -3,4 +3,4 @@
 # key: mode
 # binding: direct-keybinding
 # --
-pinMode(${1:pin},${2:mode});$0
+pinMode(${1:pin}, ${2:mode});$0

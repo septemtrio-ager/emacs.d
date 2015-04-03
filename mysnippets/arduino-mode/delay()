@@ -1,6 +1,6 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: digitalWrite()
-# key: digitalWrite
+# name: delay()
+# key: delay
 # binding: direct-keybinding
 # --
-digitalWrite(${1:pin}, ${2:value});$0
+delay(${1:ms});$0
