@@ -28,5 +28,5 @@
   
   ;; arduino-modeで利用する
   ;; 使いたかったけど対応してなかった
-  ;; (add-hook 'arduino-mode-hook 'electric-spacing-mode)
+ (add-hook 'arduino-mode-hook 'electric-spacing-mode)
   )
