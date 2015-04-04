@@ -23,8 +23,8 @@
   
 
   (setq yas-snippet-dirs
-	'("~/.emacs.d/mysnippets"      ;; 作成したスニペット
-	  "~/.emacs.d/site-snippets"   ;; 拾ってきたスニペット
+	'("~/.emacs.d/snippets/mysnippets"      ;; 作成したスニペット
+	  "~/.emacs.d/snippets/site-snippets"   ;; 拾ってきたスニペット
 	  ))
 
   (yas-global-mode 1)
