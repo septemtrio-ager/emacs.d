@@ -34,4 +34,8 @@
 
   ;; arduino-modeで利用する
   (add-hook 'arduino-mode-hook 'smart-newline-mode)
+
+  ;; GFM-modeで利用する
+  (add-hook 'gfm-mode-hook 'smart-newline-mode)
+  
   )
