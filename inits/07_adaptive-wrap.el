@@ -32,5 +32,5 @@
   (add-hook 'web-mode-hook 'adaptive-wrap-prefix-mode)
 
   ;; emacs-lisp-mode
-  (add-hook 'emacs-lisp-mode-hool 'adaptive-wrap-prefix-mode)
+  (add-hook 'emacs-lisp-mode-hook 'adaptive-wrap-prefix-mode)
   )
