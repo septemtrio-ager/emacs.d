@@ -29,3 +29,5 @@ backups/*
 
 site-lisp/*
 !.gitkeep
+
+README.html
