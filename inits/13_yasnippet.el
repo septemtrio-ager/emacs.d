@@ -20,16 +20,14 @@
 (el-get-bundle elpa:yasnippet
   
   (require 'yasnippet)
-  (yas-global-mode 1)
-
-  (yas/initialize)
+  
 
   (setq yas-snippet-dirs
-	'("~/.emacs.d/mysnippets"                           ;; 作成するスニペットはここに入る
-	  "~/.emacs.d/elpa/yasnippet-20150320.334/snippets" ;; 最初から入っていたスニペット(省略可能)
+	'("~/.emacs.d/mysnippets"      ;; 作成したスニペット
+	  "~/.emacs.d/site-snippets"   ;; 拾ってきたスニペット
 	  ))
 
-
+  (yas-global-mode 1)
 
   ;; ===================================================================
 
