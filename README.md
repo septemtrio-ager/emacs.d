@@ -32,4 +32,10 @@ init.elを読み込むようにする
 `(load (expand-file-name (concat (getenv "HOME") "/.emacs.d/init")))`
 
 ## Installation
-`git clone https://github.com/septemtrio-ager/emacs.d.git ~/.emacs.d`
+
+~~~~
+$ git clone https://github.com/septemtrio-ager/emacs.d.git ~/.emacs.d
+$ cd ~/.emacs.d
+$ ./tool-setpu.sh
+$ emacs
+~~~~
