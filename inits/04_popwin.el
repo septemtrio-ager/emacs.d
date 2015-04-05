@@ -38,6 +38,9 @@
 
 
   ;; direx-mode バッファをポップアップ表示させる
-  (push '(direx:direx-mode :position left :width 40 :dedicated t)
-	popwin:special-display-config)
+  (push '(direx:direx-mode :position left :width 40 :dedicated t) popwin:special-display-config)
+  
+  ;; magitの COMMIT_EDITMSG バッファをポップアップ表示させる
+  (push '("COMMIT_EDITMSG" :height 0.3) popwin:special-display-config)
+  
   )
