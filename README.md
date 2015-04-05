@@ -36,6 +36,6 @@ init.elを読み込むようにする
 ~~~~
 $ git clone https://github.com/septemtrio-ager/emacs.d.git ~/.emacs.d
 $ cd ~/.emacs.d
-$ ./tool-setpu.sh
+$ ./tool-setup.sh
 $ emacs
 ~~~~
