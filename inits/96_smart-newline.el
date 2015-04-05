@@ -37,5 +37,8 @@
 
   ;; GFM-modeで利用する
   (add-hook 'gfm-mode-hook 'smart-newline-mode)
+
+  ;; shell-script-modeで利用する
+  (add-hook 'shell-script-mode-hook 'smart-newline-mode)
   
   )
