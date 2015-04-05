@@ -28,8 +28,10 @@ emacs.d
 ~~~~
 
 ## .emacs
-init.elを読み込むようにする  
-`(load (expand-file-name (concat (getenv "HOME") "/.emacs.d/init")))`
+init.elを読み込むようにする
+~~~~
+(load (expand-file-name (concat (getenv "HOME") "/.emacs.d/init")))
+~~~~
 
 ## Installation
 
