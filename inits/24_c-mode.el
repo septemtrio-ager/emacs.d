@@ -15,10 +15,10 @@
 (el-get-bundle vs-set-c-style
   :url "https://myoshida-rp.googlecode.com/svn/trunk/elisp/vs-set-c-style.el"
   
-(autoload 'vs-set-c-style "vs-set-c-style")
-(add-hook 'c-mode-hook 'vs-set-c-style)
-(add-hook 'c++-mode-hook 'vs-set-c-style)
-)
+  (autoload 'vs-set-c-style "vs-set-c-style")
+  (add-hook 'c-mode-hook 'vs-set-c-style)
+  (add-hook 'c++-mode-hook 'vs-set-c-style)
+  )
 
 ;; C/C++のスタイルをBSDに設定
 (custom-set-variables
