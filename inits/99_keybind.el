@@ -4,7 +4,7 @@
 
 ;; ===================================================================
 
-;;;; キーバインドの確認
+;; キーバインドの確認
 ;; 参考 http://d.hatena.ne.jp/mtsaggie/20081128/p2
 
 ;; キーバインド一覧を表示する
@@ -14,7 +14,7 @@
 
 ;; ===================================================================
 
-;;; Ctrl-x p で逆向きへのウィンドウ移動
+;; Ctrl-x p で逆向きへのウィンドウ移動
 (global-set-key (kbd "C-x p") (lambda () (interactive) (other-window -1)))
 
 
@@ -64,3 +64,6 @@
 
 ;; C-x C-b で ibuffer を呼び出す
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+
+;; C-x m で magit-status を呼び出す
+(global-set-key (kbd "C-x m") 'magit-status)
