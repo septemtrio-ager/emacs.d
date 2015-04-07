@@ -65,5 +65,10 @@
 ;; C-x C-b で ibuffer を呼び出す
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
+
 ;; C-x m で magit-status を呼び出す
 (global-set-key (kbd "C-x m") 'magit-status)
+
+
+;; C-c ; で コメント、アンコメントする
+(global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
