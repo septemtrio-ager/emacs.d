@@ -66,6 +66,9 @@ sudo apt-get install -y openjdk-6-jdk openjdk-6-jre
 
 # malabar-modeを利用するための設定
 
+echo "Install crul"
+sudo apt-get install -y curl
+
 # GVMをインストールする
 echo "Install GVM"
 curl -s get.gvmtool.net | bash
