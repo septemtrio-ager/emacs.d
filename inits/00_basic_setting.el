@@ -34,6 +34,9 @@
 
 
 
+;; スタートアップを非表示にする
+(setq inhibit-startup-screen t)
+
 ;;; スクロールを1行ずつにする
 (setq scroll-conservatively 35
       scroll-margin 0
