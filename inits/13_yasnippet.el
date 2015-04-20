@@ -44,6 +44,6 @@
   (define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
 
   ;;トリガーキーをTABからSPCに変更
-  (define-key yas-minor-mode-map (kbd "C-;") 'yas-expand)
+  (define-key yas-minor-mode-map (kbd "C-o") 'yas-expand)
   (define-key yas-minor-mode-map (kbd "TAB") nil)
   )
