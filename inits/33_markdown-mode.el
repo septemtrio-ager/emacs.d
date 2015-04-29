@@ -9,6 +9,13 @@
 
 ;; ===================================================================
 
+
+;; 「/bin/bash: /bin/markdown: 許可がありません」
+;; と表示されるときは、管理者権限にてファイラーを起動し、
+;; /bin/markdownのプロパティ→パーミッションの
+;; プログラムとして実行可能にチェックを入れる
+
+
 (el-get-bundle markdown-mode
   
   (autoload 'markdown-mode "markdown-mode"
