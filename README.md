@@ -1,12 +1,13 @@
 # This is my Emacs dot files
 
 ## Requirements
-* Emacs 24.3 or greater
+* Emacs 24.3 or greater  
+  24.4,24.5についても動作を確認しています。
 * Ubuntu 14.4 or greater
 * Linux Mint 17.1 or greater
 * Lubuntu 14.4 or greater
 
-## Directory configuration
+## Directory Configuration
 
 ~~~~
 emacs.d
@@ -47,3 +48,8 @@ $ cd ~/.emacs.d
 $ ./tool-setup.sh
 $ emacs
 ~~~~
+
+## Recommended Settings
+*  CapsLockキーをCtrlキーに変更する  
+【参考】Ubuntu 14.04でCaps LockをCtrlにする
+http://blog.goo.ne.jp/ikunya/e/86c7c228787112acd3a664c1a4e31ef3
