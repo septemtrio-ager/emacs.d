@@ -50,6 +50,7 @@ $ emacs
 ~~~~
 
 ## Recommended Settings
-*  CapsLockキーをCtrlキーに変更する  
-【参考】Ubuntu 14.04でCaps LockをCtrlにする
-http://blog.goo.ne.jp/tbinterface/86c7c228787112acd3a664c1a4e31ef3/c9
+
+* CapsLockキーをCtrlキーに変更する  
+【参考】Caps LockキーをCtrlキーにする(Ubuntu)  
+http://l-w-i.net/t/ubuntu/key_001.txt
