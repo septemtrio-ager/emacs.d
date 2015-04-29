@@ -1,5 +1,11 @@
 # This is my Emacs dot files
 
+## Requirements
+* Emacs 24.3 or greater
+* Ubuntu 14.4 or greater
+* Linux Mint 17.1 or greater
+* Lubuntu 14.4 or greater
+
 ## Directory configuration
 
 ~~~~
