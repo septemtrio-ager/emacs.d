@@ -3,6 +3,6 @@
 # key: bundle
 # binding: direct-keybinding
 # --
-(el-get-bundle elpa:${1:package}
+(el-get-bundle ${1:package}
 	       $0
 )
