@@ -10,7 +10,7 @@
 
 ;; ===================================================================
 
-(el-get-bundle imenu-anywhre
+(el-get-bundle imenu-anywhere
 
   (global-set-key (kbd "C-.") 'helm-imenu-anywhere)
   
