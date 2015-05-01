@@ -11,3 +11,19 @@
 
 ;; javaファイルをコンパイルするのにJDKが必要なので
 ;; インストールしておく
+
+;; ===================================================================
+
+;; 【参考】
+;; https://github.com/tsu-nera/dotfiles/blob/master/.emacs.d/inits/31_java.org
+
+;; ===================================================================
+
+(add-hook 'java-mode-hook
+	    (lambda ()
+	      ;; タブ幅
+	      (setq tab-width 4)
+	      
+	      ;; タブはとりあえず有効. プロジェクトによって変える.
+	      (setq indent-tabs-mode t)
+	      (setq c-basic-offset 4)))
