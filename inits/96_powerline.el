@@ -1,6 +1,13 @@
 ;;
-;;;
+;;; powerline.elの設定
 ;;
+
+;; ===================================================================
+
+;; 【参考】
+;; https://github.com/gnrr/elisp/blob/9af26873e21e35f9789bc7389aba098255ab83b4/testing.el#L1171-L1272
+
+;; ===================================================================
 
 (el-get-bundle powerline
   
@@ -8,162 +15,106 @@
   (powerline-default-theme)
 
   ;; モードラインを平面化する
-  (set-face-attribute 'mode-line          nil :box nil)
-  (set-face-attribute 'mode-line-inactive nil :box nil)
+  ;; (set-face-attribute 'mode-line          nil :box nil)
+  ;; (set-face-attribute 'mode-line-inactive nil :box nil)
 
-  (defun get-buffer-file-eol-type ()
-    (case (coding-system-eol-type buffer-file-coding-system)
-      (0 "LF")
-      (1 "CRLF")
-      (2 "CR")
-      (otherwise "??")))
+  (set-face-background 'mode-line         "#006400")   ; darkgreen
+  (set-face-foreground 'mode-line         "#FFFFDC")   ; near-white
+  (set-face-background 'powerline-active1 "#32CD32")   ; lime-green
+  (set-face-foreground 'powerline-active1 "#272821")   ; near-black
+  (set-face-background 'powerline-active2 "#CDC0B0")   ; sand
+  (set-face-foreground 'powerline-active2 "#272821")   ; near-black
 
-  (defun get-buffer-coding-type-without-eol-type ()
-    (labels
-	((remove-os-info (string)
-			 (replace-regexp-in-string "-\\(dos\\|unix\\|mac\\)$" "" string)))
-      (lexical-let
-	  ((string
-	    (replace-regexp-in-string "-with-signature" "(bom)"
-				      (remove-os-info  (symbol-name buffer-file-coding-system)))))
-	(if (string-match-p "(bom)" string)
-	    (downcase string)
-	  (upcase string)))))
+  ;; inactive color
+  (set-face-background 'mode-line-inactive  "#CCCC99") ; sand
+  (set-face-foreground 'mode-line-inactive  "#272821") ; near-black
+  (set-face-background 'powerline-inactive1 "#383838") ; near black
+  (set-face-foreground 'powerline-inactive1 "#CCCCCC") ; light-gray
+  (set-face-background 'powerline-inactive2 "#626262") ; dark-gray
+  (set-face-foreground 'powerline-inactive2 "#CCCCCC") ; light-gray
 
-  (defface powerline-active1
-    '((t (:background "limegreen" :inherit mode-line-inactive
-		      :foreground "white")))
-    "PowerLine face 1."
-    :group 'powerline)
-  
-  (defface powerline-active3
-    '((t (:background "Springgreen4" :inherit mode-line-inactive
-		      :foreground "white")))
-    "Powerline face 3."
-    :group 'powerline)
+  ;; View mode
+  (defpowerline powerline-view
+    (when view-mode "View"))
 
-  (defface powerline-inactive3
-    '((t (:background "grey0" :inherit mode-line-inactive)))
-    "Powerline face 3."
-    :group 'powerline)
+  (add-hook 'view-mode-hook
+            '(lambda ()
+               (setcar (cdr (assq 'view-mode minor-mode-alist)) "")))
 
-  (defface powerline-active4
-    '((t (:background "VioletRed" :inherit mode-line-inactive
-		      :foreground "white")))
-    "Powerline face 4."
-    :group 'powerline)
+  ;; modified-p
+  (defpowerline powerline-modified
+    (if (buffer-modified-p) "mod" ""))
 
-  (defface powerline-inactive4
-    '((t (:background "grey0" :inherit mode-line-inactive)))
-    "Powerline face 4."
-    :group 'powerline)
+  '( 
+    ;; モードラインに現在の関数名を表示
+    (which-function-mode 1)
+    (set-face-foreground 'which-func "Gray50")
+    (set-face-italic-p 'which-func t)
 
-  (defface powerline-active5
-    '((t (:background "Yellow4" :inherit mode-line-inactive
-		      :foreground "white")))
-    "Powerline face 5."
-    :group 'powerline)
+    (defpowerline powerline-which-func
+      (progn
+        (which-function-mode 1)
+        which-func-format))
+    )
 
-  (defface powerline-inactive5
-    '((t (:background "grey0" :inherit mode-line-inactive)))
-    "Powerline face 5."
-    :group 'powerline)
+  (defpowerline powerline-count-lines-and-chars
+    (if (region-active-p)
+        (format "(%3d:%4d)"
+                (count-lines (region-beginning) (region-end))
+                (- (region-end) (region-beginning)))
+      ""))
 
-  (defface powerline-active6
-    '((t (:background "white" :inherit mode-line-inactive)))
-    "Powerline face 6."
-    :group 'powerline)
+  (setq-default mode-line-format
+                '("%e"
+                  (:eval
+                   (let* ((active (powerline-selected-window-active))
+                          (mode-line (if active 'mode-line 'mode-line-inactive))
+                          (face1 (if active 'powerline-active1 'powerline-inactive1))
+                          (face2 (if active 'powerline-active2 'powerline-inactive2))
+                          (height 20)
+                          (lhs (list
+                                (powerline-raw "%Z" nil 'l)
 
-  (defface powerline-inactive6
-    '((t (:background "grey0" :inherit mode-line-inactive)))
-    "Powerline face 6."
-    :group 'powerline)
+                                ;; (powerline-buffer-size nil 'l)
+                                (powerline-buffer-id nil 'l)
+				
+                                (powerline-raw " ")
+                                (powerline-arrow-right mode-line face1 height)
+				
+                                (when (boundp 'erc-modified-channels-object)
+                                  (powerline-raw erc-modified-channels-object face1 'l))
+                                (powerline-major-mode face1 'l)
+                                (powerline-process face1)
+                                (powerline-minor-modes face1 'l)
+                                
+				(powerline-raw " " face1)
+				
+                                (powerline-arrow-right face1 face2 height)
+                                (powerline-view face2 'l)
+                                ))
+                          (rhs (list
+                                (powerline-raw global-mode-string face2 'r)
+                                ;; (powerline-which-func face2 'r)
+                                (powerline-vc face2 'r)
+                                (powerline-arrow-left face2 face1 height)
+                                (powerline-raw " " face1)
+                                (powerline-narrow face1)
+                                (powerline-count-lines-and-chars face1)
+                                (powerline-raw "%4l" face1 'r)
+                                (powerline-raw ":" face1)
+                                (powerline-raw "%3c" face1 'r)
+                                (powerline-raw (format "%6d" (point)) face1 'r)
+                                (powerline-arrow-left face1 mode-line height)
+                                (powerline-raw " ")
+                                (powerline-modified)
+                                (powerline-raw " ")
+                                (powerline-raw "%6p%8 ")
+                                ;; (powerline-hud face2 face1)
+                                ;; (powerline-raw "    " nil 'r)
+                                )))
+                     (concat (powerline-render lhs)
+                             (powerline-fill face2 (powerline-width rhs))
+                             (powerline-render rhs))))))
 
-  (defpowerline powerline-ime-mode
-    (cond
-     ((< 0 (length smartrep-mode-line-string)) "<SR>")
-     ((ime-get-mode) "[あ]")
-     (t "[Aa]")))
-
-  (defpowerline powerline-coding-type
-    (concat (get-buffer-coding-type-without-eol-type) "[" (get-buffer-file-eol-type) "]"))
-
-  (defpowerline powerline-buffer-status
-    (concat (if buffer-read-only "r-" "rw")
-	    ":"
-	    (if (buffer-modified-p) "*" "-")))
-
-  
-  (defun powerline-my-theme ()
-    "Setup a mode-line with major and minor modes centered."
-    (interactive)
-    (setq-default mode-line-format
-		  '("%e"
-		    (:eval
-		     (let* ((active (powerline-selected-window-active))
-			    (mode-line (if active 'mode-line 'mode-line-inactive))
-			    (face1 (if active 'powerline-active1 'powerline-inactive1))
-			    (face2 (if active 'powerline-active2 'powerline-inactive2))
-			    (face3 (if active 'powerline-active3 'powerline-inactive3))
-			    (face4 (if active 'powerline-active4 'powerline-inactive4))
-			    (face5 (if active 'powerline-active5 'powerline-inactive5))
-			    (face6 (if active 'powerline-active6 'powerline-inactive6))
-			    (separator-left (intern (format "powerline-%s-%s"
-							    powerline-default-separator
-							    (car powerline-default-separator-dir))))
-			    (separator-right (intern (format "powerline-%s-%s"
-							     powerline-default-separator
-							     (cdr powerline-default-separator-dir))))
-			    (lhs (list
-				  ;; (powerline-raw "%*" nil 'l)
-				  (cond
-				   ((< 0 (length smartrep-mode-line-string))
-				    (powerline-ime-mode face5 'l))
-				   ((ime-get-mode)
-				    (powerline-ime-mode face3 'l))
-				   (t (powerline-ime-mode face4 'l)))
-				  (cond
-				   ((< 0 (length smartrep-mode-line-string))
-				    (funcall separator-left face5 nil))
-				   ((ime-get-mode)
-				    (funcall separator-left face3 nil))
-				   (t (funcall separator-left face4 nil)))
-
-				  (powerline-coding-type nil 'l)
-				  (powerline-buffer-status nil 'l)
-				  ;; (powerline-buffer-size nil 'l)
-				  (funcall separator-left face1 face6)
-				  (powerline-buffer-id face6 'l)
-				  ;; (powerline-raw " ")
-				  (funcall separator-left face6 face1)
-				  (powerline-major-mode face1 'l)
-				  (powerline-narrow face1 'l)
-				  (powerline-vc face1)))
-			    (rhs (list (powerline-raw global-mode-string face1 'r)
-				       (powerline-raw "%4l" face1 'r)
-				       (powerline-raw ":" face1)
-				       (powerline-raw "%3c" face1 'r)
-				       (funcall separator-right nil face5)
-				       ;; (powerline-raw " ")
-				       (powerline-raw "%6p" face5 'r)
-				       (powerline-hud face2 face1)))
-			    (center (list (powerline-raw " " face1)
-					  (funcall separator-left face1 face2)
-					  (when (boundp 'erc-modified-channels-object)
-					    (powerline-raw erc-modified-channels-object face2 'l))
-					  (powerline-process face2)
-					  ;; (powerline-raw " :" face2)
-					  (powerline-minor-modes face2 'l)
-					  (powerline-raw " " face2)
-					  (funcall separator-right face2 face1))))
-		       (concat (powerline-render lhs)
-			       (powerline-fill-center face1 (/ (powerline-width center) 2.0))
-			       (powerline-render center)
-			       (powerline-fill face1 (powerline-width rhs))
-			       (powerline-render rhs)))))))
-
-
-
-  (powerline-my-theme)
   
   )
