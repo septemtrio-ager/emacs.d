@@ -27,4 +27,4 @@
 
 
 ;;; 現在の関数名をモードラインに表示
-(which-function-mode 1)
+;; (which-function-mode 1)
