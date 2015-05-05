@@ -37,7 +37,7 @@
 
 
 ;; cedet-devel-load.el のディレクトリを指定
-(load-file "~/.emacs.d/bzr-cedet/cedet-devel-load.el")
+;; (load-file "~/.emacs.d/bzr-cedet/cedet-devel-load.el")
 
 
 
