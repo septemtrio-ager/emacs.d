@@ -23,7 +23,7 @@
 (el-get-bundle py-autopep8
   
   (require 'py-autopep8)
-  (add-hook 'before-save-hook 'py-autopep8-before-save)
+  (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
   )
 
 ;; Pythonのオートコンプリートをする
