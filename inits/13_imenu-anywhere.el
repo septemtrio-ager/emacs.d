@@ -10,8 +10,8 @@
 
 ;; ===================================================================
 
-(el-get-bundle imenu-anywhere
+;; (el-get-bundle imenu-anywhere
 
-  (global-set-key (kbd "C-.") 'helm-imenu-anywhere)
+;;   (global-set-key (kbd "C-.") 'helm-imenu-anywhere)
   
-  )
+;;   )
