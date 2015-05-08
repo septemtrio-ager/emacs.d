@@ -19,13 +19,20 @@
   ;; GnuPGを利用してアクセストークンを暗号化して保存する
   (setq twittering-use-master-password t)
 
-
+  ;; =================================================================
+  
   ;; 【参考】twittering-mode でエラー
   ;; http://wp.hebon.net/emacs/?tag=twittering-mode
 
+  ;; =================================================================
+  
+  ;; =================================================================
+  
   ;; 【参考】 Mac OS X 10.10 (Yosemite) 上で twittering-mode を動かそうとしたら躓いたまとめ
-
-  ;;http://d.hatena.ne.jp/cointoss/20141104/1415029315?_ga=1.180673895.1536729082.1425645803
+  ;; http://d.hatena.ne.jp/cointoss/20141104/1415029315?_ga=1.180673895.1536729082.1425645803
+  
+  ;; =================================================================
+  
   ;; M-x twitしたあとに「Failed to retrieve a request token」という
   ;; エラーが出たとき用。サーバーの証明書問題？なので証明書を検証しないようにする
   ;; (setq twittering-allow-insecure-server-cert t)
@@ -55,4 +62,5 @@
 
   ;;アイコンを表示
   (setq twittering-icon-mode t)
+  
   )
