@@ -25,7 +25,9 @@
 
 
 ;;; 終了時に自動でプロセスをkill
-(setq process-kill-without-query t)
+(defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
+  "Prevent annoying \"Active processes exist\" query when you quit Emacs."
+  (flet ((process-list ())) ad-do-it))
 
 
 
