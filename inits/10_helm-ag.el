@@ -27,7 +27,7 @@
 
 ;; ===================================================================
 
-(el-get-bundle elpa:helm-ag
+(el-get-bundle helm-ag
   
   (require 'helm-files)
   (require 'helm-ag)
