@@ -105,3 +105,8 @@
 
 ;; モードラインに列番号表示
 (column-number-mode t)
+
+
+
+;; カーソル点滅速度の変更（デフォルトは0.5）
+(setq blink-cursor-interval 0.15)
