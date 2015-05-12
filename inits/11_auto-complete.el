@@ -17,7 +17,7 @@
 
 ;; ===================================================================
 
-(el-get-bundle elpa:auto-complete
+(el-get-bundle auto-complete
   
   (require 'auto-complete)
   ;;(require 'auto-complete-config)

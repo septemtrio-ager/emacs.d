@@ -9,7 +9,7 @@
 
 ;; ===================================================================
 
-(el-get-bundle elpa:adaptive-wrap
+(el-get-bundle adaptive-wrap
   
   ;; M-x package-install adaptive-wrap でインストールする
 

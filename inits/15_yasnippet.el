@@ -17,7 +17,7 @@
 
 ;; ===================================================================
 
-(el-get-bundle elpa:yasnippet
+(el-get-bundle yasnippet
   
   (require 'yasnippet)
   
