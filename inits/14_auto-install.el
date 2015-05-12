@@ -9,8 +9,7 @@
 
 ;; ===================================================================
 
-(el-get-bundle anything)
-(el-get-bundle elpa:auto-install
+(el-get-bundle auto-install
   
   (require 'auto-install)
 
