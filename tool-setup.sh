@@ -19,11 +19,6 @@ sudo apt-get install -y texinfo
 # Python開発環境の構築
 #=====================================================================
 
-# PATHを追加
-echo "Add PATH"
-$ PATH=$PATH:~/.local/bin
-$ export PATH
-
 # pipをインストール
 echo "Install pip"
 sudo apt-get install -y python-pip
