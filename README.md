@@ -35,7 +35,7 @@ emacs.d
 ~~~~
 
 ## .emacs
-init.elを読み込むようにする
+.emacsが存在する場合、init.elを読み込むように以下を.emacsに追加する
 ~~~~
 (load (expand-file-name (concat (getenv "HOME") "/.emacs.d/init")))
 ~~~~
