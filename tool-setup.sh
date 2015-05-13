@@ -7,7 +7,7 @@ echo "This is tool setup shell script."
 #=====================================================================
 
 sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get -y upgrade
 
 #=====================================================================
 # texinfoのインストール
