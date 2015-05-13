@@ -10,7 +10,7 @@
 ;; ===================================================================
 
 
-(el-get-bundle alezost/imenus
+(el-get-bundle imenus
 
   (require 'imenus)
 
