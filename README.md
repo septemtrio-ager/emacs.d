@@ -54,3 +54,9 @@ $ emacs
 * CapsLockキーをCtrlキーに変更する  
 【参考】Caps LockキーをCtrlキーにする(Ubuntu)  
 http://l-w-i.net/t/ubuntu/key_001.txt
+
+* Python開発環境について  
+ ~/.local/bin にPATHを通す
+ * `~/.profile` をエディタで開く  
+ * `PATH="$PATH:~/.local/bin"` を最終行に追加  
+ * `source ~/.profile` を実行することで即時反映させる
