@@ -120,9 +120,17 @@ sudo apt-get install -y software-properties-common
 sudo apt-add-repository -y ppa:mizuno-as/silversearcher-ag
 sudo apt-get update
 sudo apt-get install -y silversearcher-ag
+
 #=====================================================================
 # GitHub Markdown記述環境の構築
 #=====================================================================
 
 echo "Setup GitHub Markdown - Mode"
 sudo pip install grip
+
+#=====================================================================
+# emacs-mozcのインストール
+#=====================================================================
+
+echo "Install emacs-mozc"
+sudo apt-get install -y emacs-mozc
