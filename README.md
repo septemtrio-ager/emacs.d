@@ -2,7 +2,7 @@
 
 ## Requirements
 * Emacs 24.3 or greater  
-  24.4,24.5についても動作を確認しています。
+  24.4，24.5についても動作を確認しています。
 * Ubuntu 14.4 or greater
 * Linux Mint 17.1 or greater
 * Lubuntu 14.4 or greater
@@ -54,6 +54,10 @@ $ emacs
 * CapsLockキーをCtrlキーに変更する  
 【参考】Caps LockキーをCtrlキーにする(Ubuntu)  
 http://l-w-i.net/t/ubuntu/key_001.txt
+
+* フォントについて  
+【参考】プログラミング用フォント Ricty  
+https://github.com/yascentur/Ricty
 
 * Python開発環境について  
  ~/.local/bin にPATHを通す
