@@ -19,11 +19,3 @@
   ;;(add-hook 'java-mode-hook
   ;;          (lambda () (flycheck-mode t)))
   )
-
-;; flycheck-pos-tipを使う
-(el-get-bundle flycheck-pos-tip
-
-  (eval-after-load 'flycheck
-    '(custom-set-variables
-      '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
-  )
