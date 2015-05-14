@@ -95,8 +95,26 @@
     (t
      ()))
   "*Face used by hl-line.")
-(setq hl-line-face 'hlline-face)
-(global-hl-line-mode)
+;; (setq hl-line-face 'hlline-face)
+;; (global-hl-line-mode)
+
+
+
+;; ===================================================================
+
+;; 【高速化】Emacsのカーソル移動が重い？
+;; http://rubikitch.com/2015/05/14/global-hl-line-mode-timer/
+
+;; ===================================================================
+
+;; タイマー関数を利用して現在行を目立たせる
+(defun global-hl-line-timer-function ()
+  ;; (global-hl-line-unhighlight-all)
+  (let ((global-hl-line-mode t))
+    ;; (global-hl-line-highlight)
+    ))
+(setq global-hl-line-timer
+      (run-with-idle-timer 0.1 t 'global-hl-line-timer-function))
 
 
 
@@ -116,5 +134,9 @@
 
 
 
+;; カーソルの点滅設定
+
 ;; カーソル点滅速度の変更（デフォルトは0.5）
 (setq blink-cursor-interval 0.15)
+(setq blink-cursor-delay 2.0)
+(blink-cursor-mode 1)
