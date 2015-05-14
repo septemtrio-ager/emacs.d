@@ -16,6 +16,7 @@
 /ac-comphist.dat
 /srecode-map.el
 /recentf
+/projectile-bookmarks
 
 auto-install/*
 !.gitkeep
