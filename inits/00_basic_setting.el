@@ -14,6 +14,14 @@
 
 
 
+;; フォントをRitcyに変更する
+(add-to-list 'default-frame-alist '(font . "ricty-12"))
+(custom-set-faces
+ '(variable-pitch ((t (:family "Ricty"))))
+ '(fixed-pitch ((t (:family "Ricty"))))
+ )
+
+
 ;; スクリーンの最大化
 (set-frame-parameter nil 'fullscreen 'maximized)
 
