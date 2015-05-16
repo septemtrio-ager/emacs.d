@@ -42,5 +42,8 @@
   
   ;; magitの COMMIT_EDITMSG バッファをポップアップ表示させる
   (push '("COMMIT_EDITMSG" :height 0.3) popwin:special-display-config)
+
+  ;; recentf-extの *Open Recent* バッファをポップアップ表示させる
+  (push '("*Open Recent*" :height 25) popwin:special-display-config)
   
   )
