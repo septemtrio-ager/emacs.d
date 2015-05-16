@@ -39,6 +39,7 @@
 		     ((buffer-file-name b) b)
 		     ((char-equal ?\  (aref (buffer-name b) 0)) nil)
 		     ((equal "*scratch*" (buffer-name b)) b)       ; *scratch*バッファは表示する
+		     ((equal "*Open Recent*" (buffer-name b)) b)   ; *Open Recent*バッファは表示する
 		     ((char-equal ?* (aref (buffer-name b) 0)) nil) ; それ以外の * で始まるバッファは表示しない
 		     ((buffer-live-p b) b)))
 		(buffer-list))))
