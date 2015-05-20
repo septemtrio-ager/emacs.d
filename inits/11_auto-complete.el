@@ -37,6 +37,9 @@
   (add-to-list 'ac-modes 'web-mode)
   (add-to-list 'ac-modes 'git-commit-mode)
   (add-to-list 'ac-modes 'gfm-mode)
+  (add-to-list 'ac-modes 'twittering-edit-mode)
+  (add-to-list 'ac-modes 'shell-mode)
+
 
 
 
