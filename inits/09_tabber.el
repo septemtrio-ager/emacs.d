@@ -73,16 +73,31 @@
  :background "black"
  :foreground "gray72"
  :height 0.8)
+
 (set-face-attribute
  'tabbar-unselected nil
  :background "black"
  :foreground "grey72"
  :box '(:line-width 3 :color "black"))
+
 (set-face-attribute
  'tabbar-selected nil
  :background "white"
  :foreground "gray28"
  :box '(:line-width 3 :color "white"))
+
 (set-face-attribute
  'tabbar-button nil
  :box nil)
+
+(set-face-attribute
+ 'tabbar-modified nil
+ :background "black"
+ :foreground "#F1266F"
+ :box '(:line-width 1 :color "black"))
+
+;; tabbar-selected を太字で表示
+(set-face-bold-p 'tabbar-selected t)
+
+;; tabbar-modified を太字で表示
+(set-face-bold-p 'tabbar-modified t)
