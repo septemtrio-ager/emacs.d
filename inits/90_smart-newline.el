@@ -40,4 +40,8 @@
 
   ;; shell-script-modeで利用する
   (add-hook 'sh-mode-hook 'smart-newline-mode)
+
+  ;; r-modeで利用する
+  (add-hook 'R-mode-hook 'smart-newline-mode)
+  
   )
