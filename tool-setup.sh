@@ -48,6 +48,19 @@ echo "Install NLTK"
 sudo pip install nltk
 
 #=====================================================================
+# R開発環境の構築
+#=====================================================================
+
+# ESSをインストール
+echo "Install ESS"
+sudo apt-get install -y ess
+
+# lintrのセットアップに必要なもの
+sudo apt-get install -y gfortran
+sudo apt-get install -y liblapack-dev
+sudo apt-get install -y libblas-dev
+
+#=====================================================================
 # JDKのインストール
 #=====================================================================
 
