@@ -33,13 +33,6 @@
   (global-auto-complete-mode t)
 
   ;; 適用するメジャーモードを足す
-  
-  ;; (add-to-list 'ac-modes 'scss-mode)
-  ;; (add-to-list 'ac-modes 'web-mode)
-  ;; (add-to-list 'ac-modes 'git-commit-mode)
-  ;; (add-to-list 'ac-modes 'gfm-mode)
-  ;; (add-to-list 'ac-modes 'twittering-edit-mode)
-  ;; (add-to-list 'ac-modes 'shell-mode)
   (dolist (mode '(
 		  scss-mode
 		  web-mode
