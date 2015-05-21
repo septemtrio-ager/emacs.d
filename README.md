@@ -7,6 +7,19 @@
 * Linux Mint 17.1 or greater
 * Lubuntu 14.4 or greater
 
+## Support Programming Languages
+
+* C/C++
+* Java
+* Python
+* R
+* HTML
+* CSS
+* Lisp (Emacs Lisp)
+* Markdown (Github Flavored Markdown)
+* Arduino
+* Twitter
+
 ## Directory Configuration
 
 ~~~~
@@ -61,6 +74,20 @@ https://github.com/yascentur/Ricty
 
 * Python開発環境について  
  ~/.local/bin にPATHを通す
- * `~/.profile` をエディタで開く  
- * `PATH="$PATH:~/.local/bin"` を最終行に追加  
- * `source ~/.profile` を実行することで即時反映させる
+ 1. `~/.profile` をエディタで開く  
+ 2. `PATH="$PATH:~/.local/bin"` を最終行に追加  
+ 3. `source ~/.profile` を実行することで即時反映させる
+
+* R開発環境について
+ * 最新版のRをインストールする  
+【参考】UbuntuにRをインストールするための手順  
+http://www.trifields.jp/install-r-in-ubuntu-1000  
+Linux Mint 17.1 RebeccaについてはUbuntu 14.04 Trustyをベースにしているため, DISTRIB_CODENAME=trusty と読み替えること.
+
+ * lintrの導入  
+ flycheckのSyntaxCheckerであるlintrパッケージをインストール  
+    1. Rを起動して以下のコマンドを入力  
+	`> options(CRAN = "http://cran.ism.ac.jp/")`  
+	`> options(repos = "http://cran.ism.ac.jp/")`  
+    2. lintrをパッケージ指定してインストール  
+	`> install.packages("lintr", dep=T)`
