@@ -18,5 +18,5 @@
 
   (custom-set-faces
    '(linum-highlight-face((t (:foreground "black"
-					  :background "limegreen")))))
+					  :background "#F1266F")))))
   )
