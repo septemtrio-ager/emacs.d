@@ -20,6 +20,7 @@
 	auto-highlight-symbol-mode
 	smart-newline-mode
 	volatile-highlights-mode
+	smartparens-mode
 	))
 
 (mapc (lambda (mode)
