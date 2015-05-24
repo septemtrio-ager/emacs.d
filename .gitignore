@@ -1,6 +1,7 @@
 # emacs.d gitignore
 
 *~
+*.el
 *.elc
 
 /auto-save-list
