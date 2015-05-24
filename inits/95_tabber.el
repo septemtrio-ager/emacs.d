@@ -64,21 +64,21 @@
 (setq tabbar-auto-scroll-flag nil)
 
 ;; タブとタブの間の長さ
-(setq tabbar-separator '(1.5))
+(setq tabbar-separator '(0.6))
 
 ;; 外観変更
 ;; (set-face-attribute
 ;;  'tabbar-default nil
 ;;  :family "Monaco"
-;;  :background "black"
+;;  :background "#51B24C"
 ;;  :foreground "gray72"
 ;;  :height 0.8)
 
 ;; (set-face-attribute
 ;;  'tabbar-unselected nil
-;;  :background "black"
+;;  :background "#51B24C"
 ;;  :foreground "grey72"
-;;  :box '(:line-width 3 :color "black"))
+;;  :box '(:line-width 3 :color "#51B24C"))
 
 ;; (set-face-attribute
 ;;  'tabbar-selected nil
@@ -90,31 +90,64 @@
 ;;  'tabbar-button nil
 ;;  :box nil)
 
+;; カスタマイズ設定
+
+;; (set-face-attribute
+;;  'tabbar-default nil
+;;  :family "Monaco"
+;;  :background "lightgreen"
+;;  :foreground "#51B24C" ; gray72
+;;  :height 0.8)
+;; (set-face-attribute
+;;  'tabbar-unselected nil
+;;  :background "lightgreen"
+;;  :foreground "#51B24C" ; gray72
+;;  :box '(:line-width 3 :color "lightgreen"))
+;; (set-face-attribute
+;;  'tabbar-selected nil
+;;  :background "white"
+;;  :foreground "gray28"
+;;  :box '(:line-width 3 :color "white")) ; white
+;; (set-face-attribute
+;;  'tabbar-button nil
+;;  :box nil)
+
+;; 設定しなおし
+
 (set-face-attribute
  'tabbar-default nil
  :family "Monaco"
- :background "limegreen"
- :foreground "black" ; gray72
+ :background "#51B24C"
+ :foreground "gray72"
  :height 0.8)
+
 (set-face-attribute
  'tabbar-unselected nil
- :background "limegreen"
- :foreground "black" ; gray72
- :box '(:line-width 3 :color "limegreen"))
+ :background "#51B24C"
+ :foreground "black"
+ :box '(:line-width 3 :color "#51B24C"))
+
 (set-face-attribute
  'tabbar-selected nil
  :background "white"
  :foreground "gray28"
- :box '(:line-width 3 :color "white")) ; white
+ :box '(:line-width 3 :color "white"))
+
 (set-face-attribute
  'tabbar-button nil
  :box nil)
 
 (set-face-attribute
  'tabbar-modified nil
- :background "black"
+ :background "#51B24C"
  :foreground "#F1266F"
- :box '(:line-width 1 :color "black"))
+ :box '(:line-width 1 :color "#51B24C"))
+
+(set-face-attribute
+ 'tabbar-separator nil
+ :background "#CCCC99"
+ :foreground "#CCCC99"
+ )
 
 ;; tabbar-selected を太字で表示
 (set-face-bold-p 'tabbar-selected t)
