@@ -40,6 +40,7 @@
 		  gfm-mode
 		  twittering-edit-mode
 		  shell-mode
+		  markdown-mode
 		  ))
   (add-to-list 'ac-modes mode))
 
