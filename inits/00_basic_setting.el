@@ -77,7 +77,7 @@
 ;;; ウィンドウの透過度を変更する
 (if window-system (progn
    (set-background-color "Black")
-   (set-foreground-color "LightGray")
+   (set-foreground-color "Black")
    (set-cursor-color "Gray")
    (set-frame-parameter nil 'alpha 80)
    ))
@@ -95,8 +95,8 @@
     (t
      ()))
   "*Face used by hl-line.")
-;; (setq hl-line-face 'hlline-face)
-;; (global-hl-line-mode)
+(setq hl-line-face 'hlline-face)
+(global-hl-line-mode)
 
 
 
@@ -108,13 +108,13 @@
 ;; ===================================================================
 
 ;; タイマー関数を利用して現在行を目立たせる
-(defun global-hl-line-timer-function ()
-  ;; (global-hl-line-unhighlight-all)
-  (let ((global-hl-line-mode t))
-    ;; (global-hl-line-highlight)
-    ))
-(setq global-hl-line-timer
-      (run-with-idle-timer 0.1 t 'global-hl-line-timer-function))
+;; (defun global-hl-line-timer-function ()
+;;   (global-hl-line-unhighlight-all)
+;;   (let ((global-hl-line-mode t))
+;;     (global-hl-line-highlight)
+;;     ))
+;; (setq global-hl-line-timer
+;;       (run-with-idle-timer 0.03 t 'global-hl-line-timer-function))
 
 
 
