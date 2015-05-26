@@ -12,7 +12,7 @@
 
 
 ;; 閉じ括弧を自動で補完する
-;; (electric-pair-mode 1)
+(electric-pair-mode 1)
 
 
 
