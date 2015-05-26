@@ -25,15 +25,15 @@ sudo apt-get install -y python-pip
 
 # autopep8をインストール
 echo "Install autopep8"
-sudo pip install --user autopep8
+pip install --user autopep8
 
 # rope, jediをインストール
 echo "Install rope, jedi"
-sudo pip install --user rope jedi
+pip install --user rope jedi
 
 # flake8をインストール
 echo "Install flake8"
-sudo pip install --user flake8
+pip install --user flake8
 
 # numpy, scipyをインストール
 echo "Install numpy, scipy"
@@ -45,7 +45,7 @@ sudo apt-get install -y python-sklearn python-matplotlib
 
 # NLTKをインストール
 echo "Install NLTK"
-sudo pip install nltk
+pip install nltk
 
 #=====================================================================
 # R開発環境の構築
