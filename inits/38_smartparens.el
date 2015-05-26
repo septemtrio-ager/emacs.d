@@ -1,14 +1,14 @@
 ;;
-;;;
+;;; smartparens.elの設定
 ;;
 
-(el-get-bundle smartparens
+;; (el-get-bundle smartparens
 
-  (require 'smartparens-config)
+;;   (require 'smartparens-config)
 
-  (smartparens-global-mode t)
+;;   (smartparens-global-mode t)
   
-  ;; 括弧の定義
-  (sp-pair "<#" "#>")
+;;   ;; 括弧の定義
+;;   (sp-pair "<#" "#>")
   
-  )
+;;   )
