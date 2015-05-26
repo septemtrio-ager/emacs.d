@@ -123,9 +123,9 @@
 
 (set-face-attribute
  'tabbar-unselected nil
- :background "#51B24C"
+ :background "#90ee90"
  :foreground "black"
- :box '(:line-width 3 :color "#51B24C"))
+ :box '(:line-width 3 :color "#90ee90"))
 
 (set-face-attribute
  'tabbar-selected nil
@@ -139,9 +139,9 @@
 
 (set-face-attribute
  'tabbar-modified nil
- :background "#51B24C"
+ :background "#90ee90"
  :foreground "#F1266F"
- :box '(:line-width 1 :color "#51B24C"))
+ :box '(:line-width 1 :color "#90ee90"))
 
 (set-face-attribute
  'tabbar-separator nil
