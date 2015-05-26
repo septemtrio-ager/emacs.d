@@ -1,7 +1,6 @@
 # emacs.d gitignore
 
 *~
-*.el
 *.elc
 
 /auto-save-list
@@ -35,3 +34,4 @@ site-lisp/*
 !.gitkeep
 
 README.html
+.mc-lists.el
