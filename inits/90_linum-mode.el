@@ -32,3 +32,6 @@
 
 ;; shell-script-modeで利用する
 (add-hook 'sh-mode-hook 'linum-mode)
+
+;; Markdown-modeで利用する
+(add-hook 'markdown-mode-hook 'linum-mode)
