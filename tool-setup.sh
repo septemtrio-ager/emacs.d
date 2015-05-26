@@ -45,7 +45,7 @@ sudo apt-get install -y python-sklearn python-matplotlib
 
 # NLTKをインストール
 echo "Install NLTK"
-pip install nltk
+sudo pip install nltk
 
 #=====================================================================
 # R開発環境の構築
@@ -147,3 +147,10 @@ sudo pip install grip
 
 echo "Install emacs-mozc"
 sudo apt-get install -y emacs-mozc
+
+#=====================================================================
+# Ritcyフォントのインストールに必要なもの
+#=====================================================================
+
+echo "Install fontforge"
+sudo apt-get install -y fontforge
