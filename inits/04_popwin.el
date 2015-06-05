@@ -40,10 +40,16 @@
   ;; direx-mode バッファをポップアップ表示させる
   (push '(direx:direx-mode :position left :width 40 :dedicated t) popwin:special-display-config)
   
+
   ;; magitの COMMIT_EDITMSG バッファをポップアップ表示させる
   (push '("COMMIT_EDITMSG" :height 0.3) popwin:special-display-config)
-
+  
+  
   ;; recentf-extの *Open Recent* バッファをポップアップ表示させる
   (push '("*Open Recent*" :height 25) popwin:special-display-config)
+  
+  
+  ;; undo-treeの *undo-tree* バッファをポップアップ表示させる
+  (push '("*undo-tree*" :width 0.3 :position right) popwin:special-display-config)
   
   )
