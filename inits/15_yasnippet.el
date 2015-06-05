@@ -25,6 +25,12 @@
   (setq yas-snippet-dirs
 	'("~/.emacs.d/snippets/mysnippets"      ;; 作成したスニペット
 	  "~/.emacs.d/snippets/site-snippets"   ;; 拾ってきたスニペット
+	  
+	  ;; java-modeのスニペットがyasnipett-java-modeの
+	  ;; スニペットと干渉しないように退避してあるディレクトリ
+	  
+	  ;; "~/.emacs.d/snippets/temp-snippets"
+	  
 	  ))
 
   (yas-global-mode 1)
