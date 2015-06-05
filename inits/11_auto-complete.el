@@ -41,6 +41,8 @@
 		  twittering-edit-mode
 		  shell-mode
 		  markdown-mode
+		  text-mode
+		  web-mode
 		  ))
   (add-to-list 'ac-modes mode))
 
