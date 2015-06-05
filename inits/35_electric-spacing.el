@@ -15,18 +15,18 @@
   (require 'electric-spacing)
 
   ;; c-modeで利用する
-  (add-hook 'c-mode-hook 'electric-spacing-mode)
+  (add-hook 'c-mode-hook #'electric-spacing-mode)
 
   ;; c++-modeで利用する
-  (add-hook 'c++-mode-hook 'electric-spacing-mode)
+  (add-hook 'c++-mode-hook #'electric-spacing-mode)
 
   ;; java-modeで利用する
-  (add-hook 'java-mode-hook 'electric-spacing-mode)
+  (add-hook 'java-mode-hook #'electric-spacing-mode)
 
   ;; python-modeで利用する
-  (add-hook 'python-mode-hook 'electric-spacing-mode)
+  (add-hook 'python-mode-hook #'electric-spacing-mode)
   
   ;; arduino-modeで利用する
   ;; 使いたかったけど対応してなかった
- (add-hook 'arduino-mode-hook 'electric-spacing-mode)
+ (add-hook 'arduino-mode-hook #'electric-spacing-mode)
   )
