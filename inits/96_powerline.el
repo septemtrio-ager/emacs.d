@@ -15,8 +15,8 @@
   (powerline-default-theme)
 
   ;; モードラインを平面化する
-  ;; (set-face-attribute 'mode-line          nil :box nil)
-  ;; (set-face-attribute 'mode-line-inactive nil :box nil)
+  (set-face-attribute 'mode-line          nil :box nil)
+  (set-face-attribute 'mode-line-inactive nil :box nil)
 
   (set-face-background 'mode-line         "#006400")   ; darkgreen
   (set-face-foreground 'mode-line         "#FFFFDC")   ; near-white
