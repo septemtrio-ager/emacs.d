@@ -104,6 +104,7 @@
 (el-get-bundle ess-R-data-view
 
   ;; (define-key ess-mode-map (kbd "C-c v") 'ess-R-dv-pprint)
+  ;; (define-key inferior-ess-mode-map (kbd "C-c v") 'ess-R-dv-pprint)
   
   )
 
