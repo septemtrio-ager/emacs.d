@@ -28,3 +28,17 @@
 
 ;; 現在の関数名をモードラインに表示
 ;; (which-function-mode 1)
+
+
+;; ===================================================================
+
+;; 【参考】emacsのcompileでディレクトリを指定する
+;; http://blog.livedoor.jp/regular_bound/archives/54676139.html
+
+;; ===================================================================
+
+(defun my-compile (dir-name)
+  "Compile."
+  (interactive "DDirectory: ")
+  (let ((default-directory dir-name))
+    (command-execute 'compile)))
