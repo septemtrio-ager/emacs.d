@@ -70,6 +70,7 @@
     ;; # の数によってコメントのインデントの挙動が変わるのを無効にする
     (setq ess-fancy-comments nil)
     (setq ess-loaded-p t)
+    
     (unless from-iess-p
       
       ;; ウィンドウが1つの状態で *.R を開いた場合はウィンドウを縦に分割して R を表示する
