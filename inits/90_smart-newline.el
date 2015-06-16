@@ -43,5 +43,8 @@
 
   ;; r-modeで利用する
   (add-hook 'R-mode-hook 'smart-newline-mode)
+
+  ;; octave-modeで利用する
+  (add-hook 'octave-mode-hook 'smart-newline-mode)
   
   )
