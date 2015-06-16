@@ -140,3 +140,27 @@
 (setq blink-cursor-interval 0.15)
 (setq blink-cursor-delay 2.0)
 (blink-cursor-mode 1)
+
+
+;; ===================================================================
+
+;; 【参考】現在のファイルのパスを取得してクリップボードに保存
+;; http://futurismo.biz/archives/2989
+
+;; ===================================================================
+
+;; 現在開いているファイルのパスを保存.
+;; dired を開いているときはディレクトリパスを保存.
+(defun my/get-curernt-path ()
+    (if (equal major-mode 'dired-mode)
+    default-directory
+    (buffer-file-name)))
+ 
+(defun my/copy-current-path ()                                                         
+  (interactive)
+  (let ((fPath (my/get-curernt-path)))
+    (when fPath
+      (message "stored path: %s" fPath)
+      (kill-new (file-truename fPath)))))
+ 
+(global-set-key (kbd "C-c 0") 'my/copy-current-path)
