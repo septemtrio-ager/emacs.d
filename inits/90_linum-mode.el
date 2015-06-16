@@ -35,3 +35,6 @@
 
 ;; Markdown-modeで利用する
 (add-hook 'markdown-mode-hook 'linum-mode)
+
+;; octave-modeで利用する
+(add-hook 'octave-mode-hook 'linum-mode)
