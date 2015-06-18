@@ -11,15 +11,18 @@
 
 (el-get-bundle ac-octave)
 
-;; (autoload 'octave-mode "octave-mode" nil t)
 (setq auto-mode-alist
       (cons '("\\.m$" . octave-mode) auto-mode-alist))
 
+(autoload 'run-octave "octave-inf" nil t)
+
 (add-hook 'octave-mode-hook
                (lambda ()
-		 ;; (auto-fill-mode 1)
-                 (if (eq window-system 'x)
+		 
+		 (define-key octave-mode-map (kbd "<C-return>") 'octave-send-line)
+                 
+		 (if (eq window-system 'x)
                      (font-lock-mode 1))))
 
-(define-key octave-mode-map (kbd "<C-return>") 'octave-send-line)
+
 
