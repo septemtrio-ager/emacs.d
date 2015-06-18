@@ -43,6 +43,8 @@
 		  markdown-mode
 		  text-mode
 		  web-mode
+		  octave-mode
+		  css-mode
 		  ))
   (add-to-list 'ac-modes mode))
 
