@@ -18,6 +18,7 @@
 * Lisp (Emacs Lisp)
 * Markdown (Github Flavored Markdown)
 * Arduino
+* Octave
 * Twitter
 
 ## Directory Configuration
