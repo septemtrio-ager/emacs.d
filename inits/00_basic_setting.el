@@ -18,8 +18,8 @@
 (add-to-list 'default-frame-alist '(font . "ricty-12"))
 (custom-set-faces
  '(variable-pitch ((t (:family "Ricty"))))
- '(fixed-pitch ((t (:family "Ricty"))))
- )
+ '(fixed-pitch ((t (:family "Ricty")))))
+
 
 
 ;; スクリーンの最大化
@@ -142,6 +142,7 @@
 (blink-cursor-mode 1)
 
 
+
 ;; ===================================================================
 
 ;; 【参考】現在のファイルのパスを取得してクリップボードに保存
@@ -164,3 +165,16 @@
       (kill-new (file-truename fPath)))))
  
 (global-set-key (kbd "C-c 0") 'my/copy-current-path)
+
+
+
+;; ===================================================================
+
+;; 【参考】Emacsでウィンドウのサイズに応じて
+;;                           デフォルトの分割方向を決めるようにする
+;; http://subtech.g.hatena.ne.jp/y_yanbe/20100615/1276665470
+
+;; ===================================================================
+
+(custom-set-variables
+ '(split-width-threshold 77))
