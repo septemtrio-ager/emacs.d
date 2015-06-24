@@ -32,7 +32,7 @@
   (set-face-foreground 'powerline-inactive1 "#CCCCCC") ; light-gray
   (set-face-background 'powerline-inactive2 "#626262") ; dark-gray
   (set-face-foreground 'powerline-inactive2 "#CCCCCC") ; light-gray
-
+  
   ;; View mode
   (defpowerline powerline-view
     (when view-mode "View"))
@@ -74,7 +74,7 @@
                           (height 20)
                           (lhs (list
                                 (powerline-raw "%Z" nil 'l)
-
+				(powerline-modified)
                                 ;; (powerline-buffer-size nil 'l)
                                 (powerline-buffer-id nil 'l)
 				
@@ -106,7 +106,7 @@
                                 (powerline-raw (format "%6d" (point)) face1 'r)
                                 (powerline-arrow-left face1 mode-line height)
                                 (powerline-raw " ")
-                                (powerline-modified)
+                                
                                 (powerline-raw " ")
                                 (powerline-raw "%6p%8 ")
                                 ;; (powerline-hud face2 face1)
@@ -115,6 +115,4 @@
                      (concat (powerline-render lhs)
                              (powerline-fill face2 (powerline-width rhs))
                              (powerline-render rhs))))))
-
-  
   )
