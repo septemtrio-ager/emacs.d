@@ -46,5 +46,8 @@
 
   ;; octave-modeで利用する
   (add-hook 'octave-mode-hook 'smart-newline-mode)
+
+  ;; markdown-modeで利用する
+  (add-hook 'markdown-mode-hook 'smart-newline-mode)
   
   )
