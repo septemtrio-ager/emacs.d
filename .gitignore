@@ -19,6 +19,7 @@
 /snippets/temp-snippets
 
 projectile-bookmarks.eld
+ido.last
 
 auto-install/*
 !.gitkeep
