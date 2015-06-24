@@ -19,7 +19,8 @@
 
 (el-get-bundle yasnippet
   
-  (require 'yasnippet)
+  ;; (require 'yasnippet)
+  (autoload 'yasnippet "yasnippet-mode" nil t)
   
 
   (setq yas-snippet-dirs
