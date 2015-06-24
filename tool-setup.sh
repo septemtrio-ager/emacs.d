@@ -154,3 +154,14 @@ sudo apt-get install -y emacs-mozc
 
 echo "Install fontforge"
 sudo apt-get install -y fontforge
+
+#=====================================================================
+# Ruby開発環境の構築
+#=====================================================================
+
+echo "Install Ruby"
+sudo apt-get install -y ruby1.9.1-dev
+sudo apt-get install -y ruby
+
+echo "Install Redcarpet"
+sudo gem install redcarpet
