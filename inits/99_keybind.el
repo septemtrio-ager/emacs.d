@@ -34,12 +34,12 @@
 
 
 ;; shellを起動( C-c s )
-(global-set-key (kbd"C-c s") 'shell)
+;; (global-set-key (kbd"C-c s") 'shell)
 
 
 ;; eshellを起動( C-c s )
 ;; プロンプトを可愛くするカスタマイズが使えるようになったらこっちを使いたい
-;; (global-set-key (kbd"C-c s") 'eshell)
+(global-set-key (kbd"C-c s") 'eshell)
 
 
 ;; C-c c で compile コマンドを呼び出す
