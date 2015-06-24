@@ -4,6 +4,7 @@
 
 (el-get-bundle nekop/yasnippet-java-mode
 
-  (require 'java-snippets)
+  ;; (require 'java-snippets)
+  (autoload 'java-snippets "java-snipettes" nil t)
   
   )
