@@ -2,6 +2,9 @@
 ;;; eshell.elの設定
 ;;
 
+;; eshellのバナーメッセージを変更する
+(custom-set-variables '(eshell-banner-message "Welcome to the Emacs Shell （*>w<）!\n"))
+
 ;; ===================================================================
 
 ;; 【参考】[Emacs] eshellのプロンプトをかわいくする
@@ -18,7 +21,7 @@
 
 (setq eshell-prompt-regexp   (concat "^" (regexp-opt '("（*>w<）? " "（*'-'）? " "（`;w;）! ")))
       eshell-prompt-function (lambda ()
-                                 (concat "[" (eshell/pwd) "]\n"
+                                 (concat "\n[" (eshell/pwd) "]\n"
                                          (cond ((= (user-uid) 0) "（*>w<）? ")
                                                ((= eshell-last-command-status 0) "（*'-'）? ")
                                                (t "（`;w;）! ")))))
@@ -33,4 +36,3 @@
 
 ;; 補完時に大文字小文字を区別しない
 (setq eshell-cmpl-ignore-case t)
-
