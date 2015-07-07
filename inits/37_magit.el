@@ -27,12 +27,13 @@
   
   (require 'magit)
 
-  (setq magit-last-seen-setup-instructions "1.4.0")
+  ;; (setq magit-last-seen-setup-instructions "1.4.0")
+
+  ;; (eval-after-load 'magit
+  ;;   '(progn
+  ;;      (set-face-foreground 'magit-diff-add "green3")
+  ;;      (set-face-foreground 'magit-diff-del "red3")
+  ;;      (when (not window-system)
+  ;; 	 (set-face-background 'magit-item-highlight "white"))))
   
-  (eval-after-load 'magit
-    '(progn
-       (set-face-foreground 'magit-diff-add "green3")
-       (set-face-foreground 'magit-diff-del "red3")
-       (when (not window-system)
-	 (set-face-background 'magit-item-highlight "white"))))  
   )
