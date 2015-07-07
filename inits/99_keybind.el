@@ -18,7 +18,6 @@
 (global-set-key (kbd "C-x p") (lambda () (interactive) (other-window -1)))
 
 
-
 ;; Undo( C-z )
 (global-set-key (kbd "C-z") 'undo)
 
@@ -38,7 +37,6 @@
 
 
 ;; eshellを起動( C-c s )
-;; プロンプトを可愛くするカスタマイズが使えるようになったらこっちを使いたい
 (global-set-key (kbd"C-c s") 'eshell)
 
 
@@ -72,3 +70,17 @@
 
 ;; C-c ; で コメント、アンコメントする
 (global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
+
+
+;; ===================================================================
+
+;; yank した瞬間にインデントする
+;; http://d.hatena.ne.jp/yascentur/20120228/1330355171
+
+;; ===================================================================
+
+(global-set-key (kbd "C-M-y")
+		(lambda ()
+		  (interactive)
+		  (yank)
+		  (indent-region (region-beginning) (region-end))))
