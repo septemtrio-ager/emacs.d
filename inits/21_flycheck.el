@@ -13,9 +13,19 @@
 
   (require 'flycheck)
   (add-hook 'after-init-hook #'global-flycheck-mode)
+  
+  ;; =================================================================
 
-  ;;(add-hook 'c-mode-hook
-  ;;          (lambda () (flycheck-mode t)))
-  ;;(add-hook 'java-mode-hook
-  ;;          (lambda () (flycheck-mode t)))
+  ;; 【参考】flycheck — how to disable warnning while edit emacs lisp scripts?
+  ;; http://stackoverflow.com/questions/15552349/flycheck-how-to-disable-warnning-while-edit-emacs-lisp-scripts
+
+  ;; =================================================================
+
+  ;; Emacs Lispファイルの先頭で出る警告
+  ;; 「The first line should be of the form ...」
+  ;; のようなものを表示させないようにする。
+  
+  (with-eval-after-load 'flycheck
+    (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
+  
   )
