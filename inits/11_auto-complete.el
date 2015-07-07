@@ -45,6 +45,7 @@
 		  web-mode
 		  octave-mode
 		  css-mode
+		  eshell-mode
 		  ))
   (add-to-list 'ac-modes mode))
 
@@ -56,7 +57,7 @@
       ac-source-dictionary
       ac-source-words-in-same-mode-buffers
       ac-source-mozc                       ; ac-mozcを利用する
-      ac-source-octave                     ; octaceで利用する
+      ;;ac-source-octave                     ; octaceで利用する
       ))
 
   ;; 個別にソースを指定
