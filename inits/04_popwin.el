@@ -13,7 +13,7 @@
 (el-get-bundle popwin
   
   (require 'popwin)
-  (setq display-buffer-function 'popwin:display-buffer)
+  ;; (setq display-buffer-function 'popwin:display-buffer)
 
 
   ;; *quickrun* バッファをポップアップ表示させる
