@@ -21,7 +21,8 @@
 
 (ido-vertical-mode 1)
 
-;; C-n/C-pで選択できるようにする
+;; 2015/7/7最近の変更によりC-n/C-p
+;; できなくなっていたのでで選択できるようにする
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 
 (ignore-errors (ido-vertical-mode 1))
