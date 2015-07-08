@@ -14,14 +14,13 @@
   
   (require 'popwin)
   ;; (setq display-buffer-function 'popwin:display-buffer)
-
-
+  
   ;; *quickrun* バッファをポップアップ表示させる
   (push '("*quickrun*") popwin:special-display-config)
 
 
   ;; *anything* バッファをポップアップ表示させる
-  (setq anything-samewindow nil)
+  ;; (setq anything-samewindow nil)
   (push '("*anything*" :height 25) popwin:special-display-config)
 
 
@@ -30,10 +29,15 @@
   (push '("*anything for files*" :height 25) popwin:special-display-config)
 
 
-  ;; *helm* バッファをポップアップ表示させる
+  ;; =================================================================
+  
   ;; 【参考】AnythingからHelmに移行しました
   ;; http://sleepboy-zzz.blogspot.jp/2012/09/anythinghelm.html
-  (setq helm-samewindow nil)
+
+  ;; =================================================================
+  
+  ;; *helm* バッファをポップアップ表示させる
+  ;; (setq helm-samewindow nil)
   (push '("^\*helm .+\*$" :regexp t :height 25) popwin:special-display-config)
 
 
