@@ -13,15 +13,15 @@
 (el-get-bundle popwin
   
   (require 'popwin)
-  ;; (setq display-buffer-function 'popwin:display-buffer)
-  
+  (popwin-mode 1)
+    
   ;; *quickrun* バッファをポップアップ表示させる
   (push '("*quickrun*") popwin:special-display-config)
 
 
   ;; *anything* バッファをポップアップ表示させる
   ;; (setq anything-samewindow nil)
-  (push '("*anything*" :height 25) popwin:special-display-config)
+  ;; (push '("*anything*" :height 25) popwin:special-display-config)
 
 
   ;; *anything for files* バッファをポップアップ表示させる
@@ -37,7 +37,7 @@
   ;; =================================================================
   
   ;; *helm* バッファをポップアップ表示させる
-  ;; (setq helm-samewindow nil)
+  (setq helm-samewindow nil)
   (push '("^\*helm .+\*$" :regexp t :height 25) popwin:special-display-config)
 
 
