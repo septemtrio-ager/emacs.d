@@ -1,6 +1,6 @@
 (setq el-get-lock-package-versions
       '((magit :checksum "4294a1afe8795fa86d847df794e385104c6932ff")
-	  (helm :checksum "1eaefe0788f3b991c5cd35ea0f8a3a32726e2ed2")
-	  (projectile :checksum "143c8abcc4a06c637a2807905946b1763d1e89c2")))
+	(helm :checksum "1eaefe0788f3b991c5cd35ea0f8a3a32726e2ed2")
+	(projectile :checksum "143c8abcc4a06c637a2807905946b1763d1e89c2")))
 (setq el-get-lock-locked-packages 'nil)
 (setq el-get-lock-unlocked-packages 'nil)
