@@ -1,5 +1,6 @@
 (setq el-get-lock-package-versions
-      '((magit :checksum "4294a1afe8795fa86d847df794e385104c6932ff")
+      '((init-loader :checksum "1f28a0b801cbb08aa9b47fd15ceab243a2bc064c")
+        (magit :checksum "4294a1afe8795fa86d847df794e385104c6932ff")
         (helm :checksum "1eaefe0788f3b991c5cd35ea0f8a3a32726e2ed2")
         (ac-octave :checksum "da3c11ad7570eb585988e29703cc3a1257d07c48")
         (ace-isearch :checksum "c2e66783b7ea30185a697e9654c6b8ce62bedd0a")

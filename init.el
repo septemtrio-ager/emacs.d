@@ -35,6 +35,12 @@
 
 
 
+;; el-get-lockを用いてバージョン固定したElispをダウンロードする
+(el-get-bundle tarao/el-get-lock)
+(el-get-lock)
+
+
+
 ;; init-loader.elで設定ファイルを分割する
 (el-get-bundle init-loader
 
