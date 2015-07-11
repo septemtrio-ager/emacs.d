@@ -21,6 +21,7 @@
 	smart-newline-mode
 	volatile-highlights-mode
 	smartparens-mode
+	yasnippet-mode
 	))
 
 (mapc (lambda (mode)
