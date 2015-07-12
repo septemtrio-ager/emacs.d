@@ -55,4 +55,13 @@
 			  ;; and not required because the directory name is prepended
 			  (substring input-pattern 1)
 			(concat ".*" input-pattern)))))))
+  
+  ;; popwinでポップアップさせるときにバッファが二重になるのを防ぐ
+  (helm-autoresize-mode 1)
+  
+  ;; maxとminの値を一緒にすることで
+  ;; リサイズせず一定の大きさに表示するようにする
+  (setq helm-autoresize-max-height 50)
+  (setq helm-autoresize-min-height 50)
+  
   )
