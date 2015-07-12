@@ -37,7 +37,8 @@
 
 ;; el-get-lockを用いてバージョン固定したElispをダウンロードする
 (el-get-bundle tarao/el-get-lock)
-(el-get-lock 'helm)
+(el-get-lock)
+;; (el-get-lock 'helm)
 
 
 
