@@ -1,5 +1,5 @@
 ;;
-;;;
+;;; yasnippet-java-mode.elの設定
 ;;
 
 (el-get-bundle nekop/yasnippet-java-mode
