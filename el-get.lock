@@ -1,5 +1,6 @@
 (setq el-get-lock-package-versions
-      '((init-loader :checksum "1f28a0b801cbb08aa9b47fd15ceab243a2bc064c")
+      '((realtime-preview :checksum "3318730827855b501c0febd06560c7b27c88b9d7")
+        (init-loader :checksum "1f28a0b801cbb08aa9b47fd15ceab243a2bc064c")
         (yascroll :checksum "f7743df1cf6d8e55607141d1ea5f50b562582c51")
         (hlinum :checksum "fc6a2fd6bafbf64a9898476244d3bd75f749f39a")
         (linum-ex :checksum "1e0a6c7e363e8295eff4a981bc42b5656c1ca401")
@@ -11,7 +12,6 @@
         (multiple-cursors :checksum "97e5db17c5ba631d3c2af17eac3414872224ca08")
         (recentf-ext :checksum "495bfe07e8a759f1e6dfbd45e62ae2f72404ff79")
         (twittering-mode :checksum "b04a3afd0a2efb6ac17ef84b343a80339be10a03")
-        (realtime-preview\.el :checksum "0d017530b7d7c8e7ead4de3c28462ac755da01f6")
         (ac-octave :checksum "da3c11ad7570eb585988e29703cc3a1257d07c48")
         (magit :checksum "0684b5ce9be9d6faeb983ea977174b9aead20dd2")
         (arduino-mode :checksum "44c2728f3d3ee7f30262fba1028276e0d1618d58")
