@@ -65,30 +65,70 @@ $ emacs
 
 ## Recommended Settings
 
-* CapsLockキーをCtrlキーに変更する  
+### CapsLockキーをCtrlキーに変更する  
 【参考】Caps LockキーをCtrlキーにする(Ubuntu)  
 http://l-w-i.net/t/ubuntu/key_001.txt
 
-* フォントについて  
-【参考】プログラミング用フォント Ricty  
-https://github.com/yascentur/Ricty
+### fcitx-mozcとのキーバインド衝突を回避する  
+ac-mozcの変換に利用する`C-j`がfcitx-mozcの入力メソッドの  
+オンオフ切り替えと衝突してしまうため変更する。
+ 1. Fcitx設定の"全体の設定"
+ 2. 入力メソッドのオンオフ"Ctrl+Space"を他のキーに割り当てる
 
-* Python開発環境について  
+### フォントについて  
+【参考】プログラミング用フォント Ricty  
+ https://github.com/yascentur/Ricty
+ 1. `Inconsolata.otf, Migu 1M(migu-1m-bold.ttf, migu-1m-regular.ttf)`をダウンロードし、同じディレクトリに置く
+ 2. githubからRictyをダウンロードし、`ricty_generator.sh`を1と同様のディレクトリに置く
+ 3. `$ ./ricty_generator.sh auto`を実行してRictyフォントを生成
+ 4. 以下のコマンドを実行してフォントをインストール
+ 
+ ~~~~
+ $ mkdir -p ~/.fonts
+ $ cp -f Ricty*.ttf ~/.fonts/
+ $ fc-cache -vf
+ ~~~~
+
+
+### Python開発環境について  
  ~/.local/bin にPATHを通す
  1. `~/.profile` をエディタで開く  
  2. `PATH="$PATH:~/.local/bin"` を最終行に追加  
  3. `source ~/.profile` を実行することで即時反映させる
 
-* R開発環境について
+### R開発環境について
  * 最新版のRをインストールする  
-【参考】UbuntuにRをインストールするための手順  
-http://www.trifields.jp/install-r-in-ubuntu-1000  
-Linux Mint 17.1 RebeccaについてはUbuntu 14.04 Trustyをベースにしているため, DISTRIB_CODENAME=trusty と読み替えること.
+ 【参考】UbuntuにRをインストールするための手順  
+ http://www.trifields.jp/install-r-in-ubuntu-1000  
+ Linux Mint 17.1 RebeccaについてはUbuntu 14.04 Trustyをベースにしているため, DISTRIB_CODENAME=trusty と読み替えること.
 
  * lintrの導入  
  flycheckのSyntaxCheckerであるlintrパッケージをインストール  
     1. Rを起動して以下のコマンドを入力  
-	`> options(CRAN = "http://cran.ism.ac.jp/")`  
-	`> options(repos = "http://cran.ism.ac.jp/")`  
+	
+	~~~~
+	> options(CRAN = "http://cran.ism.ac.jp/")
+	> options(repos = "http://cran.ism.ac.jp/")
+	~~~~
+	
     2. lintrをパッケージ指定してインストール  
-	`> install.packages("lintr", dep=T)`
+	~~~~
+	> install.packages("lintr", dep=T)
+	~~~~
+
+### GithubのREADME.mdをプレビューする  
+【参考】EmacsでGithub flavorなMarkdownをプレビュー確認したい  
+ http://blog.shinofara.xyz/archives/354/  
+ 1. "markdown"というbinファイルを作成する
+ 
+ ~~~~
+ $ gedit /bin/markdown
+ 
+ #!/bin/sh
+ filename=$1
+ /usr/local/bin/grip --export ${filename} > /dev/null
+ cat ${filename%.*}.html
+ ~~~~
+ 
+ 2. 管理者権限にてファイラーを起動
+ 3. /bin/markdownのプロパティ→パーミッションのプログラムとして実行可能にチェックを入れる
