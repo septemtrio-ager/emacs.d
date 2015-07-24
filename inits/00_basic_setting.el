@@ -177,4 +177,4 @@
 ;; ===================================================================
 
 (custom-set-variables
- '(split-width-threshold 77))
+ '(split-width-threshold 100))
