@@ -66,7 +66,9 @@ sudo apt-get install -y libblas-dev
 
 #JDKをインストール
 echo "Install JDK"
-sudo apt-get install -y openjdk-6-jdk openjdk-6-jre
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
 
 #=====================================================================
 # Java開発環境の構築
