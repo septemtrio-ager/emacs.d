@@ -2,7 +2,7 @@
 ;;; 基本設定
 ;;
 
-;;; 日本語を utf-8 に統一
+;; 日本語を utf-8 に統一
 (set-language-environment "Japanese")
 (setq default-buffer-file-coding-system 'utf-8)
 (set-buffer-file-coding-system 'utf-8)
@@ -27,20 +27,24 @@
 
 
 
-;;; yes/no を y/n とする。
+;; yes/no を y/n とする。
 (fset 'yes-or-no-p 'y-or-n-p)
 
 
 
-;;; 終了時に自動でプロセスをkill
+;; 終了時に自動でプロセスをkill
 (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
   "Prevent annoying \"Active processes exist\" query when you quit Emacs."
   (flet ((process-list ())) ad-do-it))
 
 
 
-;;; ツールバー非表示
+;; ツールバー非表示
 (tool-bar-mode -1)
+
+
+;; メニューバー非表示
+(menu-bar-mode -1)
 
 
 
@@ -49,7 +53,7 @@
 
 
 
-;;; スクロールを1行ずつにする
+;; スクロールを1行ずつにする
 (setq scroll-conservatively 35
       scroll-margin 0
       scroll-step 1)
@@ -61,12 +65,12 @@
 
 
 
-;;;; キャレットが '(' や ')' の直後にある場合に対応する括弧を強調
+;; キャレットが '(' や ')' の直後にある場合に対応する括弧を強調
 (show-paren-mode t)
 
 
 
-;;; Emacs サーバを起動する
+;; Emacs サーバを起動する
 ;; R だと edit や fix を実行する時に必要
 (when (require 'server nil t)
   (if (not (server-running-p))
@@ -74,7 +78,7 @@
 
 
 
-;;; ウィンドウの透過度を変更する
+;; ウィンドウの透過度を変更する
 (if window-system (progn
    (set-background-color "Black")
    (set-foreground-color "Black")
@@ -84,7 +88,7 @@
 
 
 
-;;; 現在行を目立たせる
+;; 現在行を目立たせる
 (defface hlline-face
   '((((class color)
       (background dark))
@@ -118,7 +122,7 @@
 
 
 
-;;; タイトルバーにファイルのフルパス表示
+;; タイトルバーにファイルのフルパス表示
 (setq frame-title-format
       (format "- Emacs@%s - %%f" (system-name)))
 

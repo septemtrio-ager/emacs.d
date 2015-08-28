@@ -38,3 +38,6 @@
 
 ;; octave-modeで利用する
 (add-hook 'octave-mode-hook 'linum-mode)
+
+;; xml-modeで利用する
+(add-hook 'nxml-mode-hook 'linum-mode)
