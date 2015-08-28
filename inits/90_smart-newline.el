@@ -49,5 +49,8 @@
 
   ;; markdown-modeで利用する
   (add-hook 'markdown-mode-hook 'smart-newline-mode)
+
+  ;; nxml-modeで利用する
+  (add-hook 'nxml-mode-hook 'smart-newline-mode)
   
   )

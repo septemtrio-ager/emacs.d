@@ -27,4 +27,8 @@
 
   ;; emacs-lisp-modeで利用する
   (add-hook 'emacs-lisp-mode-hook 'rainbow-mode)
+
+  ;; nxml-modeで利用する
+  (add-hook 'nxml-mode-hook 'rainbow-mode)
+  
   )

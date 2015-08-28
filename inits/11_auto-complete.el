@@ -46,6 +46,7 @@
 		  octave-mode
 		  css-mode
 		  eshell-mode
+		  nxml-mode
 		  ))
   (add-to-list 'ac-modes mode))
 
