@@ -165,3 +165,10 @@ sudo apt-get install -y ruby
 
 echo "Install Redcarpet"
 sudo gem install redcarpet
+
+#=====================================================================
+# TeX環境の構築
+#=====================================================================
+
+echo "Install TeX"
+sudo apt-get install -y mercurial
