@@ -3,9 +3,9 @@
 ## Requirements
 * Emacs 24.3 or greater  
   24.4，24.5についても動作を確認しています。
-* Ubuntu 14.4 or greater
-* Linux Mint 17.1 or greater
-* Lubuntu 14.4 or greater
+* Ubuntu 14.04 or greater
+* Linux Mint 17.01 or greater
+* Lubuntu 14.04 or greater
 
 ## Support Programming Languages
 
@@ -27,6 +27,10 @@
 emacs.d
 │
 ├── init.el       # 初期設定ファイル。初回起動時にel-getが自動でインストールされる
+│
+├── tool-setup.sh # Emacsと連携しているソフトウェアをインストールするためのスクリプト
+│
+├── el-get.lock   # El-getでインストールしたパッケージのバージョンを固定するためのファイル
 │
 ├── inits         # init-loader.elによって読み込まれる設定ファイルのディレクトリ
 │
