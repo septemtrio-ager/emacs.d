@@ -126,9 +126,9 @@ ac-mozcの変換に利用する`C-j`がfcitx-mozcの入力メソッドの
  http://blog.shinofara.xyz/archives/354/  
  1. "markdown"というbinファイルを作成する
  
- ~~~~
- $ gedit /bin/markdown
- 
+
+ `$ gedit /bin/markdown`
+ ~~~~ 
  #!/bin/sh
  filename=$1
  /usr/local/bin/grip --export ${filename} > /dev/null
