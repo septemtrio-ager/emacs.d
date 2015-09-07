@@ -1,5 +1,6 @@
 (setq el-get-lock-package-versions
-      '((android-mode :checksum "80629ff38e4c2f72ba1dbebd4a0abadb94d8a231")
+      '((centered-cursor-mode :checksum "2ef063370a8f75cfd1f2b7b54ff96032385b81de")
+        (android-mode :checksum "80629ff38e4c2f72ba1dbebd4a0abadb94d8a231")
         (realtime-preview :checksum "3318730827855b501c0febd06560c7b27c88b9d7")
         (init-loader :checksum "1f28a0b801cbb08aa9b47fd15ceab243a2bc064c")
         (yascroll :checksum "f7743df1cf6d8e55607141d1ea5f50b562582c51")
