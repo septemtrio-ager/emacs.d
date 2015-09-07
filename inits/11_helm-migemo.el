@@ -26,6 +26,14 @@
 			      (helm-candidates-in-buffer (helm-get-current-source)))))
 		    (volatile) (match identity)))
 	source))
+    
+    ;; ===============================================================
+
+    ;; helm-migemoが動かなくなったので対処しました
+    ;; http://rubikitch.com/2015/09/07/update-2/
+
+    ;; ===============================================================
+    
     ;; [2015-09-06 Sun]helm-match-plugin -> helm-multi-match変更の煽りを受けて
     (defalias 'helm-mp-3-get-patterns 'helm-mm-3-get-patterns)
     (defalias 'helm-mp-3-search-base 'helm-mm-3-search-base))
