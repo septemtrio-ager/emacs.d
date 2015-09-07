@@ -345,4 +345,4 @@ echo "# Install CSS Lint"
 echo "#"
 echo "# =============================================================="
 
-sudo npm install -g csslint
+npm install -g csslint
