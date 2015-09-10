@@ -145,6 +145,16 @@ tool-setup.shを実行することで`node.js`・`npm`・`csslint`をインス�
 ~~~~
 のようなエラーが出た場合は
 ~~~~
-# ln -s /usr/bin/nodejs /usr/bin/node
+$ ln -s /usr/bin/nodejs /usr/bin/node
 ~~~~
-することで解決する
+することで解決する.
+
+### BrowserSyncについて
+【参考】Browsersyncを利用してお手軽ブラウザ確認環境をつくろう  
+http://tech.medpeer.co.jp/entry/2015/06/09/071758  
+Browsersyncはファイル変更を監視し、自動でブラウザリロードを行ってくれるツールである.  
+ 1. ターミナルから作業ディレクトリ(HTMLやCSSのあるディレクトリ)に移動  
+ 2. 以下のコマンドを実行  
+~~~~
+$ browser-sync start --server --files "**/*"
+~~~~
