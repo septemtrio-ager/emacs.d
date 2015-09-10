@@ -64,7 +64,7 @@
 	      ;;
 	      ;; companyとの衝突を防ぐためにauto-completeをOFFに
 	      ;;
-              (auto-complete-mode -1)
+              ;; (auto-complete-mode -1)
               ))
 
 
