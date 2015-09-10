@@ -47,6 +47,7 @@
 		  css-mode
 		  eshell-mode
 		  nxml-mode
+		  python-mode
 		  ))
   (add-to-list 'ac-modes mode))
 
