@@ -26,6 +26,22 @@ echo "# ==============================================================="
 sudo apt-get install -y texinfo
 
 #=====================================================================
+# 最新版gitのインストール
+#=====================================================================
+
+echo "# =============================================================="
+echo "#"
+echo "# Install git"
+echo "#"
+echo "# =============================================================="
+
+sudo apt-get install python-software-properties
+sudo add-apt-repository -y ppa:git-core/ppa
+sudo apt-get update
+
+sudo apt-get install -y git
+
+#=====================================================================
 # Python開発環境の構築
 #=====================================================================
 
@@ -127,9 +143,9 @@ echo "#"
 echo "# ==============================================================="
 
 #JDKをインストール
-sudo add-apt-repository ppa:webupd8team/java
+sudo add-apt-repository -y ppa:webupd8team/java
 sudo apt-get update
-sudo apt-get install oracle-java8-installer
+sudo apt-get install -y oracle-java8-installer
 
 #=====================================================================
 # Java開発環境の構築
@@ -162,7 +178,7 @@ echo "#"
 echo "# ==============================================================="
 
 # groovyをインストールする
-gvm install groovy
+sudo gvm install groovy
 
 echo "# =============================================================="
 echo "#"
@@ -171,7 +187,7 @@ echo "#"
 echo "# ==============================================================="
 
 # gradleをインストールする
-gvm install gradle
+sudo gvm install gradle
 
 #=====================================================================
 # Tidyのインストール
@@ -345,4 +361,17 @@ echo "# Install CSS Lint"
 echo "#"
 echo "# =============================================================="
 
-npm install -g csslint
+sudo npm install -g csslint
+
+#=====================================================================
+#Browsersyncのセットアップ
+#=====================================================================
+
+echo "# =============================================================="
+echo "#"
+echo "# Install Browsersync"
+echo "#"
+echo "# =============================================================="
+
+sudo npm install browser-sync --save-dev # local環境にインストール
+sudo npm install browser-sync -g         # global環境にインストール
