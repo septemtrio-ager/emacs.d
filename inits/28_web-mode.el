@@ -112,4 +112,8 @@
    '(web-mode-current-element-highlight-face
      ((t (:foreground "#ff0000"))))                          ; 要素ハイライト
    )
+
+  ;; C-c ; で コメント、アンコメントする
+  (define-key web-mode-map (kbd "C-c ;") 'web-mode-comment-or-uncomment)
+
   )
