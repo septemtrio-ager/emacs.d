@@ -208,11 +208,17 @@ echo "# Install Tidy-html5"
 echo "#"
 echo "# ==============================================================="
 
-# tidy-html5をインストール
-git clone https://github.com/htacg/tidy-html5.git
-cd ~/tidy-html5/build/cmake
-./build-me.sh
-sudo make install
+
+if [ -a tidy-html5 ]; then
+    echo -e "\nTidy-html5 is already installed.\n"
+        
+else
+    # tidy-html5をインストール
+    git clone https://github.com/htacg/tidy-html5.git
+    cd ~/tidy-html5/build/cmake
+    ./build-me.sh
+    sudo make install
+fi
 
 #=====================================================================
 # arduino開発環境の構築
@@ -233,10 +239,15 @@ echo "# Install ino"
 echo "#"
 echo "# ==============================================================="
 
-# Inoをインストール
-git clone git://github.com/amperka/ino.git
-cd ino
-sudo make install
+if [ -a ino ]; then
+    echo  -e "\nIno is already installed.\n"
+    
+else
+    # Inoをインストール
+    git clone git://github.com/amperka/ino.git
+    cd ino
+    sudo make install
+fi
 
 #=====================================================================
 # migemoのインストール
