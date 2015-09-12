@@ -70,9 +70,7 @@
 
   (add-hook 'scss-mode-hook 'ac-scss-mode-setup)
   (add-hook 'web-mode-hook 'ac-web-mode-setup)
-
-
-
+  
   ;; R用のauto-complete
   ;;(require 'auto-complete-acr)
 
