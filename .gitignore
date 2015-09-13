@@ -17,6 +17,7 @@
 /srecode-map.el
 /recentf
 /snippets/temp-snippets
+/node_modules
 
 projectile-bookmarks.eld
 ido.last
