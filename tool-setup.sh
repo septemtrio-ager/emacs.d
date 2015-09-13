@@ -388,13 +388,13 @@ sudo npm install browser-sync --save-dev # local環境にインストール
 sudo npm install browser-sync -g         # global環境にインストール
 
 #=====================================================================
-#mplyerをインストール
+#mplayerをインストール
 #=====================================================================
 
 echo "# =============================================================="
 echo "#"
-echo "# Install mplyer"
+echo "# Install mplayer"
 echo "#"
 echo "# =============================================================="
 
-sudo apt-get install -y mplyer
+sudo apt-get install -y mplayer
