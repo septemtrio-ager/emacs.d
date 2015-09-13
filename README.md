@@ -145,7 +145,7 @@ tool-setup.shを実行することで`node.js`・`npm`・`csslint`をインス�
 ~~~~
 のようなエラーが出た場合は
 ~~~~
-$ ln -s /usr/bin/nodejs /usr/bin/node
+$ sudo ln -s /usr/bin/nodejs /usr/bin/node
 ~~~~
 することで解決する.
 
