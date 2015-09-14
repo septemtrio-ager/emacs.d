@@ -59,4 +59,4 @@
      (inexpr-class-open before after)
      (inexpr-class-close before after)
      (arglist-cont-nonempty before after))))
- '(custom-enabled-themes (quote (tango-dark))))
+ )
