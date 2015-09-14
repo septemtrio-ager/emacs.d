@@ -22,6 +22,7 @@
 	volatile-highlights-mode
 	smartparens-mode
 	yasnippet-mode
+	which-key-mode
 	))
 
 (mapc (lambda (mode)
