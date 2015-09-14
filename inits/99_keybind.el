@@ -76,6 +76,9 @@
 (global-set-key (kbd "C-x C-z") nil)
 
 
+;; RET でsmart-newlineを発動
+(global-set-key (kbd "RET") 'smart-newline)
+
 ;; ===================================================================
 
 ;; yank した瞬間にインデントする
