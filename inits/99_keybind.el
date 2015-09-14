@@ -76,13 +76,6 @@
 (global-set-key (kbd "C-x C-z") nil)
 
 
-;; C-o を無効化
-(global-set-key (kbd "C-o") nil)
-
-
-(global-set-key (kbd "C-m") nil)
-
-
 ;; ===================================================================
 
 ;; yank した瞬間にインデントする
