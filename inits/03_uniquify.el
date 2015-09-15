@@ -10,4 +10,6 @@
 ;; ===================================================================
 
 (require 'uniquify)
+
+;; filename<dir> 形式のバッファ名にする
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
