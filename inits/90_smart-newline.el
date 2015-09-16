@@ -1,4 +1,4 @@
-x;;
+;;
 ;;; smart-newline.elの設定
 ;;
 
