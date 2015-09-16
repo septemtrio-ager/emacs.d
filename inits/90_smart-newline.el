@@ -1,4 +1,4 @@
-;;
+x;;
 ;;; smart-newline.elの設定
 ;;
 
@@ -11,6 +11,8 @@
 
 (el-get-bundle smart-newline
 
+  (require 'smart-newline)
+  
   ;; keybind.el にて
   
   ;; (global-set-key (kbd "RET") 'smart-newline)
