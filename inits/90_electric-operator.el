@@ -24,5 +24,8 @@
 
   ;; python-modeで利用する
   (add-hook 'python-mode-hook #'electric-operator-mode)
+
+  ;; ess-modeで利用する
+  (add-hook 'ess-mode-hook #'electric-operator-mode)
   
   )
