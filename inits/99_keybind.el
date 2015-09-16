@@ -79,6 +79,12 @@
 ;; RET でsmart-newlineを発動
 (global-set-key (kbd "RET") 'smart-newline)
 
+
+;; C-oでコメントを折りたたむ
+(global-set-key (kbd "C-o") 'hs-toggle-hiding)
+
+
+
 ;; ===================================================================
 
 ;; yank した瞬間にインデントする
