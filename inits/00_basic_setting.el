@@ -142,7 +142,7 @@
 ;; カーソルの点滅設定
 
 ;; カーソル点滅速度の変更（デフォルトは0.5）
-(setq blink-cursor-interval 0.1)
+(setq blink-cursor-interval 0.08)
 (setq blink-cursor-delay 0.05)
 (blink-cursor-mode 1)
 
