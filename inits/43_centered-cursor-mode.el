@@ -12,8 +12,9 @@
 
 (el-get-bundle centered-cursor-mode
 
-  (require 'centered-cursor-mode)
-  (global-centered-cursor-mode 1)
+  (autoload 'centered-cursor-mode "centered-cursor-mode" nil t)
+  
+  ;; (global-centered-cursor-mode 1)
   
   )
 
