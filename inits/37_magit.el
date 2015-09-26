@@ -25,7 +25,7 @@
 
 (el-get-bundle magit
   
-  (require 'magit)
+  (autoload 'magit "magit" nil t)
 
   ;; (setq magit-last-seen-setup-instructions "1.4.0")
 
