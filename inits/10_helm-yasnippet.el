@@ -24,4 +24,6 @@
         (let ((n (position selected names :test 'equal)))
           (nth n choices))
       (signal 'quit "user quit!"))))
-(custom-set-variables '(yas/prompt-functions '(my-yas/prompt)))
+
+;; (custom-set-variables '(yas/prompt-functions '(my-yas/prompt)))
+(setq yas/prompt-functions '(my-yas/prompt))
