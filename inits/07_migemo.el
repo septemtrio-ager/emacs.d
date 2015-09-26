@@ -18,14 +18,9 @@
 
 ;; ===================================================================
 
-;; 「sudo apt-get install cmigemo」でcmigemoをインストールしておく
-;; 「sudo apt-get install migemo」も必要かも
-
-
-
 (el-get-bundle migemo
   
-  (require 'migemo)
+  (autoload 'migemo "migemo" nil t)
   (setq migemo-command "cmigemo")
   (setq migemo-options '("-q" "--emacs"))
 
