@@ -11,13 +11,15 @@
 
 (el-get-bundle smart-newline
 
-  (require 'smart-newline)
-  
   ;; keybind.el にて
   
   ;; (global-set-key (kbd "RET") 'smart-newline)
   
   ;; として設定してある
-  
-  )
 
+  ;; 個別にモードごとに設定をする
+  (add-hook 'ess-mode-hook
+  	    (lambda ()
+  	      (smart-newline-mode 1)))
+
+  )
