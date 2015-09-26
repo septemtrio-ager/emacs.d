@@ -9,18 +9,18 @@
 
 ;; ===================================================================
 
-(el-get-bundle android-mode)
+(el-get-bundle android-mode
 
-(require 'android-mode)
+  (autoload 'android-mode "android-mode" nil t)
 
-;; Android SDKのディレクトリを設定する
-(setq android-mode-sdk-dir "~/android-dev/android-sdk-linux/")
-;; (custom-set-variables '(android-mode-sdk-dir "~/android-dev/android-sdk-linux/"))
+  ;; Android SDKのディレクトリを設定する
+  (setq android-mode-sdk-dir "~/android-dev/android-sdk-linux/")
+  ;; (custom-set-variables '(android-mode-sdk-dir "~/android-dev/android-sdk-linux/"))
 
-;; コマンド用プレフィックス
-;; ここで設定したキーバインド＋android-mode.elで設定された文字、で、各種機能を利用できます
-(setq android-mode-key-prefix (kbd "C-c C-c"))
+  ;; コマンド用プレフィックス
+  ;; ここで設定したキーバインド＋android-mode.elで設定された文字で各種機能を利用できる
+  (setq android-mode-key-prefix (kbd "C-c C-c"))
 
-;; デフォルトで起動するエミュレータ名
-(setq android-mode-avd "CyberAngelDevice")
-  
+  ;; デフォルトで起動するエミュレータ名
+  (setq android-mode-avd "CyberAngelDevice")
+  )
