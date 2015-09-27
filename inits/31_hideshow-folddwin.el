@@ -12,12 +12,12 @@
 ;; fold-dwim.elをインストールしておくこと
 
 ;; C/C++モードにフックを追加
-(add-hook 'c++-mode-hook
-          '(lambda ()                                                       
-             (hs-minor-mode 1)))                                         
-(add-hook 'c-mode-hook
-          '(lambda ()                                                          
-             (hs-minor-mode 1)))
+;; (add-hook 'c++-mode-hook
+;;           '(lambda ()                                                       
+;;              (hs-minor-mode 1)))                                         
+;; (add-hook 'c-mode-hook
+;;           '(lambda ()                                                          
+;;              (hs-minor-mode 1)))
 
 (el-get-bundle fold-dwim
   
