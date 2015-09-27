@@ -9,23 +9,23 @@
 
 ;; ==========================================================
 
-(setq my/hidden-minor-modes
-      ;; 表示させないマイナーモード
-      '(undo-tree-mode
-	helm-mode
-	auto-complete-mode
-	smooth-scroll-mode
-	magit-auto-revert-mode
-	rainbow-mode
-	auto-highlight-symbol-mode
-	smart-newline-mode
-	volatile-highlights-mode
-	smartparens-mode
-	yasnippet-mode
-	which-key-mode
-	))
+;; (setq my/hidden-minor-modes
+;;       ;; 表示させないマイナーモード
+;;       '(undo-tree-mode
+;; 	helm-mode
+;; 	auto-complete-mode
+;; 	smooth-scroll-mode
+;; 	magit-auto-revert-mode
+;; 	rainbow-mode
+;; 	auto-highlight-symbol-mode
+;; 	smart-newline-mode
+;; 	volatile-highlights-mode
+;; 	smartparens-mode
+;; 	yasnippet-mode
+;; 	which-key-mode
+;; 	))
 
-(mapc (lambda (mode)
-	(setq minor-mode-alist
-	      (cons (list mode "") (assq-delete-all mode minor-mode-alist))))
-      my/hidden-minor-modes)
+;; (mapc (lambda (mode)
+;; 	(setq minor-mode-alist
+;; 	      (cons (list mode "") (assq-delete-all mode minor-mode-alist))))
+;;       my/hidden-minor-modes)
