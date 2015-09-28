@@ -48,6 +48,7 @@
 		  eshell-mode
 		  nxml-mode
 		  python-mode
+		  yatex-mode
 		  ))
   (add-to-list 'ac-modes mode))
 
