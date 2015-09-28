@@ -13,19 +13,18 @@
 
   (require 'electric-operator)
 
-  ;; c-modeで利用する
-  (add-hook 'c-mode-hook #'electric-operator-mode)
+  (dolist (hook '(
 
-  ;; c++-modeで利用する
-  (add-hook 'c++-mode-hook #'electric-operator-mode)
+		  ;;c系modeで利用する
+		  c-mode-common-hook
 
-  ;; java-modeで利用する
-  (add-hook 'java-mode-hook #'electric-operator-mode)
+		  ;; python-modeで利用する
+		  python-mode-hook
 
-  ;; python-modeで利用する
-  (add-hook 'python-mode-hook #'electric-operator-mode)
-
-  ;; ess-modeで利用する
-  (add-hook 'ess-mode-hook #'electric-operator-mode)
+		  ;; ess-modeで利用する
+		  ess-mode-hook
+		  
+		  ))
+    (add-hook hook #'electric-operator-mode))
   
   )
