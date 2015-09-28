@@ -37,6 +37,9 @@
 		
 		;; nxml-modeで利用する
 		nxml-mode-hook
+
+		;; yatex-modeで利用する
+		yatex-mode-hook
 		
 		))
   (add-hook hook 'linum-mode))
