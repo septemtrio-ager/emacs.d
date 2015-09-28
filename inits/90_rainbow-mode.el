@@ -13,22 +13,27 @@
   
   (require 'rainbow-mode)
 
-  ;; css-modeで利用する
-  (add-hook 'css-mode-hook 'rainbow-mode)
+  (dolist (hook '(
+		  
+		  ;; css-modeで利用する
+		  css-mode-hook
 
-  ;; scss-modeで利用する
-  (add-hook 'scss-mode-hook 'rainbow-mode)
+		  ;;scss-modeで利用する
+		  scss-mode-hook
 
-  ;; php-modeで利用する
-  (add-hook 'php-mode-hook 'rainbow-mode)
+		  ;; php-modeで利用する
+		  php-mode-hook
 
-  ;; html-modeで利用する
-  (add-hook 'html-mode-hook 'rainbow-mode)
+		  ;; html-modeで利用する
+		  html-mode-hook
 
-  ;; emacs-lisp-modeで利用する
-  (add-hook 'emacs-lisp-mode-hook 'rainbow-mode)
+		  ;; emacs-lisp-modeで利用する
+		  emacs-lisp-mode-hook
 
-  ;; nxml-modeで利用する
-  (add-hook 'nxml-mode-hook 'rainbow-mode)
+		  ;; nxml-modeで利用する
+		  nxml-mode-hook
+		  
+		  ))
+    (add-hook hook 'rainbow-mode))
   
   )
