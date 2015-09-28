@@ -17,10 +17,11 @@
     `(with-eval-after-load ,file
        (diminish ,mode ,new-name)))
   
+  ;; safe-diminish マクロを利用して
   ;; 隠したいマイナーモードを指定する
   (safe-diminish "helm" 'helm-mode)
   (safe-diminish "undo-tree" 'undo-tree-mode)
-  (safe-diminish "auto-complete" 'auto-complete-mode)
+  (safe-diminish "auto-complete" 'auto-complete-mode "AutoComplete")
   (safe-diminish "smooth-scroll" 'smooth-scroll-mode)
   (safe-diminish "magit-auto-revert-mode" 'magit-auto-revert-mode)
   (safe-diminish "rainbow-mode" 'rainbow-mode)
@@ -28,9 +29,10 @@
   (safe-diminish "smart-newline" 'smart-newline-mode)
   (safe-diminish "volatile-highlights" 'volatile-highlights-mode)
   (safe-diminish "smartparens" 'smartparens-mode)
-  ;; (safe-diminish "yasnippet" 'yasnippet)
   (safe-diminish "which-key" 'which-key-mode)
   (safe-diminish "abbrev" 'abbrev-mode)
-  ;; (safe-diminish "hs-minor-mode" 'hs-minor-mode)
+  
+  ;; safe-diminishマクロがnilになってしまうので個別に設定
+  (diminish 'hs-minor-mode)
       
   )
