@@ -344,7 +344,9 @@ echo "# Install TeX"
 echo "#"
 echo "# =============================================================="
 
-sudo apt-get install -y mercurial
+sudo apt-get install -y texlive
+sudo apt-get install -y texlive-lang-cjk
+sudo apt-get install -y xdvik-ja
 
 #=====================================================================
 # CSS Lintのセットアップ
