@@ -13,6 +13,7 @@
 (el-get-bundle popwin
   
   (require 'popwin)
+    
   (popwin-mode 1)
     
   ;; *quickrun* バッファをポップアップ表示させる
@@ -55,5 +56,19 @@
   
   ;; undo-treeの *undo-tree* バッファをポップアップ表示させる
   (push '("*undo-tree*" :width 0.3 :position right) popwin:special-display-config)
+
+  
+  ;; (require 'popwin-yatex) するとエラーが出るから、
+  ;; popwin-yatexのコードをここに転記した
+  (defadvice YaTeX-showup-buffer (around popwin-yatex:YaTeX-showup-buffer (buffer &optional func select) activate)
+    (popwin:display-buffer-1 buffer
+  			     :default-config-keywords `(:noselect ,(not select))
+  			     :if-config-not-found (lambda (buffer) ad-do-it)))
+
+  ;; yatex-modeの *dvi-preview* バッファをポップアップ表示させる
+  (push '("*dvi-preview*" :height 10) popwin:special-display-config)
+
+  ;; yatex-modeの *YaTeX-typesetting* バッファをポップアップ表示させる
+  (push '("*YaTeX-typesetting*") popwin:special-display-config)
   
   )
