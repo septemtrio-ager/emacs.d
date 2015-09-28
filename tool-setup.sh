@@ -344,6 +344,9 @@ echo "# Install TeX"
 echo "#"
 echo "# =============================================================="
 
+# yatexがmercurialリポジトリで管理されているためインストールする
+sudo apt-get install -y mercurial
+
 sudo apt-get install -y texlive
 sudo apt-get install -y texlive-lang-cjk
 sudo apt-get install -y xdvik-ja
