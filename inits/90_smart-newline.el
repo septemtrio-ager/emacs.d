@@ -22,4 +22,8 @@
   	    (lambda ()
   	      (smart-newline-mode 1)))
 
+  (add-hook 'gfm-mode-hook
+  	    (lambda ()
+  	      (smart-newline-mode 1)))
+
   )
