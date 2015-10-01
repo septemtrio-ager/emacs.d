@@ -351,6 +351,9 @@ sudo apt-get install -y texlive
 sudo apt-get install -y texlive-lang-cjk
 sudo apt-get install -y xdvik-ja
 
+# TeX/LaTeXのシンタックスチェッカーをインストールする
+sudo apt-get install -y chktex
+
 #=====================================================================
 # CSS Lintのセットアップ
 #=====================================================================
