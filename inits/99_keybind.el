@@ -80,8 +80,8 @@
 (global-set-key (kbd "RET") 'smart-newline)
 
 
-;; C-oでコメントを折りたたむ
-(global-set-key (kbd "C-o") 'hs-toggle-hiding)
+;; C-#(C-M-3)でコメントを折りたたむ
+(global-set-key (kbd "C-#") 'hs-toggle-hiding)
 
 
 
