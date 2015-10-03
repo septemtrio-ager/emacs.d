@@ -20,6 +20,11 @@
   (add-hook 'c++-mode-hook 'vs-set-c-style)
   )
 
+;; C++-modeでのFlycheckをC++11を利用する
+(add-hook 'c++-mode-hook
+	  (lambda ()
+	    (setq flycheck-gcc-language-standard "c++11")))
+
 ;; C/C++のスタイルをBSDに設定
 (custom-set-variables
  '(c-default-style
