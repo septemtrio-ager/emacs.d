@@ -82,8 +82,7 @@
 ;; ウィンドウの透過度を変更する
 (if window-system (progn
    (set-background-color "Black")
-   (set-foreground-color "Black")
-   (set-cursor-color "Gray")
+   (set-foreground-color "LightGray")
    (set-frame-parameter nil 'alpha 80)
    ))
 
