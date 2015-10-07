@@ -9,7 +9,7 @@
 
 ;; ===================================================================
 
-(el-get-bundle helm-migemo
+(el-get-bundle emacs-jp/helm-migemo
 
   (require 'helm-migemo)
 
