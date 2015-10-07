@@ -23,7 +23,7 @@
 
   ;; 補完機能の追加
   (when (require 'auto-complete-config nil t)
-    (add-to-list 'ac-dictionary-directories (expand-file-name "~/.emacs.d/elisp/ac-dict"))
+    (add-to-list 'ac-dictionary-directories (expand-file-name "~/.emacs.d/el-get/auto-complete/dict"))
     (ac-config-default)
     )
 
