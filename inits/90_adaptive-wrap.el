@@ -8,29 +8,28 @@
 ;; http://alainmathematics.blogspot.jp/2013/07/emacs.html
 
 ;; ===================================================================
-
+n
 (el-get-bundle adaptive-wrap
   
-  ;; M-x package-install adaptive-wrap でインストールする
-
-  ;; 折り返したあと、次の行にインデントされた状態にする
+    ;; 折り返したあと、次の行にインデントされた状態にする
   ;; M-x adaptive-wrap-prefix-mode
   ;; で使うことができる
 
   ;; 利用するモードにhookしておく
 
-  ;; c-mode
-  (add-hook 'c-mode-hook 'adaptive-wrap-prefix-mode)
+  (dolist
+      (hook '(
+	      
+	      ;; c系modeで利用する
+	      c-mode-common-hook
 
-  ;; c++-mode
-  (add-hook 'c++-mode-hook 'adaptive-wrap-prefix-mode)
+	      ;; web-modeで利用する
+	      web-mode-hook
 
-  ;; java-mode
-  (add-hook 'java-mode-hook 'adaptive-wrap-prefix-mode)
-
-  ;; web-mode
-  (add-hook 'web-mode-hook 'adaptive-wrap-prefix-mode)
-
-  ;; emacs-lisp-mode
-  (add-hook 'emacs-lisp-mode-hook 'adaptive-wrap-prefix-mode)
+	      ;; emacs-lisp-modeで利用する
+	      emacs-lisp-mode-hook
+	      
+	      ))
+    (add-hook hook 'adaptive-wrap-prefix-mode))
+  
   )
