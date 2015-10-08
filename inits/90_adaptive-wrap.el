@@ -11,26 +11,28 @@
 
 (el-get-bundle adaptive-wrap
   
-  ;; M-x package-install adaptive-wrap でインストールする
-
   ;; 折り返したあと、次の行にインデントされた状態にする
   ;; M-x adaptive-wrap-prefix-mode
   ;; で使うことができる
 
   ;; 利用するモードにhookしておく
+  (dolist
+      (hook
+	   '(
 
-  ;; c-mode
-  (add-hook 'c-mode-hook 'adaptive-wrap-prefix-mode)
+	     ;; c系modeで利用する
+	     c-mode-common-hook
 
-  ;; c++-mode
-  (add-hook 'c++-mode-hook 'adaptive-wrap-prefix-mode)
+	     ;; python-modeで利用する
+	     python-mode-hook
 
-  ;; java-mode
-  (add-hook 'java-mode-hook 'adaptive-wrap-prefix-mode)
+	     ;; web-modeで利用する
+	     web-mode-hook
 
-  ;; web-mode
-  (add-hook 'web-mode-hook 'adaptive-wrap-prefix-mode)
-
-  ;; emacs-lisp-mode
-  (add-hook 'emacs-lisp-mode-hook 'adaptive-wrap-prefix-mode)
+	     ;; emacs-lisp-modeで利用する
+	     emacs-lisp-mode-hook
+	     
+	     ))
+    (add-hook hook 'adaptive-wrap-prefix-mode))
+  
   )
