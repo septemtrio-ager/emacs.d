@@ -18,12 +18,19 @@
   ;; として設定してある
 
   ;; 個別にモードごとに設定をする
-  (add-hook 'ess-mode-hook
-  	    (lambda ()
-  	      (smart-newline-mode 1)))
+  (dolist
+      (hook
+       '(
 
-  (add-hook 'gfm-mode-hook
-  	    (lambda ()
-  	      (smart-newline-mode 1)))
+	 ;; ess-modeで利用するようにする
+	 ess-mode-hook
+
+	 ;; gfm-modeで利用するようにする
+	 gfm-mode-hook
+		  
+	 ))
+    (add-hook hook
+	      (lambda ()
+		(smart-newline-mode 1))))
 
   )
