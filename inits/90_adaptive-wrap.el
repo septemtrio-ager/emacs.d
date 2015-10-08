@@ -8,7 +8,7 @@
 ;; http://alainmathematics.blogspot.jp/2013/07/emacs.html
 
 ;; ===================================================================
-n
+
 (el-get-bundle adaptive-wrap
   
     ;; 折り返したあと、次の行にインデントされた状態にする
