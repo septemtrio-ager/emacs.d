@@ -24,8 +24,10 @@
   ;; Emacs Lispファイルの先頭で出る警告
   ;; 「The first line should be of the form ...」
   ;; のようなものを表示させないようにする。
-  
   (with-eval-after-load 'flycheck
     (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
+
+  ;; C++ではシンタックスチェッカーにclangを利用しないようにする
+  (setq-default flycheck-disabled-checkers '(c/c++-clang))
   
   )
