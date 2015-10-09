@@ -52,11 +52,15 @@ emacs.d
 
 ~~~~
 
+
+
 ## .emacs
-.emacsが存在する場合、init.elを読み込むように以下を.emacsに追加する
+.emacsが存在する場合、init.elを読み込むように以下を.emacsに追加する。
 ~~~~
 (load (expand-file-name (concat (getenv "HOME") "/.emacs.d/init")))
 ~~~~
+
+
 
 ## Installation
 
@@ -67,17 +71,40 @@ $ ./tool-setup.sh
 $ emacs
 ~~~~
 
+
+
 ## Recommended Settings
 
 ### CapsLockキーをCtrlキーに変更する  
-【参考】Caps LockキーをCtrlキーにする(Ubuntu)  
+n【参考】Caps LockキーをCtrlキーにする(Ubuntu)  
 http://l-w-i.net/t/ubuntu/key_001.txt
 
-### fcitx-mozcとのキーバインド衝突を回避する  
-ac-mozcの変換に利用する`C-j`がfcitx-mozcの入力メソッドの  
+
+
+### mozc.elを用いた日本語入力について
+
+#### fcitx-mozcとのキーバインド衝突を回避する  
+ac-mozcの変換に利用する`C-j`がfcitx-mozcの入力メソッドの
 オンオフ切り替えと衝突してしまうため変更する。
  1. Fcitx設定の"全体の設定"
  2. 入力メソッドのオンオフ"Ctrl+Space"を他のキーに割り当てる
+
+#### GUIのmozcよりEmacsのmozc.elを優先させる
+Emacsのmozc.elにて半角/全角キーで日本語入力の切り替えを行いたい場合、
+GUIのmozcよりEmacsのmozcを優先させるには以下のような設定を行う。
+* ターミナルからEmacsを起動させる場合は、`~/.bashrc`に以下を追加する。
+  ~~~~
+  XMODIFIERS=@im=none emacs
+  ~~~~
+
+* ランチャーからEmacsを起動させる場合は、`~/.Xresources`に以下を追加する。
+  ~~~~
+  Emacs*useXIM: false
+  ~~~~
+  
+  設定を有効にする場合は`xrdb ~/.Xresources`を実行する。
+
+
 
 ### フォントについて  
 【参考】プログラミング用フォント Ricty  
@@ -86,12 +113,13 @@ ac-mozcの変換に利用する`C-j`がfcitx-mozcの入力メソッドの
  2. githubからRictyをダウンロードし、`ricty_generator.sh`を1と同様のディレクトリに置く
  3. `$ ./ricty_generator.sh auto`を実行してRictyフォントを生成
  4. 以下のコマンドを実行してフォントをインストール
- 
+
  ~~~~
  $ mkdir -p ~/.fonts
  $ cp -f Ricty*.ttf ~/.fonts/
  $ fc-cache -vf
  ~~~~
+
 
 
 ### Python開発環境について  
@@ -101,11 +129,13 @@ ac-mozcの変換に利用する`C-j`がfcitx-mozcの入力メソッドの
  3. `source ~/.profile` を実行することで即時反映させる
  4. 反映されたかどうかを確認する場合は`echo $PATH`で確認できる
 
+
+ 
 ### R開発環境について
  * 最新版のRをインストールする  
  【参考】UbuntuにRをインストールするための手順  
  http://www.trifields.jp/install-r-in-ubuntu-1000  
- Linux Mint 17.1 RebeccaについてはUbuntu 14.04 Trustyをベースにしているため, DISTRIB_CODENAME=trusty と読み替えること.
+ Linux Mint 17.1 RebeccaについてはUbuntu 14.04 Trustyをベースにしているため, DISTRIB_CODENAME=trusty と読み替えること。
 
  * lintrの導入  
  flycheckのSyntaxCheckerであるlintrパッケージをインストール  
@@ -121,6 +151,8 @@ ac-mozcの変換に利用する`C-j`がfcitx-mozcの入力メソッドの
 	> install.packages("lintr", dep=T)
 	~~~~
 
+
+	
 ### GithubのREADME.mdをプレビューする  
 【参考】EmacsでGithub flavorなMarkdownをプレビュー確認したい  
  http://blog.shinofara.xyz/archives/354/  
@@ -138,8 +170,11 @@ ac-mozcの変換に利用する`C-j`がfcitx-mozcの入力メソッドの
  2. 管理者権限にてファイラーを起動
  3. `/bin/markdownのプロパティ`→`パーミッションのプログラムとして実行可能`にチェックを入れる
 
+
+ 
 ### CSS Lintをインストールする
-tool-setup.shを実行することで`node.js`・`npm`・`csslint`をインストールすることができる.
+`tool-setup.sh`を実行することでCSS Lintをインストールするために必要な
+`node.js`・`npm`・`csslint`をインストールすることができる。
 ~~~~
 /usr/bin/env: node: そのようなファイルやディレクトリはありません
 ~~~~
@@ -147,7 +182,9 @@ tool-setup.shを実行することで`node.js`・`npm`・`csslint`をインス�
 ~~~~
 $ sudo ln -s /usr/bin/nodejs /usr/bin/node
 ~~~~
-することで解決する.
+することで解決する。
+
+
 
 ### BrowserSyncについて
 【参考】Browsersyncを利用してお手軽ブラウザ確認環境をつくろう  
