@@ -76,7 +76,7 @@ $ emacs
 ## Recommended Settings
 
 ### CapsLockキーをCtrlキーに変更する  
-n【参考】Caps LockキーをCtrlキーにする(Ubuntu)  
+【参考】Caps LockキーをCtrlキーにする(Ubuntu)  
 http://l-w-i.net/t/ubuntu/key_001.txt
 
 
@@ -191,7 +191,8 @@ $ sudo ln -s /usr/bin/nodejs /usr/bin/node
 http://tech.medpeer.co.jp/entry/2015/06/09/071758  
 Browsersyncはファイル変更を監視し、自動でブラウザリロードを行ってくれるツールである.  
  1. ターミナルから作業ディレクトリ(HTMLやCSSのあるディレクトリ)に移動  
- 2. 以下のコマンドを実行  
-~~~~
-$ browser-sync start --server --files "**/*"
-~~~~
+ 2. 以下のコマンドを実行
+ 
+ ~~~~
+ $ browser-sync start --server --files "**/*"
+ ~~~~
