@@ -1,5 +1,6 @@
 (setq el-get-lock-package-versions
-      '((mozc-el-extensions :checksum "060797a6e570cf21c274edfcb14a26e710a5449e")
+      '((highlight-symbol :checksum "c2e15fee52aebf5c8e618460b8f924331d0df2a3")
+        (mozc-el-extensions :checksum "060797a6e570cf21c274edfcb14a26e710a5449e")
         (centered-cursor-mode :checksum "de6cf069b993edb44651132eb0bbd76e8ee6a382")
         (diminish :checksum "73669b69e5f9a0c9261c5b53624329d0e24d1ed8")
         (which-key :checksum "49204b7f961f593b117e974c13240193a402d48b")
