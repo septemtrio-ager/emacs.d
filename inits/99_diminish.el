@@ -26,6 +26,7 @@
   (safe-diminish "magit-auto-revert-mode" 'magit-auto-revert-mode)
   (safe-diminish "rainbow-mode" 'rainbow-mode)
   (safe-diminish "auto-highlight-symbol" 'auto-highlight-symbol-mode)
+  (safe-diminish "highlight-symbol" 'highlight-symbol-mode)
   (safe-diminish "smart-newline" 'smart-newline-mode)
   (safe-diminish "volatile-highlights" 'volatile-highlights-mode)
   (safe-diminish "smartparens" 'smartparens-mode)
