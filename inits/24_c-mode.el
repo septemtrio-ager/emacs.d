@@ -16,14 +16,24 @@
   :url "https://myoshida-rp.googlecode.com/svn/trunk/elisp/vs-set-c-style.el"
   
   (autoload 'vs-set-c-style "vs-set-c-style")
-  (add-hook 'c-mode-hook 'vs-set-c-style)
-  (add-hook 'c++-mode-hook 'vs-set-c-style)
+    
+  ;; vs-set-c-styleを利用するモードにhookを追加
+  (dolist (hook
+	   '(
+	     
+	     c-mode-hook
+	     c++-mode-hook
+	     
+	     ))
+    (add-hook hook 'vs-set-c-style))
+  
   )
 
 ;; C++-modeでのFlycheckをC++11を利用する
 (add-hook 'c++-mode-hook
 	  (lambda ()
-	    (setq flycheck-gcc-language-standard "c++11")))
+	    (setq flycheck-gcc-language-standard "c++11")
+	    (setq flycheck-clang-language-standard "c++11")))
 
 ;; C/C++のスタイルをBSDに設定
 (custom-set-variables
