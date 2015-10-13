@@ -14,13 +14,29 @@
   ;; 1秒後自動ハイライトされるようになる
   (setq highlight-symbol-idle-delay 1.0)
   
-  ;; 自動ハイライトをしたいならば
-  (add-hook 'prog-mode-hook 'highlight-symbol-mode)
+  ;; 自動ハイライトするmodeを設定
+  (dolist (hook '(
+		  
+		  ;; プログラミング言語modeに適応
+		  prog-mode-hook
+		  
+		  nxml-mode-hook
+		  
+		  ))
+    (add-hook hook 'highlight-symbol-mode))
   
-  ;; ソースコードにおいてM-p/M-nでシンボル間を移動
-  (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
+  ;; ソースコードにおいてM-p/M-nでシンボル間を移動できるようにする
+  (dolist (hook '(
+		  
+		  ;; プログラミング言語modeに適応
+		  prog-mode-hook
+		  
+		  nxml-mode-hook
+		  
+		  ))
+    (add-hook hook 'highlight-symbol-nav-mode))
   
-  ;; シンボル置換
+  ;; シンボル置換できるようにする
   (global-set-key (kbd "M-s M-r") 'highlight-symbol-query-replace)
   
   )
