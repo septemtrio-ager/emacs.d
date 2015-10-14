@@ -2,19 +2,15 @@
 ;;; nxml-mode.elの設定
 ;;
 
+;; ===================================================================
+
+;; 【参考】Emacs nxml-modeの設定
+;; http://yanmoo.blogspot.jp/2011/10/emacs-nxml-mode.html
+
+;; ===================================================================
+
 (add-hook 'nxml-mode-hook
           (lambda ()
-            
-	    ;; 更新タイムスタンプの自動挿入
-            ;; (setq time-stamp-line-limit 10000)
-            ;;(if (not (memq 'time-stamp write-file-hooks))
-                ;; (setq write-file-hooks
-                      ;; (cons 'time-stamp write-file-hooks)))
-            ;; (setq time-stamp-format "%3a %3b %02d %02H:%02M:%02S %:y %Z")
-            ;; (setq time-stamp-start "Last modified:[ \t]")
-            ;; (setq time-stamp-end "$")
-            ;;
-            ; ;(setq auto-fill-mode -1)
 	    
 	    (setq nxml-child-indent 2)                  ; タグのインデント幅
             (setq nxml-attribute-indent 4)              ; 属性のインデント幅
@@ -46,3 +42,6 @@
    ((t (:foreground "DarkGoldenrod"))))                  ; ＆lt;など
  '(nxml-tag-slash-face
    ((t (:inherit nxml-name-face :foreground "blue")))))  ; /(終了タグ)
+
+;; xsdファイルをnxml-modeで開くようにする
+(add-to-list 'auto-mode-alist '("\\.xsd\\'" . nxml-mode))
