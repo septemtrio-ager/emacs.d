@@ -123,7 +123,7 @@ sudo apt-get install -y ess
 
 echo "# =============================================================="
 echo "#"
-echo "# What you need to install \"linter\""
+echo "# What you need to install \"lintr\""
 echo "#"
 echo "# ==============================================================="
 
