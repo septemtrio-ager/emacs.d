@@ -152,6 +152,11 @@ GUIのmozcよりEmacsのmozcを優先させるには以下のような設定を�
 	> install.packages("lintr", dep=T)
 	~~~~
 
+ * knitrの導入
+ R markdownを利用するのに必要なknitrパッケージをインストール
+ ~~~~
+ > install.packages ('knitr', dep = T)
+ ~~~~
 
 	
 ### GithubのREADME.mdをプレビューする  

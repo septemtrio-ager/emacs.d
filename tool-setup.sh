@@ -132,6 +132,19 @@ sudo apt-get install -y gfortran
 sudo apt-get install -y liblapack-dev
 sudo apt-get install -y libblas-dev
 
+echo "# =============================================================="
+echo "#"
+echo "# What you need to install \"knitr\""
+echo "#"
+echo "# ==============================================================="
+
+# knitrのセットアップに必要なもの
+# Rglをインストールする
+sudo apt-get install -y libglu1-mesa-dev
+
+# Rcurlをインストールする
+sudo apt-get install libcurl4-openssl-dev
+
 #=====================================================================
 # JDKのインストール
 #=====================================================================
