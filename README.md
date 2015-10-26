@@ -135,7 +135,8 @@ GUIのmozcよりEmacsのmozcを優先させるには以下のような設定を�
  * 最新版のRをインストールする  
  【参考】UbuntuにRをインストールするための手順  
  http://www.trifields.jp/install-r-in-ubuntu-1000  
- Linux Mint 17.1 RebeccaについてはUbuntu 14.04 Trustyをベースにしているため, DISTRIB_CODENAME=trusty と読み替えること。
+ Linux Mint 17.1 RebeccaについてはUbuntu 14.04 Trustyをベースにしているため, `DISTRIB_CODENAME=trusty` と読み替えること。
+ 大学の学内LANなどでは公開鍵の登録に失敗することがあるので注意が必要。
 
  * lintrの導入  
  flycheckのSyntaxCheckerであるlintrパッケージをインストール  
@@ -159,7 +160,7 @@ GUIのmozcよりEmacsのmozcを優先させるには以下のような設定を�
  1. "markdown"というbinファイルを作成する
  
 
- `$ gedit /bin/markdown`
+ `$ sudo emacs /bin/markdown`
  ~~~~ 
  #!/bin/sh
  filename=$1
