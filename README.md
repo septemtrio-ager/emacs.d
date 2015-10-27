@@ -56,20 +56,21 @@ emacs.d
 
 ## .emacs
 .emacsが存在する場合、init.elを読み込むように以下を.emacsに追加する。
-~~~~
+
+```lisp
 (load (expand-file-name (concat (getenv "HOME") "/.emacs.d/init")))
-~~~~
+```
 
 
 
 ## Installation
 
-~~~~
+```sh
 $ git clone https://github.com/septemtrio-ager/emacs.d.git ~/.emacs.d
 $ cd ~/.emacs.d
 $ ./tool-setup.sh
 $ emacs
-~~~~
+```
 
 
 
@@ -93,14 +94,14 @@ ac-mozcの変換に利用する`C-j`がfcitx-mozcの入力メソッドの
 Emacsのmozc.elにて半角/全角キーで日本語入力の切り替えを行いたい場合、
 GUIのmozcよりEmacsのmozcを優先させるには以下のような設定を行う。
 * ターミナルからEmacsを起動させる場合は、`~/.bashrc`に以下を追加する。
-  ~~~~
+  ```sh
   XMODIFIERS=@im=none emacs
-  ~~~~
+  ```
 
 * ランチャーからEmacsを起動させる場合は、`~/.Xresources`に以下を追加する。
-  ~~~~
+  ```sh
   Emacs*useXIM: false
-  ~~~~
+  ```
   
   設定を有効にする場合は`xrdb ~/.Xresources`を実行する。
 
@@ -114,11 +115,11 @@ GUIのmozcよりEmacsのmozcを優先させるには以下のような設定を�
  3. `$ ./ricty_generator.sh auto`を実行してRictyフォントを生成
  4. 以下のコマンドを実行してフォントをインストール
 
- ~~~~
+ ```sh
  $ mkdir -p ~/.fonts
  $ cp -f Ricty*.ttf ~/.fonts/
  $ fc-cache -vf
- ~~~~
+ ```
 
 
 
@@ -142,21 +143,21 @@ GUIのmozcよりEmacsのmozcを優先させるには以下のような設定を�
  flycheckのSyntaxCheckerであるlintrパッケージをインストール  
     1. Rを起動して以下のコマンドを入力  
 	
-	~~~~
+	```r
 	> options(CRAN = "http://cran.ism.ac.jp/")
 	> options(repos = "http://cran.ism.ac.jp/")
-	~~~~
+	```
 	
     2. lintrをパッケージ指定してインストール  
-	~~~~
+	```r
 	> install.packages("lintr", dep=T)
-	~~~~
+	```
 
  * knitrの導入
  R markdownを利用するのに必要なknitrパッケージをインストール
- ~~~~
+ ```r
  > install.packages ('knitr', dep = T)
- ~~~~
+ ```
 
 	
 ### GithubのREADME.mdをプレビューする  
@@ -164,14 +165,15 @@ GUIのmozcよりEmacsのmozcを優先させるには以下のような設定を�
  http://blog.shinofara.xyz/archives/354/  
  1. "markdown"というbinファイルを作成する
  
-
- `$ sudo emacs /bin/markdown`
- ~~~~ 
+```sh
+$ sudo emacs /bin/markdown
+```
+ ```sh
  #!/bin/sh
  filename=$1
  /usr/local/bin/grip --export ${filename} > /dev/null
  cat ${filename%.*}.html
- ~~~~
+ ```
  
  2. 管理者権限にてファイラーを起動
  3. `/bin/markdownのプロパティ`→`パーミッションのプログラムとして実行可能`にチェックを入れる
@@ -181,13 +183,13 @@ GUIのmozcよりEmacsのmozcを優先させるには以下のような設定を�
 ### CSS Lintをインストールする
 `tool-setup.sh`を実行することでCSS Lintをインストールするために必要な
 `node.js`・`npm`・`csslint`をインストールすることができる。
-~~~~
+```sh
 /usr/bin/env: node: そのようなファイルやディレクトリはありません
-~~~~
+```
 のようなエラーが出た場合は
-~~~~
+```sh
 $ sudo ln -s /usr/bin/nodejs /usr/bin/node
-~~~~
+```
 することで解決する。
 
 
@@ -199,6 +201,6 @@ Browsersyncはファイル変更を監視し、自動でブラウザリロード
  1. ターミナルから作業ディレクトリ(HTMLやCSSのあるディレクトリ)に移動  
  2. 以下のコマンドを実行
  
- ~~~~
+ ```sh
  $ browser-sync start --server --files "**/*"
- ~~~~
+ ```
