@@ -25,6 +25,9 @@
 	 ;; ess-modeで利用するようにする
 	 ess-mode-hook
 
+	 ;; markdown-modeで利用する
+	 markdown-mode-hook
+	 
 	 ;; gfm-modeで利用するようにする
 	 gfm-mode-hook
 		  
