@@ -138,6 +138,10 @@
 
 
 
+;; バッファに変更があったら自動で再読込する
+(global-auto-revert-mode 1)
+
+
 ;; ===================================================================
 
 ;; 【参考】現在のファイルのパスを取得してクリップボードに保存
@@ -173,3 +177,28 @@
 
 (custom-set-variables
  '(split-width-threshold 100))
+
+
+
+;; ===================================================================
+
+;; 【参考】emacsで、全行インデントを一括で行う方法
+;; http://qiita.com/AnchorBlues/items/2e216f730c1e9b84a593
+
+;; ===================================================================
+
+(defun all-indent ()
+  (interactive)
+  (save-excursion
+    (indent-region (point-min) (point-max))))
+
+(defun electric-indent ()
+  "Indent specified region.
+When resion is active, indent region.
+Otherwise indent whole buffer."
+  (interactive)
+  (if (use-region-p)
+      (indent-region (region-beginning) (region-end))
+    (all-indent)))
+
+(global-set-key (kbd "C-M-\\") 'electric-indent)
