@@ -4,7 +4,7 @@
 * Emacs 24.3 or greater  
   24.4，24.5についても動作を確認しています。
 * Ubuntu 14.04 or greater
-* Linux Mint 17.01 or greater
+* Linux Mint 17.02 or greater
 * Lubuntu 14.04 or greater
 
 ## Support Programming Languages
