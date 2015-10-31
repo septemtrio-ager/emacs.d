@@ -67,53 +67,6 @@
 (setq tabbar-separator '(0.6))
 
 ;; 外観変更
-;; (set-face-attribute
-;;  'tabbar-default nil
-;;  :family "Monaco"
-;;  :background "#51B24C"
-;;  :foreground "gray72"
-;;  :height 0.8)
-
-;; (set-face-attribute
-;;  'tabbar-unselected nil
-;;  :background "#51B24C"
-;;  :foreground "grey72"
-;;  :box '(:line-width 3 :color "#51B24C"))
-
-;; (set-face-attribute
-;;  'tabbar-selected nil
-;;  :background "white"
-;;  :foreground "gray28"
-;;  :box '(:line-width 3 :color "white"))
-
-;; (set-face-attribute
-;;  'tabbar-button nil
-;;  :box nil)
-
-;; カスタマイズ設定
-
-;; (set-face-attribute
-;;  'tabbar-default nil
-;;  :family "Monaco"
-;;  :background "lightgreen"
-;;  :foreground "#51B24C" ; gray72
-;;  :height 0.8)
-;; (set-face-attribute
-;;  'tabbar-unselected nil
-;;  :background "lightgreen"
-;;  :foreground "#51B24C" ; gray72
-;;  :box '(:line-width 3 :color "lightgreen"))
-;; (set-face-attribute
-;;  'tabbar-selected nil
-;;  :background "white"
-;;  :foreground "gray28"
-;;  :box '(:line-width 3 :color "white")) ; white
-;; (set-face-attribute
-;;  'tabbar-button nil
-;;  :box nil)
-
-;; 設定しなおし
-
 (set-face-attribute
  'tabbar-default nil
  :family "Monaco"
@@ -147,6 +100,42 @@
  'tabbar-separator nil
  :background "#CCCC99"
  :foreground "#CCCC99"
+ )
+
+;; ハロウィン仕様
+(set-face-attribute
+ 'tabbar-default nil
+ :family "Monaco"
+ :background "#FE9600"
+ :foreground "#FFEE4A"
+ :height 0.8)
+
+(set-face-attribute
+ 'tabbar-unselected nil
+ :background "#FFEE4A"
+ :foreground "black"
+ :box '(:line-width 3 :color "##FFEE4A"))
+
+(set-face-attribute
+ 'tabbar-selected nil
+ :background "white"
+ :foreground "gray28"
+ :box '(:line-width 3 :color "white"))
+
+(set-face-attribute
+ 'tabbar-button nil
+ :box nil)
+
+(set-face-attribute
+ 'tabbar-modified nil
+ :background "#FFEE4A"
+ :foreground "#F1266F"
+ :box '(:line-width 1 :color "##FFEE4A"))
+
+(set-face-attribute
+ 'tabbar-separator nil
+ :background "#FFEE4A"
+ :foreground "#FFEE4A"
  )
 
 ;; tabbar-selected を太字で表示

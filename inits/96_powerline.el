@@ -25,6 +25,14 @@
   (set-face-background 'powerline-active2 "#CDC0B0")   ; sand
   (set-face-foreground 'powerline-active2 "#272821")   ; near-black
 
+  ;; ハロウィン仕様
+  (set-face-background 'mode-line         "#03001c")   ; darkgreen
+  (set-face-foreground 'mode-line         "#FFFFDC")   ; near-white
+  (set-face-background 'powerline-active1 "#FE9600")   ; lime-green
+  (set-face-foreground 'powerline-active1 "#272821")   ; near-black
+  (set-face-background 'powerline-active2 "#FFEE4A")   ; sand
+  (set-face-foreground 'powerline-active2 "#272821")   ; near-black
+
   ;; inactive color
   (set-face-background 'mode-line-inactive  "#CCCC99") ; sand
   (set-face-foreground 'mode-line-inactive  "#272821") ; near-black
