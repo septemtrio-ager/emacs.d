@@ -164,10 +164,10 @@ GUIのmozcよりEmacsのmozcを優先させるには以下のような設定を�
 【参考】EmacsでGithub flavorなMarkdownをプレビュー確認したい  
  http://blog.shinofara.xyz/archives/354/  
  1. "markdown"というbinファイルを作成する
- 
-```sh
-$ sudo emacs /bin/markdown
-```
+ ```sh
+  $ sudo emacs /bin/markdown
+ ```
+
  ```sh
  #!/bin/sh
  filename=$1
@@ -175,11 +175,14 @@ $ sudo emacs /bin/markdown
  cat ${filename%.*}.html
  ```
  
- 2. 管理者権限にてファイラーを起動
- 3. `/bin/markdownのプロパティ`→`パーミッションのプログラムとして実行可能`にチェックを入れる
-
-
+ 2. シェルスクリプトファイルに実行権限を与える
+  ```sh
+  sudo chmod +x /bin/markdown
+  ```
  
+
+
+
 ### CSS Lintをインストールする
 `tool-setup.sh`を実行することでCSS Lintをインストールするために必要な
 `node.js`・`npm`・`csslint`をインストールすることができる。
