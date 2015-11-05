@@ -67,6 +67,7 @@
 (setq tabbar-separator '(0.6))
 
 ;; 外観変更
+;; Linux Mint仕様
 (set-face-attribute
  'tabbar-default nil
  :family "Monaco"
@@ -138,6 +139,44 @@
  :background "#FFEE4A"
  :foreground "#FFEE4A"
  :box '(:line-width 3 :color "#FFEE4A" :style nil)
+ )
+
+;; クリスマス仕様
+(set-face-attribute
+ 'tabbar-default nil
+ :family "Monaco"
+ :background "#006400"
+ :foreground "#006400"
+ :box '(:line-width 3 :color "#006400" :style nil)
+ :height 0.8)
+
+(set-face-attribute
+ 'tabbar-unselected nil
+ :background "white"
+ :foreground "black"
+ :box '(:line-width 3 :color "white" :style nil))
+
+(set-face-attribute
+ 'tabbar-selected nil
+ :background "#FF0000"
+ :foreground "white"
+ :box '(:line-width 3 :color "#FF0000"))
+
+(set-face-attribute
+ 'tabbar-button nil
+ :box nil)
+
+(set-face-attribute
+ 'tabbar-modified nil
+ :background "white"
+ :foreground "#F1266F"
+ :box '(:line-width 3 :color "white"))
+
+(set-face-attribute
+ 'tabbar-separator nil
+ :background "#C0C0C0"
+ :foreground "#C0C0C0"
+ :box '(:line-width 3 :color "#C0C0C0" :style nil)
  )
 
 ;; tabbar-selected を太字で表示
