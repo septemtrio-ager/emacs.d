@@ -174,9 +174,9 @@
 
 (set-face-attribute
  'tabbar-separator nil
- :background "#C0C0C0"
- :foreground "#C0C0C0"
- :box '(:line-width 3 :color "#C0C0C0" :style nil)
+ :background "#FFD700"
+ :foreground "#FFD700"
+ :box '(:line-width 3 :color "#FFD700" :style nil)
  )
 
 ;; tabbar-selected を太字で表示
