@@ -106,21 +106,22 @@
 (set-face-attribute
  'tabbar-default nil
  :family "Monaco"
- :background "#FE9600"
+ :background "#FFEE4A"
  :foreground "#FFEE4A"
+ :box '(:line-width 3 :color "#FFEE4A" :style nil)
  :height 0.8)
 
 (set-face-attribute
  'tabbar-unselected nil
- :background "#FFEE4A"
+ :background "#FE9600"
  :foreground "black"
- :box '(:line-width 3 :color "##FFEE4A"))
+ :box '(:line-width 3 :color "#FE9600" :style nil))
 
 (set-face-attribute
  'tabbar-selected nil
- :background "white"
- :foreground "gray28"
- :box '(:line-width 3 :color "white"))
+ :background "#03001C"
+ :foreground "white"
+ :box '(:line-width 3 :color "#03001C"))
 
 (set-face-attribute
  'tabbar-button nil
@@ -128,14 +129,15 @@
 
 (set-face-attribute
  'tabbar-modified nil
- :background "#FFEE4A"
+ :background "#FE9600"
  :foreground "#F1266F"
- :box '(:line-width 1 :color "##FFEE4A"))
+ :box '(:line-width 3 :color "#FE9600"))
 
 (set-face-attribute
  'tabbar-separator nil
  :background "#FFEE4A"
  :foreground "#FFEE4A"
+ :box '(:line-width 3 :color "#FFEE4A" :style nil)
  )
 
 ;; tabbar-selected を太字で表示
