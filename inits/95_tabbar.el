@@ -153,7 +153,7 @@
 (set-face-attribute
  'tabbar-unselected nil
  :background "white"
- :foreground "black"
+ :foreground "#006400"
  :box '(:line-width 3 :color "white" :style nil))
 
 (set-face-attribute
@@ -176,7 +176,7 @@
  'tabbar-separator nil
  :background "#FFD700"
  :foreground "#FFD700"
- :box '(:line-width 3 :color "#FFD700" :style nil)
+ :box '(:line-width 1 :color "#FFD700" :style nil)
  )
 
 ;; tabbar-selected を太字で表示
@@ -184,3 +184,6 @@
 
 ;; tabbar-modified を太字で表示
 (set-face-bold-p 'tabbar-modified t)
+
+;; tabbar-unselected を太字で表示
+;; (set-face-bold-p 'tabbar-unselected t)

@@ -38,7 +38,7 @@
   (set-face-background 'mode-line         "#FF0000")   ; red
   (set-face-foreground 'mode-line         "#FFFFDC")   ; near-white
   (set-face-background 'powerline-active1 "#006400")   ; dark green
-  (set-face-foreground 'powerline-active1 "#FFFFDC")   ; near-white
+  (set-face-foreground 'powerline-active1 "#FFD700")   ; gold
   (set-face-background 'powerline-active2 "#FFFFDC")   ; near-white
   (set-face-foreground 'powerline-active2 "#FFFFDC")   ; near-black
   
