@@ -441,3 +441,16 @@ echo "# =============================================================="
 git clone git://github.com/VitaliyRodnenko/geeknote.git
 cd geeknote
 sudo python setup.py install
+
+#=====================================================================
+# Trampに必要なものをインストール
+#=====================================================================
+
+echo "# =============================================================="
+echo "#"
+echo "# What you need to install \"tramp\""
+echo "#"
+echo "# =============================================================="
+
+sudo apt-get install -y autoconf
+sudo apt-get install -y putty-tools
