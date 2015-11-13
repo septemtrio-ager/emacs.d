@@ -1,5 +1,6 @@
 (setq el-get-lock-package-versions
-      '((polymode :checksum "b9dc94728e168e0d9365ac6a94c81bdf93df66f3")
+      '((tramp :checksum "da0ae8adebe61d30ef85c2fa1a604e563aef80fa")
+        (polymode :checksum "b9dc94728e168e0d9365ac6a94c81bdf93df66f3")
         (highlight-symbol :checksum "c2e15fee52aebf5c8e618460b8f924331d0df2a3")
         (mozc-el-extensions :checksum "060797a6e570cf21c274edfcb14a26e710a5449e")
         (centered-cursor-mode :checksum "de6cf069b993edb44651132eb0bbd76e8ee6a382")
@@ -16,7 +17,7 @@
         (tabbar :checksum "ad4c9c20cf9090a5ebf77a5150f2bf98bdb4bded")
         (volatile-highlights :checksum "fb2abc2d4d4051a9a6b7c8de2fe7564161f01f24")
         (smart-newline :checksum "f5f5ff033645aea0652aa375b034746754a38b1e")
-        (anzu :checksum "b486075ab478ad4a030a7fa3c97a378f33d546b4")
+        (anzu :checksum "6fded24b366efc4cf27166104c1928f7d1fedaa7")
         (multiple-cursors :checksum "97e5db17c5ba631d3c2af17eac3414872224ca08")
         (recentf-ext :checksum "495bfe07e8a759f1e6dfbd45e62ae2f72404ff79")
         (twittering-mode :checksum "b04a3afd0a2efb6ac17ef84b343a80339be10a03")
