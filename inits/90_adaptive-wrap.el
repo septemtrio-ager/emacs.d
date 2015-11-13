@@ -31,6 +31,9 @@
 
 	     ;; emacs-lisp-modeで利用する
 	     emacs-lisp-mode-hook
+
+	     ;;gfm-modeで利用する
+	     gfm-mode-hook
 	     
 	     ))
     (add-hook hook 'adaptive-wrap-prefix-mode))
