@@ -9,7 +9,10 @@
 
 ;; ===================================================================
 
-(require 'tramp)
-(setq tramp-default-method "ssh")
-;; (setq tramp-default-method "plink")
+(el-get-bundle tramp
 
+  (require 'tramp)
+  (setq tramp-default-method "ssh")
+  ;; (setq tramp-default-method "plink")  
+  
+  )
