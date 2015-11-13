@@ -15,6 +15,7 @@
 
 
 ;; フォントをRitcyに変更する
+;; (add-to-list 'default-frame-alist '(font . "s2g love font-14"))
 (add-to-list 'default-frame-alist '(font . "ricty-12"))
 (custom-set-faces
  '(variable-pitch ((t (:family "Ricty"))))
