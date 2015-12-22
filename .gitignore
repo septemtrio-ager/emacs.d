@@ -1,8 +1,10 @@
 # emacs.d gitignore
 
+# ignore some files
 *~
 *.elc
 
+# ignore some directories
 /auto-save-list
 /semanticdb
 /bzr-cedet
@@ -11,7 +13,6 @@
 /eshell
 /tidy-html5
 /ino
-
 /history
 /ac-comphist.dat
 /srecode-map.el
@@ -19,9 +20,13 @@
 /snippets/temp-snippets
 /node_modules
 
+# ignore some specific files
 projectile-bookmarks.eld
 ido.last
+README.html
+.mc-lists.el
 
+# keep some directories
 auto-install/*
 !.gitkeep
 
@@ -37,5 +42,5 @@ backups/*
 site-lisp/*
 !.gitkeep
 
-README.html
-.mc-lists.el
+junk/*
+!.gitkeep

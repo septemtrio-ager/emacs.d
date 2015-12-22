@@ -32,6 +32,8 @@
 	   (or (ignore-errors
 		 (direx-project:jump-to-project-root-other-window) t)
 	       (direx:jump-to-directory-other-window)))))
-
-  (global-set-key (kbd "C-x C-j") 'my/dired-jump)
+  
+  ;; C-x C-jはopen-junk-fileのキーバインドに変更した
+  ;; (global-set-key (kbd "C-x C-j") 'my/dired-jump)
+  
   )
