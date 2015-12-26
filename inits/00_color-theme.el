@@ -3,22 +3,40 @@
 ;;
 
 (el-get-bundle monokai-theme
-
-  ;; tango-darkテーマ(デフォルト)
-  (load-theme 'tango-dark t)
   
   ;; monokaiテーマ
   ;; (load-theme 'monokai t)
   
-  ;; ウィンドウの透過度を変更する
-  (if window-system
-      (progn
-	(set-background-color "Black")
-	(set-foreground-color "LightGray")
-	(set-frame-parameter nil 'alpha 80)
-	))
-  
-  ;; カーソルの色を変更する
-  (set-cursor-color "yellow")
-  
   )
+
+
+
+;; tango-darkテーマ(デフォルト)
+(load-theme 'tango-dark t)
+
+
+
+;; ウィンドウの透過度を変更する
+(if window-system
+    (progn
+      (set-background-color "Black")
+      (set-foreground-color "LightGray")
+      (set-frame-parameter nil 'alpha 80)
+      ))
+
+
+
+;; カーソルの色を変更する
+(set-cursor-color "yellow")
+
+
+
+;; fringeの設定
+;; (ウィンドウ左右にある余白)
+
+;; 左だけfringeを表示させるようにする
+(fringe-mode '(7 . 1))
+
+;; 色の変更
+;; (set-face-foreground 'fringe "gold3")
+;; (set-face-attribute 'fringe nil :background "gold3" :foreground "#3F3F3F")
