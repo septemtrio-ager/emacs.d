@@ -14,8 +14,10 @@
   (autoload 'android-mode "android-mode" nil t)
 
   ;; Android SDKのディレクトリを設定する
-  (setq android-mode-sdk-dir "~/android-dev/android-sdk-linux/")
-  ;; (custom-set-variables '(android-mode-sdk-dir "~/android-dev/android-sdk-linux/"))
+  ;; Android StudioのSDKを利用するようにした
+  ;; (setq android-mode-sdk-dir "~/android-dev/android-sdk-linux/")
+  (setq android-mode-sdk-dir "~/Android/Sdk/")
+  
 
   ;; コマンド用プレフィックス
   ;; ここで設定したキーバインド＋android-mode.elで設定された文字で各種機能を利用できる
