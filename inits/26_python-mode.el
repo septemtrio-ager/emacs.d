@@ -43,7 +43,9 @@
 (el-get-bundle elpy
   
   (elpy-enable)
+  
   )
+
 ;; flycheckのシンタックスチェッカーがflake8なのでインストールしておく
 ;; pip install --user flake8
 
@@ -82,6 +84,17 @@
  '(company-tooltip-selection ((t (:background "limegreen" :foreground "white"))))
  )
 
+;; ===================================================================
+
+;; 【参考】EmacsでPython開発するための環境を整える
+;; http://nakazye.hatenablog.com/entry/2014/09/14/161154
+
+;; ===================================================================
+
+(defun python-shell-parse-command ()
+  "Return the string used to execute the inferior Python process."
+  "python3 -i"
+  )
 
 
 ;; numpy,scipy,scikit-learn,matplotlibのインストールは
