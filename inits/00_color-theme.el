@@ -9,7 +9,9 @@
   
   )
 
-
+(el-get-bundle color-theme-solarized
+    ;; (load-theme 'solarized t)
+  )
 
 ;; tango-darkテーマ(デフォルト)
 (load-theme 'tango-dark t)
@@ -38,5 +40,5 @@
 (fringe-mode '(7 . 1))
 
 ;; 色の変更
-;; (set-face-foreground 'fringe "gold3")
+(set-face-background 'fringe "gray10")
 ;; (set-face-attribute 'fringe nil :background "gold3" :foreground "#3F3F3F")
