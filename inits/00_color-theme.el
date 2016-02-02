@@ -2,16 +2,16 @@
 ;;; color themeの設定
 ;;
 
-(el-get-bundle monokai-theme
+;; (el-get-bundle monokai-theme
   
-  ;; monokaiテーマ
-  ;; (load-theme 'monokai t)
+;;   ;; monokaiテーマ
+;;   ;; (load-theme 'monokai t)
   
-  )
+;;   )
 
-(el-get-bundle color-theme-solarized
-    ;; (load-theme 'solarized t)
-  )
+;; (el-get-bundle color-theme-solarized
+;;     ;; (load-theme 'solarized t)
+;;   )
 
 ;; tango-darkテーマ(デフォルト)
 (load-theme 'tango-dark t)
