@@ -19,6 +19,7 @@
   
   ;; safe-diminish マクロを利用して
   ;; 隠したいマイナーモードを指定する
+  ;; (safe-diminish "表示を変更したいモード名" 'モードの正式名称 "変更後の表示")
   (safe-diminish "helm" 'helm-mode)
   (safe-diminish "undo-tree" 'undo-tree-mode)
   (safe-diminish "auto-complete" 'auto-complete-mode "AutoComplete")
@@ -32,6 +33,7 @@
   (safe-diminish "smartparens" 'smartparens-mode)
   (safe-diminish "which-key" 'which-key-mode)
   (safe-diminish "abbrev" 'abbrev-mode)
+  (safe-diminish "php-completion" 'php-completion-mode "PHP-Comp")
   
   ;; safe-diminishマクロがnilになってしまうので個別に設定
   (diminish 'hs-minor-mode)
