@@ -11,11 +11,11 @@
 
 (el-get-bundle auto-install
   
-  (require 'auto-install)
+  ;; (require 'auto-install)
 
-  ;; ~/.emacs.d/auto-install にダウンロードとインストールを行う
-  (setq auto-install-directory "~/.emacs.d/auto-install") 
+  ;; ;; ~/.emacs.d/auto-install にダウンロードとインストールを行う
+  ;; (setq auto-install-directory "~/.emacs.d/auto-install") 
 
-  (auto-install-update-emacswiki-package-name t)
-  (auto-install-compatibility-setup)
+  ;; (auto-install-update-emacswiki-package-name t)
+  ;; (auto-install-compatibility-setup)
   )
