@@ -97,3 +97,6 @@
 		  (interactive)
 		  (yank)
 		  (indent-region (region-beginning) (region-end))))
+
+;; C-x C-jでopen-junk-fileを発動
+(global-set-key (kbd "C-x C-j") 'open-junk-file)

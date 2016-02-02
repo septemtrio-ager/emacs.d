@@ -6,8 +6,5 @@
 
   (require 'open-junk-file)
   (setq open-junk-file-format "~/.emacs.d/junk/%Y-%m-%d-%H%M%S.")
-
-  ;; open-junk
-  (global-set-key (kbd "C-x C-j") 'open-junk-file)
   
   )
