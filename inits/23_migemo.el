@@ -18,9 +18,31 @@
 
 ;; ===================================================================
 
-(el-get-bundle migemo
+;; (el-get-bundle migemo
   
-  (autoload 'migemo "migemo" nil t)
+;;   (autoload 'migemo "migemo" nil t)
+;;   (setq migemo-command "cmigemo")
+;;   (setq migemo-options '("-q" "--emacs"))
+
+;;   ;; cmigemoのpathを指定
+;;   (setq migemo-dictionary "/usr/share/cmigemo/utf-8/migemo-dict")
+
+;;   (setq migemo-user-dictionary nil)
+;;   (setq migemo-regex-dictionary nil)
+;;   (setq migemo-coding-system 'utf-8-unix)
+;;   (load-library "migemo")
+;;   (migemo-init)
+;;   )
+
+(el-get-bundle migemo)
+
+(use-package migemo
+  :no-require t
+  ;; :defer t
+  ;; :ensure t
+  :functions migemo-init
+  
+  :config
   (setq migemo-command "cmigemo")
   (setq migemo-options '("-q" "--emacs"))
 

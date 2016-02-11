@@ -11,10 +11,13 @@
 
 ;; ===================================================================
 
-(el-get-bundle quickrun
-  
-  (require 'quickrun)
+(el-get-bundle quickrun)
 
+(use-package quickrun
+  :disabled t
+  :defer t
+  :bind ("C-c q". quickrun)
+  :config
   ;; コマンドキー "C++/C11"を追加する
   ;; C++のデフォルトで使うように指定.
   (quickrun-add-command "C++/C11"
@@ -23,5 +26,4 @@
 				       "%e %a"))
 			  (:remove  . ("%e"))
 			  (:description . "Compile C++ file with g++ -std=c++11 option and execute"))
-			:default "c++")
-  )
+			:default "c++"))

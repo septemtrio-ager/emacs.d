@@ -27,34 +27,60 @@
 
 ;; ===================================================================
 
-(el-get-bundle helm-ag
+;; (el-get-bundle helm-ag
   
-  (require 'helm-files)
-  (require 'helm-ag)
+;;   (require 'helm-files)
+;;   (require 'helm-ag)
 
-  ;; ===================================================================
+;;   ;; ===================================================================
 
-  ;; 【参考】emacs helm-ag.el : anything-grepのhelm版！
-  ;;                           最初は粗く検索、あとはどんどん絞り込め！
-  ;; http://rubikitch.com/tag/anything-grep-el/
+;;   ;; 【参考】emacs helm-ag.el : anything-grepのhelm版！
+;;   ;;                           最初は粗く検索、あとはどんどん絞り込め！
+;;   ;; http://rubikitch.com/tag/anything-grep-el/
 
-  ;; ===================================================================
+;;   ;; ===================================================================
 
-;;; ag以外の検索コマンドも使える
-  ;; (setq helm-ag-base-command "grep -rin")
-  ;; (setq helm-ag-base-command "csearch -n")
-  ;; (setq helm-ag-base-command "pt --nocolor --nogroup")
+;; ;;; ag以外の検索コマンドも使える
+;;   ;; (setq helm-ag-base-command "grep -rin")
+;;   ;; (setq helm-ag-base-command "csearch -n")
+;;   ;; (setq helm-ag-base-command "pt --nocolor --nogroup")
 
-;;; 現在のシンボルをデフォルトのクエリにする
+;; ;;; 現在のシンボルをデフォルトのクエリにする
+;;   (setq helm-ag-insert-at-point 'symbol)
+
+;; ;;; C-M-gはちょうどあいてる
+;;   (global-set-key (kbd "C-M-g") 'helm-ag)
+;;   (global-set-key (kbd "C-M-k") 'backward-kill-sexp) ;推奨
+
+
+;;   ;; .emacs.d以下を検索する M-x helm-ag-dot-emacs を定義
+
+;;   (defun helm-ag-dot-emacs ()
+;;     ".emacs.d以下を検索"
+;;     (interactive)
+;;     (helm-ag "~/.emacs.d/"))
+;;   (require 'projectile nil t)
+;;   (defun helm-projectile-ag ()
+;;     "Projectileと連携"
+;;     (interactive)
+;;     (helm-ag (projectile-project-root)))
+;;   ;; (helm-ag "~/.emacs.d/")
+;;   )
+
+(el-get-bundle helm-ag)
+
+(use-package helm-ag
+  :defer t
+  :commands helm-ag-dot-emacs
+  :bind
+  (("C-M-g" . helm-ag)
+   ;; ("C-M-k" . backward-kill-sexp)
+   )
+  
+  :config
+  ;; 現在のシンボルをデフォルトのクエリにする
   (setq helm-ag-insert-at-point 'symbol)
-
-;;; C-M-gはちょうどあいてる
-  (global-set-key (kbd "C-M-g") 'helm-ag)
-  (global-set-key (kbd "C-M-k") 'backward-kill-sexp) ;推奨
-
-
-  ;; .emacs.d以下を検索する M-x helm-ag-dot-emacs を定義
-
+  
   (defun helm-ag-dot-emacs ()
     ".emacs.d以下を検索"
     (interactive)
@@ -65,4 +91,7 @@
     (interactive)
     (helm-ag (projectile-project-root)))
   ;; (helm-ag "~/.emacs.d/")
+  
   )
+
+

@@ -17,41 +17,84 @@
 
 ;; ===================================================================
 
-(el-get-bundle helm-swoop
+;; (el-get-bundle helm-swoop
 
-  (require 'helm-swoop)
-  ;;; isearchからの連携を考えるとC-r/C-sにも割り当て推奨
-  (define-key helm-swoop-map (kbd "C-r") 'helm-previous-line)
-  (define-key helm-swoop-map (kbd "C-s") 'helm-next-line)
+;;   (require 'helm-swoop)
+;;   ;;; isearchからの連携を考えるとC-r/C-sにも割り当て推奨
+;;   (define-key helm-swoop-map (kbd "C-r") 'helm-previous-line)
+;;   (define-key helm-swoop-map (kbd "C-s") 'helm-next-line)
 
-  ;;; 検索結果をcycleしない、お好みで
-  (setq helm-swoop-move-to-line-cycle nil)
+;;   ;;; 検索結果をcycleしない、お好みで
+;;   (setq helm-swoop-move-to-line-cycle nil)
 
-  (cl-defun helm-swoop-nomigemo (&key $query ($multiline current-prefix-arg))
-    "シンボル検索用Migemo無効版helm-swoop"
-    (interactive)
-    (let ((helm-swoop-pre-input-function
-	   (lambda () (format "\\_<%s\\_> " (thing-at-point 'symbol)))))
-      (helm-swoop :$source (delete '(migemo) (copy-sequence (helm-c-source-swoop)))
-		  :$query $query :$multiline $multiline)))
-  ;;; C-M-:に割り当て
-  (global-set-key (kbd "C-M-:") 'helm-swoop-nomigemo)
+;;   (cl-defun helm-swoop-nomigemo (&key $query ($multiline current-prefix-arg))
+;;     "シンボル検索用Migemo無効版helm-swoop"
+;;     (interactive)
+;;     (let ((helm-swoop-pre-input-function
+;; 	   (lambda () (format "\\_<%s\\_> " (thing-at-point 'symbol)))))
+;;       (helm-swoop :$source (delete '(migemo) (copy-sequence (helm-c-source-swoop)))
+;; 		  :$query $query :$multiline $multiline)))
+;;   ;;; C-M-:に割り当て
+;;   (global-set-key (kbd "C-M-:") 'helm-swoop-nomigemo)
 
-  ;;; [2014-11-25 Tue]
-  (when (featurep 'helm-anything)
-    (defadvice helm-resume (around helm-swoop-resume activate)
-      "helm-anything-resumeで復元できないのでその場合に限定して無効化"
-      ad-do-it))
+;;   ;;; [2014-11-25 Tue]
+;;   (when (featurep 'helm-anything)
+;;     (defadvice helm-resume (around helm-swoop-resume activate)
+;;       "helm-anything-resumeで復元できないのでその場合に限定して無効化"
+;;       ad-do-it))
 
+;;   (defun isearch-forward-or-helm-swoop (use-helm-swoop)
+;;     (interactive "p")
+;;     (let (current-prefix-arg
+;; 	  (helm-swoop-pre-input-function 'ignore))
+;;       (call-interactively
+;;        (case use-helm-swoop
+;; 	 (1 'isearch-forward)
+;; 	 (4 'helm-swoop)
+;; 	 (16 'helm-swoop-nomigemo)))))
+;;   (global-set-key (kbd "C-s") 'isearch-forward-or-helm-swoop)
+  
+;;   )
+
+(el-get-bundle helm-swoop)
+
+(use-package helm-swoop
+  :preface
+  ;;; [2015-03-23 Mon]C-u C-s / C-u C-u C-s
+  ;;; http://rubikitch.com/2015/03/23/helm-swoop-update/
   (defun isearch-forward-or-helm-swoop (use-helm-swoop)
     (interactive "p")
     (let (current-prefix-arg
-	  (helm-swoop-pre-input-function 'ignore))
+          (helm-swoop-pre-input-function 'ignore))
       (call-interactively
        (case use-helm-swoop
-	 (1 'isearch-forward)
-	 (4 'helm-swoop)
-	 (16 'helm-swoop-nomigemo)))))
-  (global-set-key (kbd "C-s") 'isearch-forward-or-helm-swoop)
-  
-  )
+         (1 'isearch-forward)
+         (4 'helm-swoop)
+         (16 'helm-swoop-nomigemo)))))
+  :bind* ("M-o" . helm-swoop)
+  :bind (("M-O" . helm-swoop-back-to-last-point)
+	 ("C-x M-o" . helm-multi-swoop)
+	 ("C-s" . isearch-forward-or-helm-swoop))
+  ;;	 ("C-M-o" . helm-multi-swoop-all))
+  :config
+  ;; When doing isearch, hand the word over to helm-swoop
+  (define-key isearch-mode-map (kbd "M-o") 'helm-swoop-from-isearch)
+  ;; From helm-swoop to helm-multi-swoop-all
+  (define-key helm-swoop-map (kbd "M-o") 'helm-multi-swoop-all-from-helm-swoop)
+  ;; When doing evil-search, hand the word over to helm-swoop
+  ;; (define-key evil-motion-state-map (kbd "M-i") 'helm-swoop-from-evil-search)
+
+  ;; Save buffer when helm-multi-swoop-edit complete
+  (setq helm-multi-swoop-edit-save t)
+
+  ;; If this value is t, split window inside the current window
+  (setq helm-swoop-split-with-multiple-windows nil)
+
+  ;; Split direcion. 'split-window-vertically or 'split-window-horizontally
+  (setq helm-swoop-split-direction 'split-window-vertically)
+
+  ;; If nil, you can slightly boost invoke speed in exchange for text color
+  (setq helm-swoop-speed-or-color nil)
+
+  (define-key helm-swoop-map (kbd "C-s") 'swoop-action-goto-line-next)
+  (define-key helm-swoop-map (kbd "C-r") 'swoop-action-goto-line-prnnev))

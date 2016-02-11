@@ -8,17 +8,15 @@
 ;; http://qiita.com/megane42/items/ee71f1ff8652dbf94cf7
 
 ;; ===================================================================
+(el-get-bundle rainbow-delimiters)
 
-(el-get-bundle rainbow-delimiters
-  
-  (require 'rainbow-delimiters)
+(use-package rainbow-delimiters
+  :init
   (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
-
-
-
   ;; 括弧の色を強調する設定
   (require 'cl-lib)
   (require 'color)
+  
   (defun rainbow-delimiters-using-stronger-colors ()
     (interactive)
     (cl-loop
@@ -26,5 +24,6 @@
      do
      (let ((face (intern (format "rainbow-delimiters-depth-%d-face" index))))
        (cl-callf color-saturate-name (face-foreground face) 30))))
+  
   (add-hook 'emacs-startup-hook 'rainbow-delimiters-using-stronger-colors)
   )

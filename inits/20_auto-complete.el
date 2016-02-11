@@ -17,19 +17,82 @@
 
 ;; ===================================================================
 
-(el-get-bundle auto-complete
+;; (el-get-bundle auto-complete
   
-  (require 'auto-complete)
+;;   (require 'auto-complete)
 
+;;   ;; 補完機能の追加
+;;   (when (require 'auto-complete-config nil t)
+;;     (add-to-list 'ac-dictionary-directories (expand-file-name "~/.emacs.d/el-get/auto-complete/dict"))
+;;     (ac-config-default)
+;;     )
+
+;;   ;; C-n / C-p で選択できるようにする
+;;   (setq ac-use-menu-map t)
+
+;;   (global-auto-complete-mode t)
+
+;;   ;; 適用するメジャーモードを足す
+;;   (dolist (mode '(
+;; 		  scss-mode
+;; 		  web-mode
+;; 		  git-commit-mode
+;; 		  gfm-mode
+;; 		  twittering-edit-mode
+;; 		  shell-mode
+;; 		  markdown-mode
+;; 		  text-mode
+;; 		  web-mode
+;; 		  octave-mode
+;; 		  css-mode
+;; 		  eshell-mode
+;; 		  nxml-mode
+;; 		  python-mode
+;; 		  yatex-mode
+;; 		  ))
+;;     (add-to-list 'ac-modes mode))
+
+;;   ;; ベースとなるソースを指定
+;;   (defvar my-ac-sources
+;;     '(
+;;       ;; ac-source-yasnippet
+;;       ;; ac-source-abbrev
+;;       ac-source-dictionary
+;;       ac-source-words-in-same-mode-buffers
+;;       ac-source-mozc                       ; ac-mozcを利用する
+;;       ;;ac-source-octave                     ; octaceで利用する
+;;       ))
+
+;;   ;; 個別にソースを指定
+;;   (defun ac-scss-mode-setup ()
+;;     (setq-default ac-sources (append '(ac-source-css-property) my-ac-sources)))
+;;   (defun ac-web-mode-setup ()
+;;     (setq-default ac-sources my-ac-sources))
+
+;;   (add-hook 'scss-mode-hook 'ac-scss-mode-setup)
+;;   (add-hook 'web-mode-hook 'ac-web-mode-setup)
+  
+;;   ;; R用のauto-complete
+;;   ;;(require 'auto-complete-acr)
+
+;;   ;; yasnippetとの連携
+;;   ;;(require 'auto-complete-yasnippet)
+  
+;;   )
+
+(el-get-bundle auto-complete)
+
+(use-package auto-complete)
+(use-package auto-complete-config
+  
+  :config
   ;; 補完機能の追加
-  (when (require 'auto-complete-config nil t)
-    (add-to-list 'ac-dictionary-directories (expand-file-name "~/.emacs.d/el-get/auto-complete/dict"))
-    (ac-config-default)
-    )
-
+  (add-to-list 'ac-dictionary-directories (expand-file-name "~/.emacs.d/el-get/auto-complete/dict"))
+  (ac-config-default)
+  
   ;; C-n / C-p で選択できるようにする
   (setq ac-use-menu-map t)
-
+  
   (global-auto-complete-mode t)
 
   ;; 適用するメジャーモードを足す
@@ -50,32 +113,17 @@
 		  python-mode
 		  yatex-mode
 		  ))
-  (add-to-list 'ac-modes mode))
+    (add-to-list 'ac-modes mode))
 
-  ;; ベースとなるソースを指定
-  (defvar my-ac-sources
-    '(
-      ;; ac-source-yasnippet
-      ;; ac-source-abbrev
-      ac-source-dictionary
-      ac-source-words-in-same-mode-buffers
-      ac-source-mozc                       ; ac-mozcを利用する
-      ;;ac-source-octave                     ; octaceで利用する
-      ))
-
-  ;; 個別にソースを指定
-  (defun ac-scss-mode-setup ()
-    (setq-default ac-sources (append '(ac-source-css-property) my-ac-sources)))
-  (defun ac-web-mode-setup ()
-    (setq-default ac-sources my-ac-sources))
-
-  (add-hook 'scss-mode-hook 'ac-scss-mode-setup)
-  (add-hook 'web-mode-hook 'ac-web-mode-setup)
-  
-  ;; R用のauto-complete
-  ;;(require 'auto-complete-acr)
-
-  ;; yasnippetとの連携
-  ;;(require 'auto-complete-yasnippet)
+  ;; ;; ベースとなるソースを指定
+  ;; (defvar my-ac-sources
+  ;;   '(
+  ;;     ;; ac-source-yasnippet
+  ;;     ;; ac-source-abbrev
+  ;;     ac-source-dictionary
+  ;;     ac-source-words-in-same-mode-buffers
+  ;;     ac-source-mozc                       ; ac-mozcを利用する
+  ;;     ;;ac-source-octave                     ; octaceで利用する
+  ;;     ))
   
   )

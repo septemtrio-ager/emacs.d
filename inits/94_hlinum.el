@@ -9,10 +9,22 @@
 
 ;; ===================================================================
 
-(el-get-bundle hlinum
+;; (el-get-bundle hlinum
     
-  (require 'hlinum)
+;;   (require 'hlinum)
 
+;;   ;; これがないと表示されない
+;;   (hlinum-activate)
+
+;;   (custom-set-faces
+;;    '(linum-highlight-face((t (:foreground "black"
+;; 					  :background "#F1266F")))))
+;;   )
+
+(el-get-bundle hlinum)
+
+(use-package hlinum
+  :config
   ;; これがないと表示されない
   (hlinum-activate)
 

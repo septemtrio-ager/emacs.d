@@ -9,10 +9,40 @@
 
 ;; ===================================================================
 
-(el-get-bundle rainbow-mode
+;; (el-get-bundle rainbow-mode
   
-  (require 'rainbow-mode)
+;;   (require 'rainbow-mode)
 
+;;   (dolist (hook '(
+		  
+;; 		  ;; css-modeで利用する
+;; 		  css-mode-hook
+
+;; 		  ;;scss-modeで利用する
+;; 		  scss-mode-hook
+
+;; 		  ;; php-modeで利用する
+;; 		  php-mode-hook
+
+;; 		  ;; html-modeで利用する
+;; 		  html-mode-hook
+
+;; 		  ;; emacs-lisp-modeで利用する
+;; 		  emacs-lisp-mode-hook
+
+;; 		  ;; nxml-modeで利用する
+;; 		  nxml-mode-hook
+		  
+;; 		  ))
+;;     (add-hook hook 'rainbow-mode))
+  
+;;   )
+
+(el-get-bundle rainbow-mode)
+
+(use-package rainbow-mode
+  :defer t
+  :init
   (dolist (hook '(
 		  
 		  ;; css-modeで利用する

@@ -9,9 +9,16 @@
 
 ;; ===================================================================
 
-(el-get-bundle expand-region
+;; (el-get-bundle expand-region
   
-  (require 'expand-region)
-  (global-set-key (kbd "C-@") 'er/expand-region)
-  (global-set-key (kbd "C-M-@") 'er/contract-region)
-  )
+;;   (require 'expand-region)
+;;   (global-set-key (kbd "C-@") 'er/expand-region)
+;;   (global-set-key (kbd "C-M-@") 'er/contract-region)
+;;   )
+
+(el-get-bundle expand-region)
+
+(use-package expand-region
+  :defer t
+  :bind (("C-@" . er/expand-region)
+	 ("C-M-@" . er/contract-region)))

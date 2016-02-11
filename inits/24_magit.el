@@ -37,3 +37,9 @@
   ;; 	 (set-face-background 'magit-item-highlight "white"))))
   
   )
+
+(el-get-bundle magit)
+
+(use-package magit
+  :defer t
+  :bind ("C-x m" . magit-status))

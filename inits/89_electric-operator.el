@@ -26,5 +26,21 @@
 		  
 		  ))
     (add-hook hook #'electric-operator-mode))
+
+  ;; ジェネリクス型を利用する際に無駄なスペースが入ってしまうために
+  ;; java-modeでは"<"と">"において動作しないようにした
+  (electric-operator-add-rules-for-mode 'java-mode
+                                        (cons "<" nil)
+                                        (cons ">" nil))
+
+  (electric-operator-add-rules-for-mode 'php-mode
+					(cons "/" nil)
+					(cons "<" nil)
+					(cons ">" nil)
+					(cons "++" "++")
+					(cons "//" "// ")
+					(cons "." nil)
+					(cons "->" "->")
+					(cons "=>" " => "))
   
   )

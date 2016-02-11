@@ -17,42 +17,32 @@
 
 ;; ===================================================================
 
-(el-get-bundle yasnippet
-  
-  ;; (require 'yasnippet)
-  (autoload 'yasnippet "yasnippet-mode" nil t)
-  
+(el-get-bundle yasnippet)
 
+(use-package yasnippet
+  :defer t
+  :commands (yas-insert-snippet yas-new-snippet yas-visit-snippet-file yas-expand)
+  :diminish yas-minor-mode
+  
+  :init
+  (yas-global-mode 1)
+  
+  (bind-key "C-x i i" 'yas-insert-snippet yas-minor-mode-map)
+  (bind-key "C-x i n" 'yas-new-snippet yas-minor-mode-map)
+  (bind-key "C-x i v" 'yas-visit-snippet-file yas-minor-mode-map)
+  (bind-key "C-o" 'yas-expand yas-minor-mode-map)
+  (bind-key "TAB" nil yas-minor-mode-map)
+  
+  :config
   (setq yas-snippet-dirs
 	'("~/.emacs.d/snippets/mysnippets"      ;; 作成したスニペット
 	  "~/.emacs.d/snippets/site-snippets"   ;; 拾ってきたスニペット
-	  "~/.emacs.d/snippets/yasnippet-java-mode"
+	  
+	  ;; "~/.emacs.d/snippets/yasnippet-java-mode"
 	  
 	  ;; java-modeのスニペットがyasnipett-java-modeの
 	  ;; スニペットと干渉しないように退避してあるディレクトリ
 	  
 	  ;; "~/.emacs.d/snippets/temp-snippets"
-	  
 	  ))
-
-  (yas-global-mode 1)
-
-  ;; ===================================================================
-
-  ;; 【参考】emacs 最強スニペット展開プラグイン yasnippet.elのインストール!
-  ;; http://konbu13.hatenablog.com/entry/2014/01/12/113300
-
-  ;; ===================================================================
-
-  ;; 既存スニペットを挿入する
-  (define-key yas-minor-mode-map (kbd "C-x i i") 'yas-insert-snippet)
-  ;; 新規スニペットを作成するバッファを用意する
-  (define-key yas-minor-mode-map (kbd "C-x i n") 'yas-new-snippet)
-  ;; 既存スニペットを閲覧・編集する
-  (define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
-
-  ;;トリガーキーをTABからSPCに変更
-  (define-key yas-minor-mode-map (kbd "C-o") 'yas-expand)
-  (define-key yas-minor-mode-map (kbd "TAB") nil)
-  
   )

@@ -18,6 +18,7 @@
   (set-face-attribute 'mode-line          nil :box nil)
   (set-face-attribute 'mode-line-inactive nil :box nil)
 
+  ;; Linux Mint仕様
   (set-face-background 'mode-line         "#006400")   ; darkgreen
   (set-face-foreground 'mode-line         "#FFFFDC")   ; near-white
   (set-face-background 'powerline-active1 "#32CD32")   ; lime-green
@@ -25,6 +26,23 @@
   (set-face-background 'powerline-active2 "#CDC0B0")   ; sand
   (set-face-foreground 'powerline-active2 "#272821")   ; near-black
 
+  ;; ハロウィン仕様
+  (set-face-background 'mode-line         "#03001c")   ; very dark-blue
+  (set-face-foreground 'mode-line         "#FFFFDC")   ; near-white
+  (set-face-background 'powerline-active1 "#FE9600")   ; pure-orange
+  (set-face-foreground 'powerline-active1 "#272821")   ; near-black
+  (set-face-background 'powerline-active2 "#FFEE4A")   ; sand
+  (set-face-foreground 'powerline-active2 "#272821")   ; near-black
+
+  ;; クリスマス仕様
+  (set-face-background 'mode-line         "#FF0000")   ; red
+  (set-face-foreground 'mode-line         "#FFFFDC")   ; near-white
+  (set-face-background 'powerline-active1 "#006400")   ; dark green
+  (set-face-foreground 'powerline-active1 "#FFD700")   ; gold
+  (set-face-background 'powerline-active2 "#FFFFDC")   ; near-white
+  (set-face-foreground 'powerline-active2 "#FFFFDC")   ; near-black
+  
+  
   ;; inactive color
   (set-face-background 'mode-line-inactive  "#CCCC99") ; sand
   (set-face-foreground 'mode-line-inactive  "#272821") ; near-black

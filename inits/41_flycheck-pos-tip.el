@@ -9,9 +9,17 @@
 
 ;; ===================================================================
 
-(el-get-bundle flycheck-pos-tip
+;; (el-get-bundle flycheck-pos-tip
 
-  (eval-after-load 'flycheck
-    '(custom-set-variables
-      '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
+;;   (eval-after-load 'flycheck
+;;     '(custom-set-variables
+;;       '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
+;;   )
+
+(el-get-bundle flycheck-pos-tip)
+
+(use-package flycheck-pos-tip
+  :defer t
+  :config
+  (setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages)
   )

@@ -9,9 +9,16 @@
 
 ;; ===================================================================
 
-(el-get-bundle undo-tree
+;; (el-get-bundle undo-tree
   
-  (require 'undo-tree)
-  (global-undo-tree-mode t)
+;;   (require 'undo-tree)
+;;   (global-undo-tree-mode t)
   
-  )
+;;   )
+
+(el-get-bundle undo-tree)
+
+(use-package undo-tree
+  :no-require t
+  :config
+  (global-undo-tree-mode t))

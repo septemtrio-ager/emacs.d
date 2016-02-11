@@ -8,3 +8,9 @@
 ;;   (autoload 'java-snippets "java-snipettes" nil t)
   
 ;;   )
+
+;; (el-get-bundle nekop/yasnippet-java-mode)
+
+;; (use-package yasnippet-java-mode
+;;   :disabled t
+;;   :no-require t)

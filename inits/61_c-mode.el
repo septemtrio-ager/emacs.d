@@ -12,10 +12,19 @@
 ;;; VisualStudioのスタイルを使う
 
 ;; BSDスタイルの設定では足りない設定を補う
-(el-get-bundle vs-set-c-style
-  :url "https://myoshida-rp.googlecode.com/svn/trunk/elisp/vs-set-c-style.el"
+;; (el-get-bundle vs-set-c-style
+;;   :url "https://myoshida-rp.googlecode.com/svn/trunk/elisp/vs-set-c-style.el"
   
-  (autoload 'vs-set-c-style "vs-set-c-style")
+;;   (autoload 'vs-set-c-style "vs-set-c-style")
+;;   (add-hook 'c-mode-hook 'vs-set-c-style)
+;;   (add-hook 'c++-mode-hook 'vs-set-c-style)
+;;   )
+
+(el-get-bundle vs-set-c-style
+  :url "https://myoshida-rp.googlecode.com/svn/trunk/elisp/vs-set-c-style.el")
+
+(use-package vs-set-c-style
+  :init
   (add-hook 'c-mode-hook 'vs-set-c-style)
   (add-hook 'c++-mode-hook 'vs-set-c-style)
   )

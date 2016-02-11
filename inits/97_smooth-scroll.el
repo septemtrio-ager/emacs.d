@@ -9,8 +9,15 @@
 
 ;; ===================================================================
 
-(el-get-bundle smooth-scroll
+;; (el-get-bundle smooth-scroll
   
-  (require 'smooth-scroll)
+;;   (require 'smooth-scroll)
+;;   (smooth-scroll-mode t)
+;;   )
+
+(el-get-bundle smooth-scroll)
+
+(use-package smooth-scroll
+  :config
   (smooth-scroll-mode t)
   )

@@ -9,11 +9,21 @@
 
 ;; ===================================================================
 
-(el-get-bundle yascroll
+;; (el-get-bundle yascroll
   
+;;   ;; まずは標準のスクロールバーを消す
+;;   (scroll-bar-mode 0)
+
+;;   (require 'yascroll)
+;;   (global-yascroll-bar-mode t)
+;;   )
+
+(el-get-bundle yascroll)
+
+(use-package yascroll
+  :defer t
+  :config
   ;; まずは標準のスクロールバーを消す
   (scroll-bar-mode 0)
-
-  (require 'yascroll)
   (global-yascroll-bar-mode t)
   )

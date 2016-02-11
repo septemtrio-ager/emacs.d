@@ -18,3 +18,8 @@
   
   )
 
+(el-get-bundle centered-cursor-mode)
+
+(use-package centered-cursor-mode
+  :defer t)
+

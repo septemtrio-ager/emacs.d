@@ -9,8 +9,15 @@
 
 ;; ===================================================================
 
-(el-get-bundle helm-descbinds
+;; (el-get-bundle helm-descbinds
   
-  (require 'helm-descbinds)
-  (helm-descbinds-mode)
-  )
+;;   (require 'helm-descbinds)
+;;   (helm-descbinds-mode)
+;;   )
+
+(el-get-bundle helm-descbinds)
+
+(use-package helm-descbinds
+  :defer t
+  :config
+  (helm-descbinds-mode))

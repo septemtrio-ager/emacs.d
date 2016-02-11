@@ -27,3 +27,23 @@
 ;;   (global-set-key (kbd "C-z") 'winner-undo)
   
 ;;   )
+
+(el-get-bundle shackle)
+
+(use-package shackle
+  :disabled t
+  :config
+  (setq shackle-rules
+	'(
+	  
+	  ;; *helm* バッファをポップアップ表示させる
+	  ("^\*helm .+\*$" :regexp t :align below :radio 0.4)
+	  
+	  ))
+  (shackle-mode 1)
+  (setq shackle-lighter "")
+
+  ;; C-zで直前のウィンドウ構成に戻す
+  (winner-mode 1)
+  (global-set-key (kbd "C-z") 'winner-undo)
+  )
