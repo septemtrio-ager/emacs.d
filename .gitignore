@@ -24,7 +24,6 @@
 projectile-bookmarks.eld
 ido.last
 README.html
-.mc-lists.el
 
 # keep some directories
 auto-install/*
