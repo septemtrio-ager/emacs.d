@@ -32,5 +32,15 @@
   (electric-operator-add-rules-for-mode 'java-mode
                                         (cons "<" nil)
                                         (cons ">" nil))
+
+  (electric-operator-add-rules-for-mode 'php-mode
+					(cons "/" nil)
+					(cons "<" nil)
+					(cons ">" nil)
+					(cons "++" "++")
+					(cons "//" "// ")
+					(cons "." nil)
+					(cons "->" "->")
+					(cons "=>" " => "))
   
   )
