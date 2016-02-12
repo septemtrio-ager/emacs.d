@@ -9,6 +9,7 @@
 
 ;; ===================================================================
 
+
 (el-get-bundle auto-highlight-symbol)
 
 (use-package auto-highlight-symbol

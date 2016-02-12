@@ -16,6 +16,12 @@
   :bind ("C-x C-j" . my/dired-jump)
   
   :config
+
+  ;; フレームを分割している際一番左にpopupされると、どのバッファに対して
+  ;; ディレクトリ操作を行ったかが分かりづらくなってしまうので、
+  ;; フレームを分割していときには、other-windowではなく、同じwindowに
+  ;; 表示するようにする
+  
   (defun my/dired-jump ()
     (interactive)
     (cond (current-prefix-arg

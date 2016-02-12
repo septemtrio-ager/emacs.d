@@ -12,6 +12,16 @@
 ;; 番号のフォーマットを3桁にしておく
 (setq linum-format "%3d ")
 
+;; 背景の色を設定する
+(custom-set-faces
+ '(linum ((t (:inherit (shadow default) :background "Gray5")))))
+
+;; (custom-set-faces
+;;  '(linum ((t (:inherit (shadow default) :background "#002B36")))))
+
+;; 番号のフォーマットを3桁にしておく
+(setq linum-format "%3d ")
+
 (dolist (hook '(
 		
 		;; c系modeで利用する

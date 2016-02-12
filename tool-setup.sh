@@ -123,7 +123,7 @@ sudo apt-get install -y ess
 
 echo "# =============================================================="
 echo "#"
-echo "# What you need to install \"linter\""
+echo "# What you need to install \"lintr\""
 echo "#"
 echo "# ==============================================================="
 
@@ -131,6 +131,19 @@ echo "# ==============================================================="
 sudo apt-get install -y gfortran
 sudo apt-get install -y liblapack-dev
 sudo apt-get install -y libblas-dev
+
+echo "# =============================================================="
+echo "#"
+echo "# What you need to install \"knitr\""
+echo "#"
+echo "# ==============================================================="
+
+# knitrのセットアップに必要なもの
+# Rglをインストールする
+sudo apt-get install -y libglu1-mesa-dev
+
+# Rcurlをインストールする
+sudo apt-get install libcurl4-openssl-dev
 
 #=====================================================================
 # JDKのインストール
@@ -164,12 +177,18 @@ sudo apt-get install -y curl
 
 echo "# =============================================================="
 echo "#"
-echo "# Install GVM"
+echo "# Install SDK MAN"
 echo "#"
 echo "# ==============================================================="
 
-# GVMをインストールする
-curl -s get.gvmtool.net | bash
+# # GVMをインストールする
+# curl -s get.gvmtool.net | bash
+
+# SDKMANをインストールする
+curl -s get.sdkman.io | bash
+
+# 環境変数に反映させる
+source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 echo "# =============================================================="
 echo "#"
@@ -178,7 +197,8 @@ echo "#"
 echo "# ==============================================================="
 
 # groovyをインストールする
-gvm install groovy
+# gvm install groovy
+sdk install groovy
 
 echo "# =============================================================="
 echo "#"
@@ -187,7 +207,8 @@ echo "#"
 echo "# ==============================================================="
 
 # gradleをインストールする
-gvm install gradle
+# gvm install gradle
+sdk install gradle
 
 #=====================================================================
 # Tidyのインストール
@@ -406,3 +427,30 @@ echo "#"
 echo "# =============================================================="
 
 sudo apt-get install -y mplayer
+
+#=====================================================================
+#Geeknoteをインストール
+#=====================================================================
+
+echo "# =============================================================="
+echo "#"
+echo "# Install geeknote"
+echo "#"
+echo "# =============================================================="
+
+git clone git://github.com/VitaliyRodnenko/geeknote.git
+cd geeknote
+sudo python setup.py install
+
+#=====================================================================
+# Trampに必要なものをインストール
+#=====================================================================
+
+echo "# =============================================================="
+echo "#"
+echo "# What you need to install \"tramp\""
+echo "#"
+echo "# =============================================================="
+
+sudo apt-get install -y autoconf
+sudo apt-get install -y putty-tools

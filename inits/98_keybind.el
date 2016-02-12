@@ -14,6 +14,13 @@
 
 ;; ===================================================================
 
+;; ===================================================================
+
+;; 【参考】emacsで画面分割したウィンドウを逆向きに移動する設定
+;; http://emacs.clickyourstyle.com/articles/266
+
+;; ===================================================================
+
 ;; Ctrl-x p で逆向きへのウィンドウ移動
 (global-set-key (kbd "C-x p") (lambda () (interactive) (other-window -1)))
 
@@ -107,3 +114,6 @@
 		  (interactive)
 		  (yank)
 		  (indent-region (region-beginning) (region-end))))
+
+;; C-x C-jでopen-junk-fileを発動
+(global-set-key (kbd "C-x C-j") 'open-junk-file)

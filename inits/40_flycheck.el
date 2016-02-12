@@ -23,8 +23,4 @@
 
   ;; =================================================================
 
-  ;; Emacs Lispファイルの先頭で出る警告
-  ;; 「The first line should be of the form ...」
-  ;; のようなものを表示させないようにする。
-  
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
