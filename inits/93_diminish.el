@@ -34,6 +34,8 @@
   (safe-diminish "which-key" 'which-key-mode)
   (safe-diminish "abbrev" 'abbrev-mode)
   (safe-diminish "php-completion" 'php-completion-mode "PHP-Comp")
+  (safe-diminish "flyspell" 'flyspell-mode "FlyS")
+  
   
   ;; safe-diminishマクロがnilになってしまうので個別に設定
   (diminish 'hs-minor-mode)
