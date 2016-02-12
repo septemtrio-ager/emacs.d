@@ -19,9 +19,10 @@
 (el-get-bundle migemo)
 
 (use-package migemo
-  :defer t
+  
   :config
-  (setq migemo-command "cmigemo")
+  
+  (setq migemo-command "/usr/bin/cmigemo")
   (setq migemo-options '("-q" "--emacs"))
 
   ;; cmigemoのpathを指定
