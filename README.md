@@ -68,7 +68,7 @@ emacs.d
 ## Installation
 
 ```sh
-$ git clone https://github.com/septemtrio-ager/emacs.d.git ~/.emacs.d
+$ git clone https://github.com/shunk031/emacs.d.git
 $ cd ~/.emacs.d
 $ ./tool-setup.sh
 $ emacs
