@@ -16,12 +16,9 @@
 
 (use-package php-mode
   :defer t
-  
-  :init
+  :config
   (use-package php-completion)
   (php-completion-mode t)
-  
-  :config
   ;; array()のインデントを変更する
   (defun ywb-php-lineup-arglist-intro (langelem)
     (save-excursion
