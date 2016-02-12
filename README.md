@@ -70,7 +70,7 @@ emacs.d
 ```sh
 $ git clone https://github.com/shunk031/emacs.d.git
 $ cd ~/.emacs.d
-$ ./tool-setup.sh
+$ sh setup.shx
 $ emacs
 ```
 
