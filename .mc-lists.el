@@ -10,6 +10,7 @@
 	mwim-end-of-code-or-line
 	toggle-input-method
 	yas-expand
+	wdired-finish-edit
 	))
 
 (setq mc/cmds-to-run-once
