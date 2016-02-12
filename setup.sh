@@ -39,11 +39,12 @@ askYesOrNo() {
 
 
 
-# Create symbolic link to home directory
+# Create some symbolic links to home directory
 ln -sfn ~/emacs.d ~/.emacs.d
 echo "Created symbolic link of .emacs.d to home directory"
 
-
+ln -sfn ~/.emacs.d/etc/.aspell.conf ~/.aspell.conf
+echo "Created symbolic link of .aspell.conf to home directory"
 
 # Setup GFM preview environment
 askYesOrNo "Are you sure you want to setup GFM preview environment?"
