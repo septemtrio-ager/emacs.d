@@ -11,14 +11,16 @@
 
 * C/C++
 * Java
+* PHP
 * Python
 * R
-* HTML
-* CSS
+* HTML/CSS
+* XML/XSD
 * Lisp (Emacs Lisp)
 * Markdown (Github Flavored Markdown)
 * Arduino
 * Octave
+* TeX
 * Twitter
 
 ## Directory Configuration
