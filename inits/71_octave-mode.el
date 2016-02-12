@@ -11,18 +11,20 @@
 
 (el-get-bundle ac-octave)
 
-(setq auto-mode-alist
-      (cons '("\\.m$" . octave-mode) auto-mode-alist))
-
-(autoload 'run-octave "octave-inf" nil t)
-
-(add-hook 'octave-mode-hook
-               (lambda ()
-		 
-		 (define-key octave-mode-map (kbd "<C-return>") 'octave-send-line)
-                 
-		 (if (eq window-system 'x)
-                     (font-lock-mode 1))))
-
-
-
+(use-package octave
+  :disabled t
+  :defer t
+  
+  :mode ("\\.m$" . octave-mode)
+  
+  :commands octave-send-line
+  
+  :init
+  (use-package run-octave)
+  (add-hook 'octave-mode-hook
+		  (lambda ()
+		    (bind-key "<C-return>" 'octave-send-line octave-mode-map)))
+  
+  :if (eq window-system 'x)
+  :config
+  (font-lock-mode 1))

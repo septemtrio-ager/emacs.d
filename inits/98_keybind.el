@@ -88,6 +88,13 @@
 ;; C-x C-M-k でEmacsを終了させる 
 (global-set-key (kbd "C-x C-M-k") 'save-buffers-kill-emacs)
 
+
+
+;; C-x C-jでopen-junk-fileを発動
+(global-set-key (kbd "C-x C-j") 'open-junk-file)
+
+
+
 ;; ===================================================================
 
 ;; yank した瞬間にインデントする

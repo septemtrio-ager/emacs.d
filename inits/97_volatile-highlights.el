@@ -9,17 +9,9 @@
 
 ;; ===================================================================
 
-;; (el-get-bundle volatile-highlights
-
-;;   (require 'volatile-highlights)
-;;   (volatile-highlights-mode t)
-  
-;;   )
-
 (el-get-bundle volatile-highlights)
 
 (use-package volatile-highlights
   :defer t
   :config
-  (volatile-highlights-mode t)
-  )
+  (volatile-highlights-mode t))

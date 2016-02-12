@@ -9,16 +9,9 @@
 
 ;; ===================================================================
 
-;; (el-get-bundle undo-tree
-  
-;;   (require 'undo-tree)
-;;   (global-undo-tree-mode t)
-  
-;;   )
-
 (el-get-bundle undo-tree)
 
 (use-package undo-tree
-  :no-require t
+  ;; :defer t を入れると発動しなくなってしまうから注意 
   :config
   (global-undo-tree-mode t))

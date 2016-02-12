@@ -9,42 +9,16 @@
 
 ;; ===================================================================
 
-;; fold-dwim.elをインストールしておくこと
-
-;; C/C++モードにフックを追加
-;; (add-hook 'c++-mode-hook
-;;           '(lambda ()                                                       
-;;              (hs-minor-mode 1)))                                         
-;; (add-hook 'c-mode-hook
-;;           '(lambda ()                                                          
-;;              (hs-minor-mode 1)))
-
-;; (el-get-bundle fold-dwim
-  
-;;   (when (require 'fold-dwim nil t)
-;;     (require 'hideshow nil t)
-;;     ;;
-;;     ;; 機能を利用するメジャーモード一覧
-;;     ;;
-;;     (let ((hook))
-;;       (dolist (hook
-;; 	       '(emacs-lisp-mode-hook
-;; 		 c-mode-common-hook
-;; 		 python-mode-hook
-;; 		 php-mode-hook
-;; 		 ruby-mode-hook
-;; 		 js2-mode-hook
-;; 		 css-mode-hook
-;; 		 apples-mode-hook))
-;; 	(add-hook hook 'hs-minor-mode))))
-;;   )
-
 (el-get-bundle fold-dwim)
 
 (use-package fold-dwim
-  :no-require t
+  :defer t
   :init
+  (use-package hideshow)
   (let ((hook))
+    
+    ;; 機能を利用するメジャーモード一覧
+    
     (dolist (hook
 	     '(emacs-lisp-mode-hook
 	       c-mode-common-hook
@@ -54,8 +28,4 @@
 	       js2-mode-hook
 	       css-mode-hook
 	       apples-mode-hook))
-      (add-hook hook 'hs-minor-mode)))
-  :config
-  (require 'hideshow nil t)
-  
-  )
+      (add-hook hook 'hs-minor-mode))))

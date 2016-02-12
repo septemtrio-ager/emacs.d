@@ -30,20 +30,6 @@
 ;; $ ino build <-- Arduinoプロジェクトをビルド
 ;; $ ino upload <-- Arduinoプロジェクトを実機にアップロード
 
-
-
-;; (el-get-bundle arduino-mode
-  
-;;   (setq auto-mode-alist (cons '("\\.\\(pde\\|ino\\)$" . arduino-mode) auto-mode-alist))
-;;   (autoload 'arduino-mode "arduino-mode" "Arduino editing mode." t)
-
-;;   (add-hook 'arduino-mode-hook
-;; 	    '(lambda ()
-;; 	    (auto-complete-mode t)
-;; 	    ))
-  
-;;   )
-
 (el-get-bundle arduino-mode)
 
 (use-package arduino-mode

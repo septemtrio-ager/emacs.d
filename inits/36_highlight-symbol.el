@@ -13,6 +13,7 @@
 
 (use-package highlight-symbol
   :defer t
+  
   :init
   ;; 自動ハイライトするmodeを設定
   (dolist (hook '(
@@ -35,8 +36,9 @@
 		  
 		  ))
     (add-hook hook 'highlight-symbol-nav-mode))
+  
   :bind ("M-s M-r" . highlight-symbol-query-replace) ;; シンボル置換できるようにする
+  
   :config
   ;; 1秒後自動ハイライトされるようになる
-  (setq highlight-symbol-idle-delay 1.0)
-  )
+  (setq highlight-symbol-idle-delay 1.0))

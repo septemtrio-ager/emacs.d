@@ -11,13 +11,13 @@
 
 (el-get-bundle helm)
 
-(use-package helm-config
+(use-package helm
   :defer t
-    
-  :commands
-  (delete-backward-char helm-execute-persistent-action)
+  :commands (delete-backward-char helm-execute-persistent-action)
   
   :init
+  (use-package helm-config)
+  
   (bind-key "C-h" 'delete-backward-char helm-map)
   (bind-key "C-h" 'delete-backward-char helm-find-files-map)
   (bind-key "TAB" 'helm-execute-persistent-action helm-find-files-map)
@@ -36,10 +36,10 @@
   ;; helm-buffers-list のバッファ名の領域が狭いので
   (setq helm-buffer-max-length 50)
 
-  ;; Disable helm in some functions
+  ;; いくつかのhelmコマンドを無効にする
   (add-to-list 'helm-completing-read-handlers-alist '(find-alternate-file . nil))
 
-  ;; Emulate `kill-line' in helm minibuffer
+  ;; helmミニバッファ内でkill-lineを使えるようにする
   (setq helm-delete-minibuffer-contents-from-point t)
   (defadvice helm-delete-minibuffer-contents (before helm-emulate-kill-line activate)
     "Emulate `kill-line' in helm minibuffer"
@@ -49,7 +49,6 @@
     "Execute command only if CANDIDATE exists"
     (when (file-exists-p candidate)
       ad-do-it))
-
   
   (defadvice helm-ff-transform-fname-for-completion (around my-transform activate)
     "Transform the pattern to reflect my intention"
@@ -73,7 +72,7 @@
   (setq helm-autoresize-max-height 50)
   (setq helm-autoresize-min-height 50)
 
-  ;; helm-yasnippet
+  ;; helm-yasnippetを利用できるようにする
   (defun my-yas/prompt (prompt choices &optional display-fn)
     (let* ((names (loop for choice in choices
 			collect (or (and display-fn (funcall display-fn choice))
@@ -88,6 +87,4 @@
 	    (nth n choices))
 	(signal 'quit "user quit!"))))
 
-  (setq yas/prompt-functions '(my-yas/prompt))
-  
-  )
+  (setq yas/prompt-functions '(my-yas/prompt)))

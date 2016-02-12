@@ -9,12 +9,8 @@
 
 ;; ===================================================================
 
-;; (require 'uniquify)
-
-;; ;; filename<dir> 形式のバッファ名にする
-;; (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
-
 (use-package uniquify
+  :defer t
   :config
-  (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
-  )
+  ;; filename<dir> 形式のバッファ名にする
+  (setq uniquify-buffer-name-style 'post-forward-angle-brackets))

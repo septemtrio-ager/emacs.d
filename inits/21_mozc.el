@@ -17,6 +17,7 @@
 ;; ===================================================================
 
 (el-get-bundle mozc)
+
 (use-package mozc
   :defer t
   :init
@@ -35,13 +36,19 @@
   :bind
   ("<zenkaku-hankaku>" . toggle-input-method))
 
+
+
 (el-get-bundle mozc-popup)
+
 (use-package mozc-popup
   :config
   ;; 変換候補をポップアップで表示させるようにする
   (setq mozc-candidate-style 'popup))
 
+
+
 (el-get-bundle iRi-E/mozc-el-extensions)
+
 (use-package mozc-cursor-color
   :config
   ;; カーソルの色の設定

@@ -10,16 +10,6 @@
 
 ;; ===================================================================
 
-(el-get-bundle centered-cursor-mode
-
-  (autoload 'centered-cursor-mode "centered-cursor-mode" nil t)
-  
-  ;; (global-centered-cursor-mode 1)
-  
-  )
-
-(el-get-bundle centered-cursor-mode)
-
 (use-package centered-cursor-mode
   :defer t)
 

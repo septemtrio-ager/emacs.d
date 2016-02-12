@@ -1,5 +1,5 @@
 ;;
-;;; highlight-indentation.el
+;;; highlight-indentation.elの設定
 ;;
 
 (use-package highlight-indentation

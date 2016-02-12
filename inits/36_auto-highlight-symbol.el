@@ -9,29 +9,15 @@
 
 ;; ===================================================================
 
-;; (el-get-bundle auto-highlight-symbol
-;;   :type github :pkgname "emacsmirror/auto-highlight-symbol"
-  
-;;   (require 'auto-highlight-symbol)
-
-;;   ;; C-x C-a で、ハイライトしている変数を一括でリネームできる
-;;   (global-auto-highlight-symbol-mode t)
-  
-;;   ;; バッファ全体をハイライトの対象として、変数の一括変更ができるようにする
-;;   (custom-set-variables '(ahs-default-range (quote ahs-range-whole-buffer)))
-  
-;;   )
-
 (el-get-bundle auto-highlight-symbol)
 
 (use-package auto-highlight-symbol
   :disabled t
   :defer t
+  
   :config
   ;; C-x C-a で、ハイライトしている変数を一括でリネームできる
   (global-auto-highlight-symbol-mode t)
 
   ;; バッファ全体をハイライトの対象として、変数の一括変更ができるようにする
-  (custom-set-variables '(ahs-default-range (quote ahs-range-whole-buffer)))
-  
-  )
+  (custom-set-variables '(ahs-default-range (quote ahs-range-whole-buffer))))

@@ -17,9 +17,9 @@
 (use-package py-autopep8
   :defer t
   :commands py-autopep8-enable-on-save
+  
   :init
-  (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
-  )
+  (add-hook 'python-mode-hook 'py-autopep8-enable-on-save))
 
 ;; ===================================================================
 
@@ -57,11 +57,11 @@
 
 
 ;; elpy 色の設定 デフォルトは黄色でダサいのでauto-complete風に変更
-(custom-set-variables
- '(company-minimum-prefix-length 1)
- '(company-selection-wrap-around t))
+(setq company-minimum-prefix-length 1)
+(setq company-selection-wrap-around t)
+
 (custom-set-faces
-  '(company-scrollbar-bg ((t (:inherit company-tooltip :background "#c0c0c0"))))
+ '(company-scrollbar-bg ((t (:inherit company-tooltip :background "#c0c0c0"))))
  '(company-scrollbar-fg ((t (:background "limegreen"))))
  '(company-tooltip ((t (:background "#c0c0c0" :foreground "black"))))
  '(company-tooltip-annotation ((t (:inherit company-tooltip :foreground "black"))))
@@ -86,6 +86,7 @@
 (el-get-bundle virtualenvwrapper)
 
 (use-package virtualenvwrapper
+  :disabled t
   
   :defer t
   :config

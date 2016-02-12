@@ -9,18 +9,6 @@
 
 ;; ===================================================================
 
-;; (el-get-bundle polymode
-
-;;   ;; MARKDOWN
-;;   (add-to-list 'auto-mode-alist '("\\.md" . poly-markdown-mode))
-
-;;   ;; R modes
-;;   (add-to-list 'auto-mode-alist '("\\.Snw" . poly-noweb+r-mode))
-;;   (add-to-list 'auto-mode-alist '("\\.Rnw" . poly-noweb+r-mode))
-;;   (add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
-  
-;;   )
-
 (el-get-bundle polymode)
 
 (use-package polymode
@@ -28,5 +16,4 @@
   :mode (("\\.md" . poly-markdown-mode)
 	 ("\\.Snw" . poly-noweb+r-mode)
 	 ("\\.Rnw" . poly-noweb+r-mode)
-	 ("\\.Rmd" . poly-markdown+r-mode))
-  )
+	 ("\\.Rmd" . poly-markdown+r-mode)))

@@ -10,16 +10,9 @@
 
 ;; ===================================================================
 
-;; (el-get-bundle imenu-anywhere
-
-;;   (global-set-key (kbd "C-.") 'helm-imenu-anywhere)
-  
-;;   )
-
 (el-get-bundle imenu-anywhere)
 
 (use-package imenu-anywhere
   :disabled t
   ;; :comands helm-imenu-anywhere
-  :bind ("C-." . helm-imenu-anywhere)
-  )
+  :bind ("C-." . helm-imenu-anywhere))
