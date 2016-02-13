@@ -6,7 +6,7 @@
 
 (use-package ace-jump-helm-line
   :defer t
-  :comands (ace-jump-helm-line--with-error-fallback
+  :commands (ace-jump-helm-line--with-error-fallback
 	    ace-jump-helm-line-and-execute-action)
   :init
   (bind-key "`" 'ace-jump-helm-line--with-error-fallback helm-map)
