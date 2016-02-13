@@ -9,48 +9,63 @@
 
 ;; ===================================================================
 
-(el-get-bundle powerline
+(el-get-bundle powerline)
+
+(use-package powerline
   
-  (require 'powerline)
+  :config
+
   (powerline-default-theme)
 
   ;; モードラインを平面化する
-  (set-face-attribute 'mode-line          nil :box nil)
-  (set-face-attribute 'mode-line-inactive nil :box nil)
+  ;; (set-face-attribute 'mode-line          nil :box nil)
+  ;; (set-face-attribute 'mode-line-inactive nil :box nil)
 
-  ;; Linux Mint仕様
-  (set-face-background 'mode-line         "#006400")   ; darkgreen
-  (set-face-foreground 'mode-line         "#FFFFDC")   ; near-white
-  (set-face-background 'powerline-active1 "#32CD32")   ; lime-green
-  (set-face-foreground 'powerline-active1 "#272821")   ; near-black
-  (set-face-background 'powerline-active2 "#CDC0B0")   ; sand
-  (set-face-foreground 'powerline-active2 "#272821")   ; near-black
+  ;; ;; Linux Mint仕様
+  ;; (set-face-background 'mode-line         "#006400")   ; darkgreen
+  ;; (set-face-foreground 'mode-line         "#FFFFDC")   ; near-white
+  ;; (set-face-background 'powerline-active1 "#32CD32")   ; lime-green
+  ;; (set-face-foreground 'powerline-active1 "#272821")   ; near-black
+  ;; (set-face-background 'powerline-active2 "#CDC0B0")   ; sand
+  ;; (set-face-foreground 'powerline-active2 "#272821")   ; near-black
 
-  ;; ハロウィン仕様
-  (set-face-background 'mode-line         "#03001c")   ; very dark-blue
-  (set-face-foreground 'mode-line         "#FFFFDC")   ; near-white
-  (set-face-background 'powerline-active1 "#FE9600")   ; pure-orange
-  (set-face-foreground 'powerline-active1 "#272821")   ; near-black
-  (set-face-background 'powerline-active2 "#FFEE4A")   ; sand
-  (set-face-foreground 'powerline-active2 "#272821")   ; near-black
+  ;; ;; ハロウィン仕様
+  ;; (set-face-background 'mode-line         "#03001c")   ; very dark-blue
+  ;; (set-face-foreground 'mode-line         "#FFFFDC")   ; near-white
+  ;; (set-face-background 'powerline-active1 "#FE9600")   ; pure-orange
+  ;; (set-face-foreground 'powerline-active1 "#272821")   ; near-black
+  ;; (set-face-background 'powerline-active2 "#FFEE4A")   ; sand
+  ;; (set-face-foreground 'powerline-active2 "#272821")   ; near-black
 
-  ;; クリスマス仕様
-  (set-face-background 'mode-line         "#FF0000")   ; red
-  (set-face-foreground 'mode-line         "#FFFFDC")   ; near-white
-  (set-face-background 'powerline-active1 "#006400")   ; dark green
-  (set-face-foreground 'powerline-active1 "#FFD700")   ; gold
-  (set-face-background 'powerline-active2 "#FFFFDC")   ; near-white
-  (set-face-foreground 'powerline-active2 "#FFFFDC")   ; near-black
+  ;; ;; クリスマス仕様
+  ;; (set-face-background 'mode-line         "#FF0000")   ; red
+  ;; (set-face-foreground 'mode-line         "#FFFFDC")   ; near-white
+  ;; (set-face-background 'powerline-active1 "#006400")   ; dark green
+  ;; (set-face-foreground 'powerline-active1 "#FFD700")   ; gold
+  ;; (set-face-background 'powerline-active2 "#FFFFDC")   ; near-white
+  ;; (set-face-foreground 'powerline-active2 "#FFFFDC")   ; near-black
   
   
-  ;; inactive color
-  (set-face-background 'mode-line-inactive  "#CCCC99") ; sand
-  (set-face-foreground 'mode-line-inactive  "#272821") ; near-black
-  (set-face-background 'powerline-inactive1 "#383838") ; near black
-  (set-face-foreground 'powerline-inactive1 "#CCCCCC") ; light-gray
-  (set-face-background 'powerline-inactive2 "#626262") ; dark-gray
-  (set-face-foreground 'powerline-inactive2 "#CCCCCC") ; light-gray
+  ;; ;; inactive color
+  ;; (set-face-background 'mode-line-inactive  "#CCCC99") ; sand
+  ;; (set-face-foreground 'mode-line-inactive  "#272821") ; near-black
+  ;; (set-face-background 'powerline-inactive1 "#383838") ; near black
+  ;; (set-face-foreground 'powerline-inactive1 "#CCCCCC") ; light-gray
+  ;; (set-face-background 'powerline-inactive2 "#626262") ; dark-gray
+  ;; (set-face-foreground 'powerline-inactive2 "#CCCCCC") ; light-gray
+
   
+  ;; Solarizedテーマ仕様
+  (setq powerline-color1 "#073642")
+  (setq powerline-color2 "#002b36")
+
+  (set-face-attribute 'mode-line nil
+		      :foreground "#fdf6e3"
+		      :background "#2aa198"
+		      :box nil)
+  (set-face-attribute 'mode-line-inactive nil
+		      :box nil)
+
   ;; View mode
   (defpowerline powerline-view
     (when view-mode "View"))
@@ -61,7 +76,7 @@
 
   ;; modified-p
   (defpowerline powerline-modified
-    (if (buffer-modified-p) "mod" ""))
+    (if (buffer-modified-p) "Mod" ""))
 
   '( 
     ;; モードラインに現在の関数名を表示
@@ -81,7 +96,8 @@
                 (count-lines (region-beginning) (region-end))
                 (- (region-end) (region-beginning)))
       ""))
-
+  
+  ;; Powerlineの表示フォーマットを指定する
   (setq-default mode-line-format
                 '("%e"
                   (:eval
