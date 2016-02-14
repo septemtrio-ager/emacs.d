@@ -1,5 +1,5 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: <?php ?>
+# name: php
 # key: php
 # binding: direct-keybinding
 # --
