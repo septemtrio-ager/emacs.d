@@ -20,19 +20,8 @@
 (el-get-bundle yasnippet)
 
 (use-package yasnippet
-  :defer t
-  :commands (yas-insert-snippet yas-new-snippet yas-visit-snippet-file yas-expand)
+  ;; :defer t
   :diminish yas-minor-mode
-  
-  :init
-  (yas-global-mode 1)
-  
-  (bind-key "C-x i i" 'yas-insert-snippet yas-minor-mode-map)
-  (bind-key "C-x i n" 'yas-new-snippet yas-minor-mode-map)
-  (bind-key "C-x i v" 'yas-visit-snippet-file yas-minor-mode-map)
-  (bind-key "C-o" 'yas-expand yas-minor-mode-map)
-  (bind-key "TAB" nil yas-minor-mode-map)
-  
   :config
   (setq yas-snippet-dirs
 	'("~/.emacs.d/snippets/mysnippets"      ;; 作成したスニペット
@@ -45,4 +34,13 @@
 	  
 	  ;; "~/.emacs.d/snippets/temp-snippets"
 	  ))
+
+  (yas-global-mode 1)
+
+  (bind-key "C-x i i" 'yas-insert-snippet yas-minor-mode-map)
+  (bind-key "C-x i n" 'yas-new-snippet yas-minor-mode-map)
+  (bind-key "C-x i v" 'yas-visit-snippet-file yas-minor-mode-map)
+  (bind-key "C-o" 'yas-expand yas-minor-mode-map)
+  (bind-key "TAB" nil yas-minor-mode-map)
+  
   )
