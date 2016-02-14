@@ -11,12 +11,12 @@
 
 (el-get-bundle helm)
 
-(use-package helm
+(use-package helm-config
   :defer t
   :commands (delete-backward-char helm-execute-persistent-action)
   
   :init
-  (use-package helm-config)
+  ;; (use-package helm-config)
   
   (bind-key "C-h" 'delete-backward-char helm-map)
   (bind-key "C-h" 'delete-backward-char helm-find-files-map)
