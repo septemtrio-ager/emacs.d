@@ -164,7 +164,7 @@
       (message "stored path: %s" fPath)
       (kill-new (file-truename fPath)))))
  
-(global-set-key (kbd "C-c 0") 'my/copy-current-path)
+(bind-key "C-c 0" 'my/copy-current-path)
 
 
 
