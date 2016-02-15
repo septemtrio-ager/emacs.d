@@ -104,13 +104,16 @@
 ;; ===================================================================
 
 ;; タイマー関数を利用して現在行を目立たせる
-(defun global-hl-line-timer-function ()
-  (global-hl-line-unhighlight-all)
-  (let ((global-hl-line-mode t))
-    (global-hl-line-highlight)
-    ))
-(setq global-hl-line-timer
-      (run-with-idle-timer 0.03 t 'global-hl-line-timer-function))
+;; (use-package hl-line
+;;   :config
+
+;;   (defun global-hl-line-timer-function ()
+;;     (global-hl-line-unhighlight-all)
+;;     (let ((global-hl-line-mode t))
+;;       (global-hl-line-highlight)))
+
+;;   (setq global-hl-line-timer
+;; 	(run-with-idle-timer 0.03 t 'global-hl-line-timer-function)))
 
 
 
@@ -141,6 +144,7 @@
 
 ;; バッファに変更があったら自動で再読込する
 (global-auto-revert-mode 1)
+
 
 
 ;; ===================================================================
@@ -201,4 +205,5 @@ Otherwise indent whole buffer."
       (indent-region (region-beginning) (region-end))
     (all-indent)))
 
-(global-set-key (kbd "C-M-\\") 'electric-indent)
+;; (global-set-key (kbd "C-M-\\") 'electric-indent)
+(bind-key "C-M-\\" 'electric-indent)
