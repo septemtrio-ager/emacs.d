@@ -1,14 +1,16 @@
-;; ;;
-;; ;;; tabbar.elの設定
-;; ;;
-  
-;; ;; ===================================================================
+;;
+;;; tabbar.elの設定
+;;
 
-;; ;; 【参考】年末なのでEmacsの設定ファイルを見直しますよ
-;; ;; http://ser1zw.hatenablog.com/entry/2012/12/31/022359
+;; ===================================================================
 
-;; ;; 【参考】Emacs にタブを付ける
-;; ;; http://www.muskmelon.jp/?p=928
+;; 【参考】年末なのでEmacsの設定ファイルを見直しますよ
+;; http://ser1zw.hatenablog.com/entry/2012/12/31/022359
+
+;; ===================================================================
+
+;; 【参考】Emacs にタブを付ける
+;; http://www.muskmelon.jp/?p=928
 
 ;; ;; ===================================================================
 
@@ -44,7 +46,7 @@
   (add-hook 'after-save-hook 'ztl-modification-state-change)
   
   ;; This doesn't work for revert, I don't know.
-  ;;(add-hook 'after-revert-hook 'ztl-modification-state-change)
+  ;; (add-hook 'after-revert-hook 'ztl-modification-state-change)
   (add-hook 'first-change-hook 'ztl-on-buffer-modification)
   
   ;; 左に表示されるボタンの無効化
