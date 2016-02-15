@@ -1,5 +1,8 @@
 (setq el-get-lock-package-versions
-      '((markdown-preview-eww :checksum "5853f836425c877c8a956501f0adda137ef1d3b7")
+      '((color-theme-solarized :checksum "d7f9165adf02c01ea67a2ecc31df56c7495199e6")
+        (color-theme :checksum "88430f7ad734a6a48a238c63bcffed2c5d7e0f65")
+        (flyspell :checksum "0400d6f23984d718c1cd555ccbc5852ee9d92a37")
+        (markdown-preview-eww :checksum "5853f836425c877c8a956501f0adda137ef1d3b7")
         (tramp :checksum "da0ae8adebe61d30ef85c2fa1a604e563aef80fa")
         (polymode :checksum "b9dc94728e168e0d9365ac6a94c81bdf93df66f3")
         (highlight-symbol :checksum "c2e15fee52aebf5c8e618460b8f924331d0df2a3")
