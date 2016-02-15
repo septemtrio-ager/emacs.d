@@ -6,8 +6,11 @@
 
 (use-package ace-isearch
   :defer t
+  
   :commands isearch-forward-or-helm-swoop 
+  
   :bind ("C-s" . isearch-forward-or-helm-swoop)
+  
   :init
   (global-ace-isearch-mode 1)
   
