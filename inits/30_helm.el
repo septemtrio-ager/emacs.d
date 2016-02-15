@@ -16,8 +16,6 @@
   :commands (delete-backward-char helm-execute-persistent-action)
   
   :init
-  ;; (use-package helm-config)
-  
   (bind-key "C-h" 'delete-backward-char helm-map)
   (bind-key "C-h" 'delete-backward-char helm-find-files-map)
   (bind-key "TAB" 'helm-execute-persistent-action helm-find-files-map)
