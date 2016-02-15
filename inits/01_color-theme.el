@@ -2,25 +2,37 @@
 ;; ;;; color themeの設定
 ;; ;;
 
-;; ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/el-get")
 
-;; ;; (el-get-bundle monokai-theme
-  
-;; ;;   ;; monokaiテーマ
-;; ;;   ;; (load-theme 'monokai t)
-  
-;; ;;   )
 
+;; ;; tango-darkテーマ(デフォルト)
+;; ;; (load-theme 'tango-dark t)
+
+
+
+(el-get-bundle solarized-emacs)
 (use-package solarized-theme
+  ;; :disabled t
   :config
   (setq solarized-distinct-fringe-background t)
   (setq solarized-high-contrast-mode-line t)
   (setq solarized-use-more-italic t)
-  (load-theme 'solarized-dark t)
-  )
+  (load-theme 'solarized-dark t))
 
-;; ;; tango-darkテーマ(デフォルト)
-;; ;; (load-theme 'tango-dark t)
+
+
+(el-get-bundle sublime-themes)
+(use-package emacs-color-themes
+  :disabled t
+  :config
+  (load-theme 'spolsky t))
+
+
+
+(el-get-bundle monokai-theme)
+(use-package monokai-theme
+  :disabled t
+  :config
+  (load-theme 'monokai t))
 
 
 
@@ -42,8 +54,12 @@
 ;; ;; fringeの設定
 ;; ;; (ウィンドウ左右にある余白)
 
+
+
 ;; ;; 左だけfringeを表示させるようにする
-;; (fringe-mode '(7 . 2))
+(fringe-mode '(7 . 2))
+
+
 
 ;; ;; 色の変更
 ;; ;; (set-face-background 'fringe "gray10")
