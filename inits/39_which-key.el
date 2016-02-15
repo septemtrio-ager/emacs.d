@@ -12,6 +12,7 @@
 (el-get-bundle justbur/which-key)
 
 (use-package which-key
+  :disabled t
   :config
   
   ;; which-key発動までの時間を設定

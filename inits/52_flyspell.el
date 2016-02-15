@@ -3,7 +3,7 @@
 ;;
 
 (use-package flyspell
-  :disable t
+  :disabled t
   :commands flyspell-correct-word-popup-el
   :init
   (add-hook 'markdown-mode-hook 'flyspell-mode)
