@@ -6,6 +6,13 @@
 
 (use-package geeknote
   :defer t
+  :commands (geeknote-create
+	    geeknote-edit
+	    geeknote-find
+	    geeknote-show
+	    geeknote-remove
+	    geeknote-move)
+  
   :bind (("C-c g c" . geeknote-create)
 	 ("C-c g e" . geeknote-edit)
 	 ("C-c g f" . geeknote-find)

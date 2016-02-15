@@ -215,7 +215,8 @@
    :background "#586e75"
    :foreground "#586e75"
    :box '(:line-width 3 :color "#586e75" :style nil)
-   :height 0.8)
+   ;; :height 0.8
+   )
 
   (set-face-attribute
    'tabbar-unselected nil

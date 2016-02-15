@@ -12,11 +12,15 @@
 (el-get-bundle web-mode)
 
 (use-package web-mode
-  :load-path "/usr/bin/tidy"
+  ;; :load-path "/usr/bin/tidy"
   
-  :commands web-mode-comment-or-uncomment
+  ;; :commands web-mode-comment-or-uncomment
   
-  :mode ("\\.\\(html\\|xhtml\\|shtml\\|tpl\\)\\'" . web-mode)
+  ;; :mode ("\\.\\(html\\|xhtml\\|shtml\\|tpl\\)\\'" . web-mode)
+  :mode (("\\.html?\\'" . web-mode)
+	 ("\\.xhtml\\'" . web-mode)
+	 ("\\.shtml\\'" . web-mode)
+	 ("\\.tpl\\'" . web-mode))
 
   :init
   ;; (bind-key "C-c ;" 'web-mode-comment-or-uncomment web-mode-map)

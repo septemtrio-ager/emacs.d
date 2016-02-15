@@ -3,8 +3,8 @@
 ;;
 
 ;; 背景の色を設定する
-(custom-set-faces
- '(linum ((t (:inherit (shadow default) :background "Gray5")))))
+;; (custom-set-faces
+;;  '(linum ((t (:inherit (shadow default) :background "Gray5")))))
 
 ;; (custom-set-faces
 ;;  '(linum ((t (:inherit (shadow default) :background "#002B36")))))
@@ -13,8 +13,8 @@
 (setq linum-format "%3d ")
 
 ;; 背景の色を設定する
-(custom-set-faces
- '(linum ((t (:inherit (shadow default) :background "Gray5")))))
+;; (custom-set-faces
+;;  '(linum ((t (:inherit (shadow default) :background "Gray5")))))
 
 ;; (custom-set-faces
 ;;  '(linum ((t (:inherit (shadow default) :background "#002B36")))))

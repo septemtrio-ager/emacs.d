@@ -21,6 +21,7 @@
 (el-get-bundle yascroll)
 
 (use-package yascroll
+  :defer t
   :init
   (scroll-bar-mode 0)
   :config

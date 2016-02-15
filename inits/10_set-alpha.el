@@ -13,3 +13,5 @@
   "set frame parameter 'alpha"
   (interactive "nAlpha:")
   (set-frame-parameter nil 'alpha (cons alpha-num '(80))))
+
+(bind-key "M-s M-a" 'set-alpha)
