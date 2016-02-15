@@ -80,6 +80,11 @@ $ emacs
 
 
 
+## Byte compile
+
+inits下の設定ファイルをバイトコンパイルするには、diredでinitsを開き、`m`でファイルを選択してから`B`を実行することでバイトコンパイルされる
+
+
 ## Recommended Settings
 
 ### CapsLockキーをCtrlキーに変更する  
