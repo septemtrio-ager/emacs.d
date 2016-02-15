@@ -45,8 +45,11 @@
 (el-get-bundle init-loader
 
   (require 'init-loader)
-  (init-loader-load "~/.emacs.d/inits")
-
+  
+  ;; 設定ファイルのあるフォルダを指定
+  (setq inits_dir (expand-file-name "~/.emacs.d/inits/"))
+  (init-loader-load inits_dir)
+  
   ;; 読み込みエラーが発生したときだけエラーログを表示
   (setq init-loader-show-log-after-init 'error-only)
 
@@ -68,4 +71,24 @@
 	   ;; (init-loader-error-log (error-message-string e)) ；削除
 	   (init-loader-error-log (format "%s. %s" (locate-library el) (error-message-string e))) ;追加
 	   )))))
+
+  ;; inits フォルダのみ, 保存時に自動コンパイルして即反映させる
+  ;; http://fukuyama.co/emacsd
+  (defun auto-save-byte-compile-file ()
+    "Do `byte-compile-file' and reload setting immediately, When elisp file saved only in inits folder."
+    (interactive)
+    (when (or (equal default-directory inits_dir)
+	      (equal default-directory (abbreviate-file-name inits_dir)))
+      (byte-compile-file buffer-file-name t)
+      ))
+
+  (add-hook 'emacs-lisp-mode-hook
+	    (lambda ()
+	      (add-hook 'after-save-hook 'auto-save-byte-compile-file nil t)))
+  
   )
+
+
+
+
+
