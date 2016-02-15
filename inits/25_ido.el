@@ -13,8 +13,10 @@
 
 (use-package ido
   :defer t
-  :init (ido-mode 1)
+  
   :config
+  (use-package ido-occasional)
+  
   ;; このときidoが使うwindowの高さは大きくした方がいい
   (setq ido-max-window-height 0.75)
   
@@ -27,7 +29,7 @@
 
 (use-package ido-vertical-mode
   :defer t
-  :config
+  :init
   (ignore-errors
     (ido-vertical-mode 1)
     ;; 2015/7/7最近の変更によりC-n/C-p
