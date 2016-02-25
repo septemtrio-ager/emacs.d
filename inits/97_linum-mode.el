@@ -62,6 +62,9 @@
 
 		;; yatex-modeで利用する
 		yatex-mode-hook
+
+		;; graphviz-dot-modeで利用する
+		graphviz-dot-mode-hook
 		
 		))
   (add-hook hook 'linum-mode))
