@@ -55,7 +55,8 @@
 		  nxml-mode
 		  python-mode
 		  yatex-mode
-		  arduino-mode))
+		  arduino-mode
+		  graphviz-dot-mode))
     (add-to-list 'ac-modes mode))
 
   ;; acが発動するまでの文字数を指定する
