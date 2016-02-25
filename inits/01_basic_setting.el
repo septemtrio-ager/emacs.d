@@ -34,9 +34,9 @@
 
 
 ;; 終了時に自動でプロセスをkill
-(defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
-  "Prevent annoying \"Active processes exist\" query when you quit Emacs."
-  (flet ((process-list ())) ad-do-it))
+;; (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
+;;   "Prevent annoying \"Active processes exist\" query when you quit Emacs."
+;;   (flet ((process-list ())) ad-do-it))
 
 
 
@@ -205,5 +205,4 @@ Otherwise indent whole buffer."
       (indent-region (region-beginning) (region-end))
     (all-indent)))
 
-;; (global-set-key (kbd "C-M-\\") 'electric-indent)
 (bind-key "C-M-\\" 'electric-indent)
