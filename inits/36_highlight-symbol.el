@@ -37,7 +37,7 @@
 		  ))
     (add-hook hook 'highlight-symbol-nav-mode))
   
-  :bind ("M-s M-r" . highlight-symbol-query-replace) ;; シンボル置換できるようにする
+  :bind ("C-c r" . highlight-symbol-query-replace) ;; シンボル置換できるようにする
   
   :config
   ;; 1秒後自動ハイライトされるようになる
