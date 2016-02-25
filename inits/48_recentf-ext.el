@@ -9,16 +9,21 @@
 
 ;; ===================================================================
 
-(el-get-bundle recentf-ext
-
-  (require 'recentf-ext)
+(el-get-bundle recentf-ext)
+(use-package recentf-ext
+  :defer t
+  :init
+  (add-hook 'after-init-hook
+	    (lambda()
+	      (recentf-open-files)))
+  
+  :config
   (setq recentf-max-saved-items 100)
   (setq recentf-exclude '(".recentf"))
   (setq recentf-auto-cleanup 10)
   (setq recentf-auto-save-timer (run-with-idle-timer 30 t 'recentf-save-list))
   (recentf-mode 1)
 
-  
   ;; =================================================================
 
   ;;【参考】recentf のホームディレクトリを "~" に置換
@@ -43,15 +48,4 @@
     (save-excursion
       (while (re-search-forward "\\(^  \\[[0-9]\\] \\|^  \\)\\(.*/\\)$" nil t nil)
 	(overlay-put (make-overlay (match-beginning 2) (match-end 2))
-		     'face `((:foreground ,"#F1266F"))))))
-
-  
-  
-  (add-hook 'after-init-hook
-	    (lambda()
-	      (recentf-open-files)
-	      ))
-
-  ;; (global-set-key (kbd "C-x C-r") 'recentf-open-files)
-  
-  )
+		     'face `((:foreground ,"#F1266F")))))))
