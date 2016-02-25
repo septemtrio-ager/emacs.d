@@ -9,14 +9,10 @@
 
 ;; ===================================================================
 
-(el-get-bundle adaptive-wrap
+(use-package adaptive-wrap
+  :defer t
   
-    ;; 折り返したあと、次の行にインデントされた状態にする
-  ;; M-x adaptive-wrap-prefix-mode
-  ;; で使うことができる
-
-  ;; 利用するモードにhookしておく
-
+  :init
   (dolist
       (hook '(
 	      
@@ -28,6 +24,9 @@
 
 	      ;; emacs-lisp-modeで利用する
 	      emacs-lisp-mode-hook
+
+	      ;; graphviz-dot-modeで利用する
+	      graphviz-dot-mode-hook
 	      
 	      ))
     (add-hook hook 'adaptive-wrap-prefix-mode))
