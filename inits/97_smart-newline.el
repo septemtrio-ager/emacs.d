@@ -9,14 +9,14 @@
 
 ;; ===================================================================
 
-(el-get-bundle smart-newline
+;; keybind.el にて
+;;    (global-set-key (kbd "RET") 'smart-newline)
+;; として設定してある
+;; 個々には設定が効かないモードについて個別にhookさせる
 
-  ;; keybind.el にて
-  
-  ;; (global-set-key (kbd "RET") 'smart-newline)
-  
-  ;; として設定してある
-
+(el-get-bundle smart-newline)
+(use-package smart-newline
+  :init
   ;; 個別にモードごとに設定をする
   (dolist
       (hook
@@ -30,10 +30,8 @@
 	 
 	 ;; gfm-modeで利用するようにする
 	 gfm-mode-hook
-		  
+	 
 	 ))
     (add-hook hook
 	      (lambda ()
-		(smart-newline-mode 1))))
-
-  )
+		(smart-newline-mode 1)))))
