@@ -37,7 +37,7 @@ askYesOrNo() {
     done
 }
 
-
+DOTEMACS=~/.emacs.d
 
 # Create some symbolic links to home directory
 ln -sfn ~/emacs.d ~/.emacs.d
@@ -47,7 +47,8 @@ ln -sfn ~/.emacs.d/etc/.aspell.conf ~/.aspell.conf
 echo "Created symbolic link of .aspell.conf to home directory"
 
 # Setup GFM preview environment
-askYesOrNo "Are you sure you want to setup GFM preview environment?"
+askYesOrNo "
+Are you sure you want to setup GFM preview environment?"
 if [ $? -eq 0 ]; then
     
     sudo ln -sfn ~/emacs.d/etc/markdown /bin/markdown
@@ -58,4 +59,23 @@ if [ $? -eq 0 ]; then
     
 else
     echo "Setting up GFM preview environment has been canceled."
+fi
+
+# Setup emacs-realtime-markdown-viewer settings
+askYesOrNo "
+Are you sure you want to setup emacs-realtime-markdown-viewer settings?"
+if [ $? -eq 0]; then
+    
+    dir=~/.emacs.d/el-get/emacs-realtime-markdown-viewer
+
+    if [ -e $dir ]; then
+	cd $dir
+	cpanm --installdeps .
+	echo "You can use emacs-realtime-markdown-viewer."
+	cd $DOTEMACS
+    else
+	echo "Can't find $dir"
+    fi
+else
+    echo "Setting up has been canceled."
 fi
