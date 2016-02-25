@@ -13,7 +13,8 @@
 
 (use-package polymode
   :defer t
-  :mode (("\\.md" . poly-markdown-mode)
+  :mode (
+	 ;; ("\\.md" . poly-markdown-mode)
 	 ("\\.Snw" . poly-noweb+r-mode)
 	 ("\\.Rnw" . poly-noweb+r-mode)
 	 ("\\.Rmd" . poly-markdown+r-mode)))
