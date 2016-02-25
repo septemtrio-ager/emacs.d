@@ -9,10 +9,11 @@
 
 ;; ===================================================================
 
-(el-get-bundle electric-operator
-
-  (require 'electric-operator)
-
+(el-get-bundle electric-operator)
+(use-package electric-operator
+  :defer t
+  
+  :init
   (dolist (hook '(
 
 		  ;;c系modeで利用する
@@ -26,21 +27,25 @@
 		  
 		  ))
     (add-hook hook #'electric-operator-mode))
-
+  
+  :config
+  
   ;; ジェネリクス型を利用する際に無駄なスペースが入ってしまうために
   ;; java-modeでは"<"と">"において動作しないようにした
-  (electric-operator-add-rules-for-mode 'java-mode
-                                        (cons "<" nil)
-                                        (cons ">" nil))
+  (electric-operator-add-rules-for-mode
+   'java-mode
+   (cons "<" nil)
+   (cons ">" nil))
 
-  (electric-operator-add-rules-for-mode 'php-mode
-					(cons "/" nil)
-					(cons "<" nil)
-					(cons ">" nil)
-					(cons "++" "++")
-					(cons "//" "// ")
-					(cons "." nil)
-					(cons "->" "->")
-					(cons "=>" " => "))
+  (electric-operator-add-rules-for-mode
+   'php-mode
+   (cons "/" nil)
+   (cons "<" nil)
+   (cons ">" nil)
+   (cons "++" "++")
+   (cons "//" "// ")
+   (cons "." nil)
+   (cons "->" "->")
+   (cons "=>" " => "))
   
   )
