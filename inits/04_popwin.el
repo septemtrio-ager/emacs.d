@@ -40,8 +40,7 @@
     :defer t
     :config
     ;; yatex-modeの *YaTeX-typesetting* バッファをポップアップ表示させる
-    (push '("*YaTeX-typesetting*") popwin:special-display-config)
-    )
+    (push '("*YaTeX-typesetting*") popwin:special-display-config))
   
   ;; (require 'popwin-yatex) するとエラーが出るから、
   ;; popwin-yatexのコードをここに転記した
@@ -56,5 +55,8 @@
 
   ;; yatex-modeの *YaTeX-typesetting* バッファをポップアップ表示させる
   ;; (push '("*YaTeX-typesetting*") popwin:special-display-config)
+
+  ;; *compilation* バッファをポップアップ表示させる
+  (push '("*compilation*" :height 10) popwin:special-display-config)
   
   )
