@@ -1,5 +1,9 @@
 (setq el-get-lock-package-versions
-      '((sublime-themes :checksum "2b37d0def434871a2c0d3476f5b7eeeed9bb90b2")
+      '((graphviz-dot-mode :checksum "ca0f15158c3bbd516549532be1dd35bc51462c84")
+        (emacs-websocket :checksum "fca05614306c455af1cf783bc97021527050dcc6")
+        (websocket :checksum "fca05614306c455af1cf783bc97021527050dcc6")
+        (emacs-realtime-markdown-viewer :checksum "31f8cd04acbc1f8dd342a47463db1da7ddd31e06")
+        (sublime-themes :checksum "2b37d0def434871a2c0d3476f5b7eeeed9bb90b2")
         (solarized-emacs :checksum "d518af81dbe14c4ae710115e6b7de94587436f21")
         (color-theme-solarized :checksum "d7f9165adf02c01ea67a2ecc31df56c7495199e6")
         (color-theme :checksum "88430f7ad734a6a48a238c63bcffed2c5d7e0f65")
