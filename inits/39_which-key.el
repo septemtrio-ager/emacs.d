@@ -9,10 +9,10 @@
 
 ;; ===================================================================
 
-(el-get-bundle justbur/which-key)
+(el-get-bundle justbur/emacs-which-key)
 
 (use-package which-key
-  :disabled t
+  ;; :disabled t
   :config
   
   ;; which-key発動までの時間を設定
