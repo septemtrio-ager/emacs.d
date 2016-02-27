@@ -128,7 +128,10 @@ GUIのmozcよりEmacsのmozcを優先させるには以下のような設定を�
 【参考】プログラミング用フォント Ricty  
 https://github.com/yascentur/Ricty
 
- 1. `Inconsolata.otf, Migu 1M(migu-1m-bold.ttf, migu-1m-regular.ttf)`をダウンロードし、同じディレクトリに置く
+ 1. `Inconsolata.otf, Migu 1M(migu-1m-bold.ttf, migu-1m-regular.ttf)`をダウンロードし、同じディレクトリに置く  
+   [Inconsolata-Regular.ttf のダウンロード](https://github.com/google/fonts/raw/master/ofl/inconsolata/Inconsolata-Regular.ttf)  
+   [Inconsolata-Bold.ttf のダウンロード](https://github.com/google/fonts/raw/master/ofl/inconsolata/Inconsolata-Bold.ttf)  
+   [migu-1m-20150712.zip のダウンロード](https://osdn.jp/projects/mix-mplus-ipa/downloads/63545/migu-1m-20150712.zip/)  
  2. githubからRictyをダウンロードし、`ricty_generator.sh`を1と同様のディレクトリに置く
  3. `$ ./ricty_generator.sh auto`を実行してRictyフォントを生成
  4. 以下のコマンドを実行してフォントをインストール
