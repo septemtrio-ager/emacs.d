@@ -37,7 +37,7 @@ askYesOrNo() {
     done
 }
 
-DOTEMACS=~/.emacs.d
+DOTEMACS=$HOME/emacs.d
 
 # Create some symbolic links to home directory
 ln -sfn ~/emacs.d ~/.emacs.d
@@ -64,7 +64,7 @@ fi
 # Setup emacs-realtime-markdown-viewer settings
 askYesOrNo "
 Are you sure you want to setup emacs-realtime-markdown-viewer settings?"
-if [ $? -eq 0]; then
+if [ $? -eq 0 ]; then
     
     dir=~/.emacs.d/el-get/emacs-realtime-markdown-viewer
 
