@@ -211,7 +211,7 @@ http://blog.shinofara.xyz/archives/354/
 
 ### CSS Lintをインストールする
 
-`tool-setup.sh`を実行することでCSS Lintをインストールするために必要な
+`setup.sh`を実行することでCSS Lintをインストールするために必要な
 `node.js`・`npm`・`csslint`をインストールすることができる。
 
 ```sh
