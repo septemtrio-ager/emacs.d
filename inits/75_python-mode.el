@@ -31,9 +31,9 @@
 
 (el-get-bundle elpy)
 (use-package elpy
-  :defer t
   :config
-  (elpy-enable))
+  (elpy-enable)
+  (setq elpy-rpc-backend "jedi"))
 
 ;; ===================================================================
 
@@ -47,28 +47,28 @@
 	     ;;
 	     ;; companyの補完をC-n,C-pで選択できるようにする
 	     ;;
-              (define-key company-active-map (kbd "\C-n") 'company-select-next)
-              (define-key company-active-map (kbd "\C-p") 'company-select-previous)
-	      ;;
-	      ;; companyとの衝突を防ぐためにauto-completeをOFFに
-	      ;;
-              ;; (auto-complete-mode -1)
-              ))
+	     ;; (define-key company-active-map (kbd "\C-n") 'company-select-next)
+	     ;; (define-key company-active-map (kbd "\C-p") 'company-select-previous)
+	     ;;
+	     ;; companyとの衝突を防ぐためにauto-completeをOFFに
+	     ;;
+	     ;; (auto-complete-mode -1)
+	     ))
 
 
 ;; elpy 色の設定 デフォルトは黄色でダサいのでauto-complete風に変更
-(setq company-minimum-prefix-length 1)
-(setq company-selection-wrap-around t)
+;; (setq company-minimum-prefix-length 1)
+;; (setq company-selection-wrap-around t)
 
-(custom-set-faces
- '(company-scrollbar-bg ((t (:inherit company-tooltip :background "#c0c0c0"))))
- '(company-scrollbar-fg ((t (:background "limegreen"))))
- '(company-tooltip ((t (:background "#c0c0c0" :foreground "black"))))
- '(company-tooltip-annotation ((t (:inherit company-tooltip :foreground "black"))))
- '(company-tooltip-common ((t (:inherit company-tooltip :foreground "black"))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :foreground "black"))))
- '(company-tooltip-selection ((t (:background "limegreen" :foreground "white"))))
- )
+;; (custom-set-faces
+;;  '(company-scrollbar-bg ((t (:inherit company-tooltip :background "#c0c0c0"))))
+;;  '(company-scrollbar-fg ((t (:background "limegreen"))))
+;;  '(company-tooltip ((t (:background "#c0c0c0" :foreground "black"))))
+;;  '(company-tooltip-annotation ((t (:inherit company-tooltip :foreground "black"))))
+;;  '(company-tooltip-common ((t (:inherit company-tooltip :foreground "black"))))
+;;  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :foreground "black"))))
+;;  '(company-tooltip-selection ((t (:background "limegreen" :foreground "white"))))
+;;  )
 
 ;; ===================================================================
 
