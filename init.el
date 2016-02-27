@@ -87,8 +87,3 @@
 	      (add-hook 'after-save-hook 'auto-save-byte-compile-file nil t)))
   
   )
-
-
-
-
-

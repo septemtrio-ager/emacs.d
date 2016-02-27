@@ -37,18 +37,19 @@ askYesOrNo() {
     done
 }
 
-DOTEMACS=$HOME/emacs.d
+DOTEMACS=$HOME/.emacs.d
 
 # Create some symbolic links to home directory
 ln -sfn ~/emacs.d ~/.emacs.d
 echo "Created symbolic link of .emacs.d to home directory"
 
-ln -sfn ~/.emacs.d/etc/.aspell.conf ~/.aspell.conf
+ln -sfn ~/emacs.d/etc/aspell.conf ~/.aspell.conf
 echo "Created symbolic link of .aspell.conf to home directory"
+
 
 # Setup GFM preview environment
 askYesOrNo "
-Are you sure you want to setup GFM preview environment?"
+Are you sure you want to \"setup GFM preview environment\"?"
 if [ $? -eq 0 ]; then
     
     sudo ln -sfn ~/emacs.d/etc/markdown /bin/markdown
@@ -61,9 +62,10 @@ else
     echo "Setting up GFM preview environment has been canceled."
 fi
 
+
 # Setup emacs-realtime-markdown-viewer settings
 askYesOrNo "
-Are you sure you want to setup emacs-realtime-markdown-viewer settings?"
+Are you sure you want to \"setup emacs-realtime-markdown-viewer settings\"?"
 if [ $? -eq 0 ]; then
     
     dir=~/.emacs.d/el-get/emacs-realtime-markdown-viewer
@@ -79,3 +81,14 @@ if [ $? -eq 0 ]; then
 else
     echo "Setting up has been canceled."
 fi
+
+
+# Setup Python development environment
+askYesOrNo "
+Are you sure you want to setup \"python development environment\"?"
+if [ $? -eq 0 ]; then
+    pip install --user autopep8 rope jedi flake8 importmagic yapf
+else
+    echo "Setting up has been canceled."
+fi
+
