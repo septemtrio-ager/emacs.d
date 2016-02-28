@@ -12,8 +12,6 @@
 (el-get-bundle eval-in-repl)
 
 (use-package eval-in-repl
-  :defer t
-  
   :commands (eir-eval-in-python)
   
   :config
