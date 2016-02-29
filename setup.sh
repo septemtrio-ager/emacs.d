@@ -87,7 +87,7 @@ fi
 askYesOrNo "
 Are you sure you want to setup \"python development environment\"?"
 if [ $? -eq 0 ]; then
-    pip install --user autopep8 rope jedi flake8 importmagic yapf
+    pip install autopep8 rope jedi flake8 importmagic yapf
 else
     echo "Setting up has been canceled."
 fi
