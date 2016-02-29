@@ -11,9 +11,9 @@
 
 (el-get-bundle eval-in-repl)
 
-(use-package eval-in-repl
-  :commands (eir-eval-in-python)
-  
-  :config
-  ;; python-modeで利用する
-  (bind-key "<C-return>" 'eir-eval-in-python python-mode-map))
+(use-package eval-in-repl-python
+  :commands eir-eval-in-python)
+
+(add-hook 'python-mode-hook
+          '(lambda ()
+             (local-set-key (kbd "<C-return>") 'eir-eval-in-python)))
