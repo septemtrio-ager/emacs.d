@@ -5,6 +5,6 @@
 (el-get-bundle point-undo)
 
 (use-package point-undo
-  :bind (("<f7>" . point-undo)
-	 ("S-<f7>" . point-redo))
-)
+  :config
+  (bind-key "<f7>" 'point-undo)
+  (bind-key "S-<f7>" 'point-redo))
