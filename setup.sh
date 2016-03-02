@@ -87,7 +87,12 @@ fi
 askYesOrNo "
 Are you sure you want to setup \"python development environment\"?"
 if [ $? -eq 0 ]; then
+    
+    # install the modules required for python development environment 
     pip install autopep8 rope jedi flake8 importmagic yapf
+    
+    # install ipython and dependency: matplotlib
+    pip install ipython matplotlib
 else
     echo "Setting up has been canceled."
 fi
