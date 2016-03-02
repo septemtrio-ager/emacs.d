@@ -33,6 +33,7 @@
 (use-package elpy
   :config
   (elpy-enable)
+  (elpy-use-ipython)
   (setq elpy-rpc-backend "jedi"))
 
 ;; ===================================================================
@@ -77,9 +78,9 @@
 
 ;; ===================================================================
 
-(defun python-shell-parse-command ()
-  "Return the string used to execute the inferior Python process."
-  "python3 -i")
+;; (defun python-shell-parse-command ()
+;;   "Return the string used to execute the inferior Python process."
+;;   "python3 -i")
 
 
 
@@ -94,3 +95,10 @@
   (venv-initialize-eshell) ;; if you want eshell support
   )
 
+;; (el-get-bundle pyenv-mode)
+;; (use-package pyenv-mode
+;;   :config
+;;   (pyenv-mode))
+
+;; (el-get-bundle pyenv-mode-auto)
+;; (use-package pyenv-mode-auto)
