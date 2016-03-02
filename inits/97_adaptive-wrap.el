@@ -10,8 +10,7 @@
 ;; ===================================================================
 
 (use-package adaptive-wrap
-  :defer t
-  
+    
   :init
   (dolist
       (hook '(
@@ -29,6 +28,4 @@
 	      graphviz-dot-mode-hook
 	      
 	      ))
-    (add-hook hook 'adaptive-wrap-prefix-mode))
-  
-  )
+    (add-hook hook 'adaptive-wrap-prefix-mode)))
