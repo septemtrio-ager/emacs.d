@@ -74,9 +74,13 @@
 
 ;; Emacs サーバを起動する
 ;; R だと edit や fix を実行する時に必要
-(when (require 'server nil t)
-  (if (not (server-running-p))
-      (server-start)))
+(require 'server)
+(unless (server-running-p)
+  (server-start))
+
+;; (when (require 'server nil t)
+;;   (unless (server-running-p)
+;;     (server-start)))
 
 
 
