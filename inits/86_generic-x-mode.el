@@ -3,4 +3,5 @@
 ;;
 
 (use-package generic-x
-  :defer t)
+  ;; :defer t
+  )
