@@ -9,6 +9,8 @@
 
 ;; ===================================================================
 
+(el-get-bundle adaptive-wrap)
+
 (use-package adaptive-wrap
     
   :init
