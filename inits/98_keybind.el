@@ -97,8 +97,12 @@
 
 
 
-;; C-x C-jでopen-junk-fileを発動
+;; C-x C-j でopen-junk-fileを発動
 (global-set-key (kbd "C-x C-j") 'open-junk-file)
+
+
+;; C-h でbackspace
+(global-set-key (kbd "C-h") 'delete-backward-char)
 
 
 
