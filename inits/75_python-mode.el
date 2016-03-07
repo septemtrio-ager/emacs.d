@@ -36,26 +36,13 @@
   (elpy-use-ipython)
   (setq elpy-rpc-backend "jedi"))
 
+
 ;; ===================================================================
 
 ;; 【参考】Emacsの上にも3年
 ;; http://ksknw.hatenablog.com/entry/2015/02/11/202320
 
 ;; ===================================================================
-
-(add-hook 'python-mode-hook
-	  '(lambda ()
-	     ;;
-	     ;; companyの補完をC-n,C-pで選択できるようにする
-	     ;;
-	     ;; (define-key company-active-map (kbd "\C-n") 'company-select-next)
-	     ;; (define-key company-active-map (kbd "\C-p") 'company-select-previous)
-	     ;;
-	     ;; companyとの衝突を防ぐためにauto-completeをOFFに
-	     ;;
-	     ;; (auto-complete-mode -1)
-	     ))
-
 
 ;; elpy 色の設定 デフォルトは黄色でダサいのでauto-complete風に変更
 ;; (setq company-minimum-prefix-length 1)
@@ -81,24 +68,3 @@
 ;; (defun python-shell-parse-command ()
 ;;   "Return the string used to execute the inferior Python process."
 ;;   "python3 -i")
-
-
-
-(el-get-bundle virtualenvwrapper)
-
-(use-package virtualenvwrapper
-  :disabled t
-  
-  :defer t
-  :config
-  (venv-initialize-interactive-shells) ;; if you want interactive shell support
-  (venv-initialize-eshell) ;; if you want eshell support
-  )
-
-;; (el-get-bundle pyenv-mode)
-;; (use-package pyenv-mode
-;;   :config
-;;   (pyenv-mode))
-
-;; (el-get-bundle pyenv-mode-auto)
-;; (use-package pyenv-mode-auto)
