@@ -56,7 +56,8 @@
 		  python-mode
 		  yatex-mode
 		  arduino-mode
-		  graphviz-dot-mode))
+		  graphviz-dot-mode
+		  php-mode))
     (add-to-list 'ac-modes mode))
 
   ;; acが発動するまでの文字数を指定する
