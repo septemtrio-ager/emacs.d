@@ -22,48 +22,29 @@
 	 ("\\.shtml\\'" . web-mode)
 	 ("\\.tpl\\'" . web-mode)
 	 ("\\.blade\\.php\\'" . web-mode))
-
-  :init
-  ;; (bind-key "C-c ;" 'web-mode-comment-or-uncomment web-mode-map)
   
   :config
-  ;; web-modeの設定
-  (setq web-mode-markup-indent-offset 2) ;; html indent
-  (setq web-mode-css-indent-offset 2)    ;; css indent
-  (setq web-mode-code-indent-offset 2)   ;; script indent(js,php,etc..)
 
-  ;; htmlの内容をインデント
-  ;; TEXTAREA等の中身をインデントすると副作用が起こったりするので
-  ;; デフォルトではインデントしない
-  ;;(setq web-mode-indent-style 2)
-  ;; コメントのスタイル
-  ;;   1:htmlのコメントスタイル(default)
-  ;;   2:テンプレートエンジンのコメントスタイル
-  ;;      (Ex. {# django comment #},{* smarty comment *},{{-- blade comment --}})
-
-  (setq web-mode-comment-style 2)
-
-  ;; 終了タグの自動補完をしない
-  ;;(setq web-mode-disable-auto-pairing t)
-  ;; color:#ff0000;等とした場合に指定した色をbgに表示しない
-  ;;(setq web-mode-disable-css-colorization t)
-  ;;css,js,php,etc..の範囲をbg色で表示
-  ;; (setq web-mode-enable-block-faces t)
-  ;; (custom-set-faces
-  ;;  '(web-mode-server-face
-  ;;    ((t (:background "grey"))))                  ; template Blockの背景色
-  ;;  '(web-mode-css-face
-  ;;    ((t (:background "grey18"))))                ; CSS Blockの背景色
-  ;;  '(web-mode-javascript-face
-  ;;    ((t (:background "grey36"))))                ; javascript Blockの背景色
-  ;;  )
-  ;;(setq web-mode-enable-heredoc-fontification t)
-
-  ;; 現在の要素をハイライトする
-  (setq web-mode-enable-current-element-highlight t)
-
-  ;; 現在の要素の列をハイライトする
-  ;; (setq web-mode-enable-current-column-highlight t)
+  (defun my-web-mode-hook ()
+    
+    "Hooks for Web mode."
+    
+    ;; web-modeの設定
+    (setq web-mode-markup-indent-offset 2) ;; html indent
+    (setq web-mode-css-indent-offset 2)    ;; css indent
+    (setq web-mode-code-indent-offset 2)   ;; script indent(js,php,etc..)
+    
+    ;; コメントスタイルの指定
+    (setq web-mode-comment-style 2))
+  (add-hook 'web-mode-hook  'my-web-mode-hook)
+  
+  ;;blade記法/PHP記法をハイライトするようにする
+  (setq web-mode-engines-alist
+	'(("php" . "\\.html\\'")
+	  ("blade"  . "\\.blade\\.")))
+  
+  ;; C-c ; で コメント、アンコメントする
+  (bind-key "C-c ;" 'web-mode-comment-or-uncomment web-mode-map)
 
   ;; (custom-set-faces
   ;;  '(web-mode-doctype-face
@@ -84,16 +65,6 @@
   ;;    ((t (:foreground "#FF7F00"))))                          ; css 疑似クラス
   ;;  '(web-mode-css-at-rule-face
   ;;    ((t (:foreground "#FF7F00"))))                          ; cssのタグ
-  ;;  '(web-mode-current-element-highlight-face
-  ;;    ((t (:foreground "#ff0000"))))                          ; 要素ハイライト
   ;;  )
-  
-  ;;blade記法/PHP記法をハイライトするようにする
-  (setq web-mode-engines-alist
-	'(("php" . "\\.html\\'")
-	  ("blade"  . "\\.blade\\.")))
-  
-  ;; C-c ; で コメント、アンコメントする
-  (bind-key "C-c ;" 'web-mode-comment-or-uncomment web-mode-map)
   
   )
