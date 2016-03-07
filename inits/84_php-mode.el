@@ -16,9 +16,12 @@
 
 (use-package php-mode
   :defer t
+  
   :config
+  
   (use-package php-completion)
   (php-completion-mode t)
+  
   ;; array()のインデントを変更する
   (defun ywb-php-lineup-arglist-intro (langelem)
     (save-excursion
@@ -34,7 +37,4 @@
   (c-set-offset 'arglist-close 'ywb-php-lineup-arglist-close)
 
   (make-variable-buffer-local 'ac-sources)
-  (add-to-list 'ac-sources 'ac-source-php-completion)
-  (auto-complete-mode t)
-  
-  )
+  (add-to-list 'ac-sources 'ac-source-php-completion))
