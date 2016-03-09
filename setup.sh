@@ -47,6 +47,7 @@ ln -sfn ~/emacs.d/etc/aspell.conf ~/.aspell.conf
 echo "Created symbolic link of .aspell.conf to home directory"
 
 
+
 # Setup GFM preview environment
 askYesOrNo "
 Are you sure you want to \"setup GFM preview environment\"?"
@@ -89,10 +90,10 @@ Are you sure you want to setup \"python development environment\"?"
 if [ $? -eq 0 ]; then
     
     # install the modules required for python development environment 
-    pip install autopep8 rope jedi flake8 importmagic yapf
+    sudo pip install autopep8 rope jedi flake8 importmagic yapf
     
     # install ipython and dependency: matplotlib
-    pip install ipython matplotlib
+    sudo pip install ipython matplotlib
 else
     echo "Setting up has been canceled."
 fi
