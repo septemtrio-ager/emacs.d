@@ -5,12 +5,13 @@
       '(
 	c-electric-delete-forward
 	c-electric-lt-gt
+	indent-for-tab-command
 	mozc-handle-event
 	mwim-beginning-of-code-or-line
 	mwim-end-of-code-or-line
 	toggle-input-method
-	yas-expand
 	wdired-finish-edit
+	yas-expand
 	))
 
 (setq mc/cmds-to-run-once
