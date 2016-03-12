@@ -60,6 +60,7 @@
   (push '("*compilation*" :height 10) popwin:special-display-config)
   
   ;; R data view バッファをポップアップ表示させる
-  (push '("R data view" :position right) popwin:special-display-config)
+  ;; 動かない
+  ;; (push '("R data view" :position right) popwin:special-display-config)
   
   )
