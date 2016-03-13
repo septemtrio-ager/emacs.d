@@ -37,7 +37,7 @@ askYesOrNo() {
     done
 }
 
-DOTEMACS=$HOME/.emacs.d
+readonly DOTEMACS=$HOME/.emacs.d
 
 # Create some symbolic links to home directory
 ln -sfn ~/emacs.d ~/.emacs.d
@@ -59,9 +59,10 @@ if [ $? -eq 0 ]; then
     sudo chmod +x /bin/markdown
     echo "You can run GFM preview script!"
     
-else
-    echo "Setting up GFM preview environment has been canceled."
+elsep
+    echo -n "\nSetting up GFM preview environment has been canceled.\n"
 fi
+
 
 
 # Setup emacs-realtime-markdown-viewer settings
@@ -69,19 +70,20 @@ askYesOrNo "
 Are you sure you want to \"setup emacs-realtime-markdown-viewer settings\"?"
 if [ $? -eq 0 ]; then
     
-    dir=~/.emacs.d/el-get/emacs-realtime-markdown-viewer
+    readonly EMACS_RTMV_DIR=~/.emacs.d/el-get/emacs-realtime-markdown-viewer
 
-    if [ -e $dir ]; then
-	cd $dir
+    if [ -e $EMACS_RTMV_DIR ]; then
+	cd $EMACS_RTMV_DIR
 	cpanm --installdeps .
 	echo "You can use emacs-realtime-markdown-viewer."
 	cd $DOTEMACS
     else
-	echo "Can't find $dir"
+	echo -n "\nCan't find $EMACS_RTMV_DIR\n"
     fi
 else
-    echo "Setting up has been canceled."
+    echo -n "\nSetting up has been canceled.\n"
 fi
+
 
 
 # Setup Python development environment
@@ -95,6 +97,5 @@ if [ $? -eq 0 ]; then
     # install ipython and dependency: matplotlib
     sudo pip install ipython matplotlib
 else
-    echo "Setting up has been canceled."
+    echo -n "\nSetting up has been canceled.\n"
 fi
-
