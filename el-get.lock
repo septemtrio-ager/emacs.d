@@ -12,7 +12,7 @@
         (imenu-anywhere :checksum "e2419b1558cecdbc8fe8a31806334b8ce2556622")
         (emacs-async :checksum "65219115a75fc91d68de8a624b2d39e7079ad736")
         (with-editor :checksum "b3631b8ef473a314a504321d0442b6a5ea481a99")
-        (use-package :checksum "1e15fbce4fb7763574e2af6745664dc382b5c50b")
+        (use-package :checksum "d867b0370e4e311c71665ccaa418374a15097461")
         (graphviz-dot-mode :checksum "ca0f15158c3bbd516549532be1dd35bc51462c84")
         (emacs-websocket :checksum "fca05614306c455af1cf783bc97021527050dcc6")
         (websocket :checksum "fca05614306c455af1cf783bc97021527050dcc6")

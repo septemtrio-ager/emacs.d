@@ -12,7 +12,6 @@
 (el-get-bundle exec-path-from-shell)
 
 (use-package exec-path-from-shell
-  :defer t
   :config
   (when (memq window-system '(mac ns))
     (exec-path-from-shell-initialize))
@@ -38,8 +37,8 @@
 		"/sw/bin"
 		"/usr/local/bin"
 		(expand-file-name "~/bin")
-		(expand-file-name "~/.emacs.d/bin")
-		))
+		(expand-file-name "~/.emacs.d/bin")))
+    
     ;; PATH と exec-path に同じ物を追加する
     (when (and (file-exists-p dir) (not (member dir exec-path)))
       (setenv "PATH" (concat dir ":" (getenv "PATH")))

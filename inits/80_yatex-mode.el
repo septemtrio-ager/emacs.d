@@ -39,4 +39,8 @@
   (setq dviprint-command-format "dvipdfmx")
   
   ;; 自動で改行しないようにする
-  (auto-fill-mode -1))
+  (auto-fill-mode -1)
+  
+  (setq YaTeX-use-hilit19 nil)
+  
+  )

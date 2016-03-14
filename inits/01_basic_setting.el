@@ -4,7 +4,7 @@
 
 ;; 日本語を utf-8 に統一
 (set-language-environment "Japanese")
-(setq default-buffer-file-coding-system 'utf-8)
+(setq buffer-file-coding-system 'utf-8)
 (set-buffer-file-coding-system 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
@@ -37,7 +37,10 @@
 ;; (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
 ;;   "Prevent annoying \"Active processes exist\" query when you quit Emacs."
 ;;   (flet ((process-list ())) ad-do-it))
-
+(defadvice save-buffers-kill-terminal (before my-save-buffers-kill-terminal activate)
+  (when (process-list)
+    (dolist (p (process-list))
+      (set-process-query-on-exit-flag p nil))))
 
 
 ;; ツールバー非表示
@@ -85,17 +88,20 @@
 
 
 ;; 現在行を目立たせる
-(defface hlline-face
-  '((((class color)
-      (background dark))
-     (:background "#16160e"))
-    (((class color)
-      (background light))
-     (:background "#16160e"))
-    (t
-     ()))
-  "*Face used by hl-line.")
-(setq hl-line-face 'hlline-face)
+;; (defface hlline-face
+;;   '((((class color)
+;;       (background dark))
+;;      (:background "#16160e"))
+;;     (((class color)
+;;       (background light))
+;;      (:background "#16160e"))
+;;     (t
+;;      ()))
+;;   "*Face used by hl-line.")
+;; (setq hl-line-face 'hlline-face)
+(custom-set-faces
+'(hl-line ((t (:background "#16160e"))))
+)
 (global-hl-line-mode)
 
 

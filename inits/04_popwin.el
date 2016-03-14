@@ -21,7 +21,7 @@
   (push '("*quickrun*") popwin:special-display-config)
 
   ;; *helm* バッファをポップアップ表示させる
-  (setq helm-samewindow nil)
+  (setq helm-full-frame nil)
   (push '("^\*helm .+\*$" :regexp t :height 25) popwin:special-display-config)
 
   ;; direx-mode バッファをポップアップ表示させる
@@ -58,5 +58,9 @@
 
   ;; *compilation* バッファをポップアップ表示させる
   (push '("*compilation*" :height 10) popwin:special-display-config)
+  
+  ;; R data view バッファをポップアップ表示させる
+  ;; 動かない
+  ;; (push '("R data view" :position right) popwin:special-display-config)
   
   )
