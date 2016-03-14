@@ -18,6 +18,9 @@ echo '
 
    1. Download https://github.com/shunk031/emacs.d.git
    2. Symlinking "emacs.d" to your home directory
+   3. Setup GFM preview environment
+   4. Setup Emacs realtime markdown viewer settings
+   5. Setup Python development environment
    
 '
 
