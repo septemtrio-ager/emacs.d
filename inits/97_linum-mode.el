@@ -65,6 +65,9 @@
 
 		;; graphviz-dot-modeで利用する
 		graphviz-dot-mode-hook
+
+		;; generic-modeで利用する
+		default-generic-mode-hook
 		
 		))
   (add-hook hook 'linum-mode))
