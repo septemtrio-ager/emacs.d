@@ -14,6 +14,8 @@
   :init
   (global-ace-isearch-mode 1)
   
+  (bind-key "C-h" 'isearch-del-char isearch-mode-map)
+    
   :config
   ;; isearch中に一定文字以上になったらhelm-swoopを呼び出す
   (defun isearch-forward-or-helm-swoop (use-helm-swoop)
