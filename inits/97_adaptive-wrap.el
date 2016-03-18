@@ -26,6 +26,9 @@
 	      ;; emacs-lisp-modeで利用する
 	      emacs-lisp-mode-hook
 
+	      ;; lisp^modeで利用する
+	      lisp-mode-hook
+
 	      ;; graphviz-dot-modeで利用する
 	      graphviz-dot-mode-hook
 	      

@@ -35,6 +35,9 @@
 		
 		;; emacs-lisp-modeで利用する
 		emacs-lisp-mode-hook
+
+		;; lisp-modeで利用する
+		lisp-mode-hook
 		
 		;; web-modeで利用する
 		web-mode-hook
