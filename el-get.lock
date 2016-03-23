@@ -1,5 +1,8 @@
 (setq el-get-lock-package-versions
-      '((emacs-which-key :checksum "69a1435dffc88af1b6e1e974945102b340798141")
+      '((helm-themes :checksum "a6449a40c5a219b43a92c975917a07337f864b4f")
+        (wh-theming :checksum "45db4cf79f413275de0925857440180b720e0957")
+        (pyenv :checksum "d500e1fd3b222ab0a061b80c5301e6a0cd804b42")
+        (emacs-which-key :checksum "69a1435dffc88af1b6e1e974945102b340798141")
         (point-undo :checksum "b09bdcc64a0de08bae0838ef708c679dbc08f4c2")
         (vagrant-tramp :checksum "660b84f3dd3ac44b5e4d6e72446d557afac11dd9")
         (open-junk-file :checksum "a5643846681c672b8f95af85b4d36349879b1aad")
