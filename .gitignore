@@ -39,8 +39,8 @@ el-get/*
 backups/*
 !.gitkeep
 
-site-lisp/*
-!.gitkeep
+# site-lisp/*
+# !.gitkeep
 
 junk/*
 !.gitkeep
