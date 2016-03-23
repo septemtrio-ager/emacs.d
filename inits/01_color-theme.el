@@ -3,9 +3,43 @@
 ;; ;;
 
 
+;; ===================================================================
 
-;; ;; tango-darkテーマ(デフォルト)
-;; ;; (load-theme 'tango-dark t)
+;; 【参考】whatyouhide/emacs.d
+;; https://github.com/whatyouhide/emacs.d/blob/master/init.el#L46
+
+;; ===================================================================
+
+;; wh/term-theme, wh/gui-themesで設定したカラーテーマについて
+;; "C-c t n"で次のテーマ、"C-c t p"で前のテーマを利用する
+
+;; (el-get-bundle wh-theming
+;;   :url "https://raw.githubusercontent.com/whatyouhide/emacs.d/master/lisp/wh-theming.el")
+
+(use-package wh-theming
+  
+  :bind (("C-c t r" . wh/theming-load-random-theme)
+	 ("C-c t n" . wh/theming-load-next-theme)
+	 ("C-c t p" . wh/theming-load-prev-theme))
+
+  :init
+  
+  ;; powerlineの設定ファイルを指定
+  (setq init_powerline (expand-file-name "~/emacs.d/inits/02_powerline.elc"))
+    
+  ;; 利用するテーマを指定
+  (setq wh/term-theme 'solarized-dark
+	wh/gui-themes '(solarized-dark
+			tango-dark
+			monokai
+			))
+
+  :config
+  (if (memq window-system '(mac ns))
+      (wh/theming-load-random-theme)
+    (load-theme wh/term-theme t))
+  
+  )
 
 
 
