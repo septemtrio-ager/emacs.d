@@ -9,37 +9,51 @@
 
 ;; ===================================================================
 
+;; ===================================================================
+
+;; 【参考】Speed issue with exec-path-from-shell-initialize
+;; https://github.com/purcell/exec-path-from-shell/issues/36
+
+;; Don't pass -i to the shell in exec-path-from-shell
+;; https://github.com/whatyouhide/emacs.d/commit/28382fdcc21d0b338814e870e76b4be0c9336139
+
+;; ===================================================================
+
 (el-get-bundle exec-path-from-shell)
 
 (use-package exec-path-from-shell
+  
+  :if (memq window-system '(mac ns))
+  
   :config
-  (when (memq window-system '(mac ns))
-    (exec-path-from-shell-initialize))
-
-  (let ((envs '("PATH" "GEM_PATH" "GEM_HOME" "GOPATH")))
-    (exec-path-from-shell-copy-envs envs))
-
-  (exec-path-from-shell-copy-env "PYTHONPATH")
-
-  ;; ===================================================================
-
-  ;; 【参考】Emacsでrbenvを使う環境変数PATHで手間取ったのでメモ
-  ;; http://blog.be-open.net/emacs/emacs-rbenv-path/
-
-  ;; ===================================================================
-
-  (dolist (dir (list
-		"/sbin"
-		"/usr/sbin"
-		"/bin"
-		"/usr/bin"
-		"/opt/local/bin"
-		"/sw/bin"
-		"/usr/local/bin"
-		(expand-file-name "~/bin")
-		(expand-file-name "~/.emacs.d/bin")))
+  (progn
+    (setq exec-path-from-shell-arguments '("-l"))
+    (exec-path-from-shell-initialize)
+    (let ((envs '("PATH" "GEM_PATH" "GEM_HOME" "GOPATH" "PYTHONPATH")))
+      (exec-path-from-shell-copy-envs envs))
     
-    ;; PATH と exec-path に同じ物を追加する
-    (when (and (file-exists-p dir) (not (member dir exec-path)))
-      (setenv "PATH" (concat dir ":" (getenv "PATH")))
-      (setq exec-path (append (list dir) exec-path)))))
+    ))
+
+;;   ;; ===================================================================
+
+;;   ;; 【参考】Emacsでrbenvを使う環境変数PATHで手間取ったのでメモ
+;;   ;; http://blog.be-open.net/emacs/emacs-rbenv-path/
+
+;;   ;; ===================================================================
+
+;;   ;; (dolist (dir (list
+;;   ;; 		"/sbin"
+;;   ;; 		"/usr/sbin"
+;;   ;; 		"/bin"
+;;   ;; 		"/usr/bin"
+;;   ;; 		"/opt/local/bin"
+;;   ;; 		"/sw/bin"
+;;   ;; 		"/usr/local/bin"
+;;   ;; 		))
+    
+;;   ;;   ;; PATH と exec-path に同じ物を追加する
+;;   ;;   (when (and (file-exists-p dir) (not (member dir exec-path)))
+;;   ;;     (setenv "PATH" (concat dir ":" (getenv "PATH")))
+;;   ;;     (setq exec-path (append (list dir) exec-path))))
+  
+;;   )

@@ -2,6 +2,20 @@
 ;;; python-mode.elの設定
 ;;
 
+(el-get-bundle pyenv)
+
+(use-package pyenv
+  :init
+  ;; (add-hook python-mode-hook
+  ;; 	    (lambda ()
+  ;; 	      pyenv-use-global))
+  :config
+  ;; (global-pyenv-mode)
+  (set-face-attribute
+   'pyenv-active-python-face nil
+   :foreground "white")
+  )
+
 ;; ===================================================================
 
 ;;; 【参考】はむかず！PythonプログラミングのためのEmacs設定
@@ -31,10 +45,14 @@
 
 (el-get-bundle elpy)
 (use-package elpy
+  :init
+  ;; (remove-hook 'elpy-modules 'elpy-module-company)
+  
   :config
   (elpy-enable)
   (elpy-use-ipython)
-  (setq elpy-rpc-backend "jedi"))
+  (setq elpy-rpc-backend "jedi")
+  )
 
 
 ;; ===================================================================
