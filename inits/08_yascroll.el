@@ -14,8 +14,8 @@
 (use-package yascroll
   :defer t
   :init
-  (scroll-bar-mode 0)
-  :config
   ;; まずは標準のスクロールバーを消す
-  (global-yascroll-bar-mode t)
-  )
+  (scroll-bar-mode 0)
+  
+  :config
+  (global-yascroll-bar-mode t))
