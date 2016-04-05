@@ -216,3 +216,20 @@ Otherwise indent whole buffer."
     (all-indent)))
 
 (bind-key "C-M-\\" 'electric-indent)
+
+
+;; ===================================================================
+
+;; 【参考】recordMyDesctopを使って画面を録画する
+;; http://ayato.hateblo.jp/entry/20140120/1390224317
+
+;; ===================================================================
+
+;; Emacsの操作画面などを録画するときは以下の
+;; record-my-desctop-modeで撮影に適した設定に変更する
+
+;;;###autoload
+(defun record-my-desktop-mode ()
+  (interactive)
+  (blink-cursor-mode -1)
+  (setq frame-title-format "emacs @ test dev env"))
