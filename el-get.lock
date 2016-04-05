@@ -1,5 +1,8 @@
 (setq el-get-lock-package-versions
-      '((helm-themes :checksum "a6449a40c5a219b43a92c975917a07337f864b4f")
+      '((chameleon-theming :checksum "60958b9f2b76f545a5973583c68f2e0b26e68164")
+        (showkey :checksum "b86779948288393ddaa501fb052da56d2e5a4ea2")
+        (macrostep :checksum "1e2593279f3722e31d8a8f07e297a5c546586cba")
+        (helm-themes :checksum "a6449a40c5a219b43a92c975917a07337f864b4f")
         (wh-theming :checksum "45db4cf79f413275de0925857440180b720e0957")
         (pyenv :checksum "d500e1fd3b222ab0a061b80c5301e6a0cd804b42")
         (emacs-which-key :checksum "69a1435dffc88af1b6e1e974945102b340798141")
