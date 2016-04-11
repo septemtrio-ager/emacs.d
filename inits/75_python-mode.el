@@ -9,8 +9,9 @@
   ;; (add-hook python-mode-hook
   ;; 	    (lambda ()
   ;; 	      pyenv-use-global))
+  (add-hook 'python-mode-hook 'global-pyenv-mode)
   :config
-  ;; (global-pyenv-mode)
+  
   (set-face-attribute
    'pyenv-active-python-face nil
    :foreground "white")
@@ -35,6 +36,14 @@
   :init
   (add-hook 'python-mode-hook 'py-autopep8-enable-on-save))
 
+(el-get-bundle jedi)
+(use-package jedi
+  :init
+  (add-hook 'python-mode-hook 'jedi:setup)
+  :config
+  (setq jedi:complete-on-dot t)
+  )
+
 ;; ===================================================================
 
 ;; 【参考】https://github.com/jorgenschaefer/elpy/issues/439
@@ -46,12 +55,13 @@
 (el-get-bundle elpy)
 (use-package elpy
   :init
-  ;; (remove-hook 'elpy-modules 'elpy-module-company)
+  (remove-hook 'elpy-modules 'elpy-module-company)
   
   :config
   (elpy-enable)
   (elpy-use-ipython)
-  (setq elpy-rpc-backend "jedi")
+  ;; (setq elpy-rpc-backend "jedi")
+  
   )
 
 
