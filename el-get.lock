@@ -1,5 +1,10 @@
 (setq el-get-lock-package-versions
-      '((chameleon-theming :checksum "60958b9f2b76f545a5973583c68f2e0b26e68164")
+      '((jedi :checksum "e6b0139cba46bd4e53afaf044bc84c618b8afb38")
+        (epc :checksum "76fe6847a341f78c635164c18908a0b691f7212c")
+        (ctable :checksum "cd673a09a80ce4e9e102ffe2e3d7e6bfb9d652b0")
+        (python-environment :checksum "401006584e32864a10c69d29f14414828909362e")
+        (deferred :checksum "8827106c83f0fc773bc406d381ea25a29a5965e1")
+        (chameleon-theming :checksum "60958b9f2b76f545a5973583c68f2e0b26e68164")
         (showkey :checksum "b86779948288393ddaa501fb052da56d2e5a4ea2")
         (macrostep :checksum "1e2593279f3722e31d8a8f07e297a5c546586cba")
         (helm-themes :checksum "a6449a40c5a219b43a92c975917a07337f864b4f")
