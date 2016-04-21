@@ -105,7 +105,7 @@
         (smooth-scroll :checksum "db1e2a5372c91c973d5d3579898c657fb865f556")
         (exec-path-from-shell :checksum "54c1d4a0c6e3cbf66e1399298d4cf1bc575020be")
         (monokai-theme :checksum "1af1cbc2b1db7acfacdc2e689386819a3bc09900")
-        (helm :checksum "e70bc6c4adc50d80ae18cfbab8424307e2f4c8f5")
+        (helm :checksum "6afb3861a1b24ae23ab54e198742e99aab835d45")
         (el-get :checksum "75edc70c4dc9ad0a821b8a00a5df1c5e10413e3c")))
 (setq el-get-lock-locked-packages 'nil)
 (setq el-get-lock-unlocked-packages 'nil)
