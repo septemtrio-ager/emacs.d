@@ -8,6 +8,11 @@
       (set-frame-parameter nil 'alpha 80)
       ))
 
+;; Change pyenv-active-python-face color
+(set-face-attribute
+ 'pyenv-active-python-face nil
+ :foreground "#006400")
+
 ;; powerline
 ;; クリスマス仕様
 (set-face-background 'mode-line         "#FF0000")   ; red

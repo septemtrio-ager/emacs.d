@@ -1,7 +1,9 @@
 ;; overwrite-solarized-dark
 
 ;; overwrite settings
-
+(set-face-attribute
+   'pyenv-active-python-face nil
+   :foreground "white")
 
 
 ;; powerline settings
