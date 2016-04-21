@@ -12,6 +12,8 @@
 	(if (fboundp 'normal-top-level-add-subdirs-to-load-path)
 	    (normal-top-level-add-subdirs-to-load-path))))))
 
+;; site-lisp, elpa, auto-complete, my-lispディレクトリに
+;; load-pathを通すようにする
 (add-to-load-path "site-lisp" "elpa" "auto-install" "my-lisp")
 
 
