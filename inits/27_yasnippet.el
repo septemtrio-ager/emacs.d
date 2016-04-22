@@ -24,8 +24,8 @@
   :diminish yas-minor-mode
   :config
   (setq yas-snippet-dirs
-	'("~/.emacs.d/snippets/mysnippets"      ;; 作成したスニペット
-	  "~/.emacs.d/snippets/site-snippets"   ;; 拾ってきたスニペット
+	'("~/emacs.d/snippets/mysnippets"      ;; 作成したスニペット
+	  "~/emacs.d/snippets/site-snippets"   ;; 拾ってきたスニペット
 	  
 	  ;; "~/.emacs.d/snippets/yasnippet-java-mode"
 	  
