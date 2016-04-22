@@ -21,6 +21,7 @@
 	 ("\\.xhtml\\'" . web-mode)
 	 ("\\.shtml\\'" . web-mode)
 	 ("\\.tpl\\'" . web-mode)
+	 ("\\.jsp\\'" . web-mode)
 	 ("\\.blade\\.php\\'" . web-mode))
   
   :config
