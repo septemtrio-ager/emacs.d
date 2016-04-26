@@ -17,7 +17,7 @@
 (el-get-bundle twittering-mode)
 
 (use-package twittering-mode
-  :disabled t
+  ;; :disabled t
   :defer t
   
   :init
@@ -53,7 +53,7 @@
   ;; エラーが出たとき用。サーバーの証明書問題？なので証明書を検証しないようにする
   ;; (setq twittering-allow-insecure-server-cert t)
 
-  (set-face-bold-p 'twittering-username-face t)
+  (set-face-bold 'twittering-username-face t)
   (set-face-foreground 'twittering-uri-face "DeepSkyBlue3")
   
   ;;アイコンを表示
