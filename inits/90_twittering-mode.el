@@ -10,6 +10,10 @@
 
 ;; ===================================================================
 
+;; 新規ツイートをpostするときは
+;; C-c C-s
+;; で新しいpostを入力できる
+
 (el-get-bundle twittering-mode)
 
 (use-package twittering-mode
