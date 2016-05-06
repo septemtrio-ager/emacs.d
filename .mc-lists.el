@@ -5,6 +5,8 @@
       '(
 	c-electric-delete-forward
 	c-electric-lt-gt
+	comment-or-uncomment-region
+	gud-tooltip-mouse-motion
 	indent-for-tab-command
 	mozc-handle-event
 	mwim-beginning-of-code-or-line
