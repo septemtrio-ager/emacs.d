@@ -5,4 +5,6 @@
 (use-package highlight-indentation
   :defer t
   :config
-  (set-face-background 'highlight-indentation-face "gray5"))
+  ;; (set-face-background 'highlight-indentation-face "gray5")
+  
+  )

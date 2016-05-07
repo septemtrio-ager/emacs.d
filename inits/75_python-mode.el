@@ -56,7 +56,8 @@
 (use-package elpy
   :init
   (remove-hook 'elpy-modules 'elpy-module-company)
-  
+  (remove-hook 'elpy-modules 'elpy-module-flymake)
+  (add-hook 'elpy-mode-hook 'highlight-indentation-current-column-mode)
   :config
   (elpy-enable)
   (elpy-use-ipython)

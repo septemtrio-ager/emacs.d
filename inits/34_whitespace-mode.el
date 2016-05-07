@@ -17,16 +17,16 @@
 	  tabs spaces newline trailing space-before-tab space-after-tab
 	  space-mark tab-mark newline-mark))
   
-  (let ((dark (eq 'dark (frame-parameter nil 'background-mode))))
-    (set-face-attribute 'whitespace-space nil
-			:foreground (if dark "red" "azure3")
-			:background 'unspecified)
-    (set-face-attribute 'whitespace-tab nil
-			:foreground (if dark "gray20" "gray80")
-			:background 'unspecified
-			:strike-through t)
-    (set-face-attribute 'whitespace-newline nil
-			:foreground (if dark "darkcyan" "darkseagreen")))
+  ;; (let ((dark (eq 'dark (frame-parameter nil 'background-mode))))
+  ;;   (set-face-attribute 'whitespace-space nil
+  ;; 			:foreground (if dark "red" "azure3")
+  ;; 			:background 'unspecified)
+  ;;   (set-face-attribute 'whitespace-tab nil
+  ;; 			:foreground (if dark "gray20" "gray80")
+  ;; 			:background 'unspecified
+  ;; 			:strike-through t)
+  ;;   (set-face-attribute 'whitespace-newline nil
+  ;; 			:foreground (if dark "darkcyan" "darkseagreen")))
   
   ;; 全角スペースを表示させる
   (setq whitespace-space-regexp "\\(　+\\)")
