@@ -1,5 +1,6 @@
 (setq el-get-lock-package-versions
-      '((jedi :checksum "e6b0139cba46bd4e53afaf044bc84c618b8afb38")
+      '((open-junk-file :checksum "f87b93ec26e92dc747da43499d0cbf5ab70fd8c2")
+        (jedi :checksum "e6b0139cba46bd4e53afaf044bc84c618b8afb38")
         (epc :checksum "76fe6847a341f78c635164c18908a0b691f7212c")
         (ctable :checksum "cd673a09a80ce4e9e102ffe2e3d7e6bfb9d652b0")
         (python-environment :checksum "401006584e32864a10c69d29f14414828909362e")
@@ -13,7 +14,6 @@
         (emacs-which-key :checksum "69a1435dffc88af1b6e1e974945102b340798141")
         (point-undo :checksum "b09bdcc64a0de08bae0838ef708c679dbc08f4c2")
         (vagrant-tramp :checksum "660b84f3dd3ac44b5e4d6e72446d557afac11dd9")
-        (open-junk-file :checksum "a5643846681c672b8f95af85b4d36349879b1aad")
         (restart-emacs :checksum "f0e8e1ae1bb5f4e50a99d220c39913ef300f44c8")
         (php-completion :checksum "8f9e11510ec32da38eb037e040f66246b4d77686")
         (php-mode :checksum "a4bd678c4440317a200cce69918663186b139cc0")
