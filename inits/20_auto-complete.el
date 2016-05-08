@@ -33,7 +33,7 @@
   
   :config
   ;; 補完機能の追加
-  (add-to-list 'ac-dictionary-directories (expand-file-name "~/.emacs.d/el-get/auto-complete/dict"))
+  (add-to-list 'ac-dictionary-directories (expand-file-name "~/emacs.d/el-get/auto-complete/dict"))
   (ac-config-default)
   
   ;; C-n / C-p で選択できるようにする
