@@ -12,6 +12,7 @@
 (el-get-bundle emacs-jp/helm-migemo)
 
 (use-package helm-migemo
+  :disabled t
   :defer t
   :commands helm-compile-source--candidates-in-buffer
   :config
