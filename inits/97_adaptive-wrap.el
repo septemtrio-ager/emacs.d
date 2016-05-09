@@ -31,6 +31,9 @@
 
 	      ;; graphviz-dot-modeで利用する
 	      graphviz-dot-mode-hook
+
+	      ;; gfm-modeで利用する
+	      gfm-mode-hook
 	      
 	      ))
     (add-hook hook 'adaptive-wrap-prefix-mode)))
