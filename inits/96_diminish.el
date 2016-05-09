@@ -19,8 +19,17 @@
   
   ;; safe-diminish マクロを利用して
   ;; 隠したいマイナーモードを指定する
-  ;; (safe-diminish "表示を変更したいモード名" 'モードの正式名称 "変更後の表示")
+  ;;
+  ;; M-x find-function
+  ;;
+  ;; でマイナーモードがどのファイルに定義されているか調べて
+  ;; 
+  ;; (safe-diminish "シンボルのモードが定義されてるファイル名" 'モードの正式名称 "変更後の表示")
+  ;;
+  ;; のように指定する
+  
   (safe-diminish "helm" 'helm-mode)
+  (safe-diminish "helm-multi-match" 'helm-migemo-mode)
   (safe-diminish "undo-tree" 'undo-tree-mode)
   (safe-diminish "auto-complete" 'auto-complete-mode "AutoComplete")
   (safe-diminish "smooth-scroll" 'smooth-scroll-mode)
@@ -35,6 +44,7 @@
   (safe-diminish "abbrev" 'abbrev-mode)
   (safe-diminish "php-completion" 'php-completion-mode "PHP-Comp")
   (safe-diminish "flyspell" 'flyspell-mode "FlyS")
+  (safe-diminish "highlight-indentation" 'highlight-indentation-current-column-mode)
   
   
   ;; safe-diminishマクロがnilになってしまうので個別に設定
