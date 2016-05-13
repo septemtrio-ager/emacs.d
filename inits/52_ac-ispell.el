@@ -6,11 +6,15 @@
 
 (use-package ac-ispell
   
-  :init (ac-ispell-setup)
+  :init
+  (custom-set-variables
+   '(ac-ispell-requires 4)
+   '(ac-ispell-fuzzy-limit 2))
+  
   (add-hook 'prog-mode-hook 'ac-ispell-ac-setup)
   (add-hook 'text-mode-hook 'ac-ispell-ac-setup)
 
   :config
-  (custom-set-variables
-   '(ac-ispell-requires 4)
-   '(ac-ispell-fuzzy-limit 2)))
+  (with-eval-after-load 'auto-complete
+    (ac-ispell-setup))
+  )
