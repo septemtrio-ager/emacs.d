@@ -1,5 +1,6 @@
 (setq el-get-lock-package-versions
-      '((open-junk-file :checksum "f87b93ec26e92dc747da43499d0cbf5ab70fd8c2")
+      '((eval-in-repl :checksum "c79ba77bdd6f1534f379953fc6e0ec0e1c866151")
+        (open-junk-file :checksum "f87b93ec26e92dc747da43499d0cbf5ab70fd8c2")
         (jedi :checksum "e6b0139cba46bd4e53afaf044bc84c618b8afb38")
         (epc :checksum "76fe6847a341f78c635164c18908a0b691f7212c")
         (ctable :checksum "cd673a09a80ce4e9e102ffe2e3d7e6bfb9d652b0")

@@ -22,6 +22,7 @@
   :defer t
   :init
   (setq default-input-method "japanese-mozc")
+  
   (add-hook 'mozc-mode-hook
 	    (lambda()
 	      (define-key mozc-mode-map (kbd "<zenkaku-hankaku>") 'toggle-input-method)))
@@ -34,7 +35,16 @@
 		(deactivate-input-method))))
   
   :bind
-  ("<zenkaku-hankaku>" . toggle-input-method))
+  ("<zenkaku-hankaku>" . toggle-input-method)
+
+  :config
+  ;; helm でミニバッファの入力時に IME の状態を継承しない
+  (setq helm-inherit-input-method nil)
+  ;; helm で候補のアクションを表示する際に IME を OFF にする
+  (advice-add 'helm-select-action
+	      :before (lambda (&rest args)
+			(deactivate-input-method)))
+  )
 
 
 
@@ -50,6 +60,10 @@
 (el-get-bundle iRi-E/mozc-el-extensions)
 
 (use-package mozc-cursor-color
+  :init
+  (add-hook 'mozc-im-activate-hook (lambda () (setq mozc-mode t)))
+  (add-hook 'mozc-im-deactivate-hook (lambda () (setq mozc-mode nil)))
+
   :config
   ;; カーソルの色の設定
   (setq mozc-cursor-color-alist
@@ -60,7 +74,7 @@
 	  (half-ascii . "dark orchid")
 	  (full-ascii . "orchid")
 	  (half-katakana . "dark goldenrod")))
-    
+  
   (use-package mozc-mode-line-indicator)
   (use-package mozc-isearch
     :disabled t)
