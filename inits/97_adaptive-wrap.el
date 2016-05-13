@@ -19,7 +19,10 @@
 	      
 	      ;; c系modeで利用する
 	      c-mode-common-hook
-
+	      
+	      ;; python-modeで利用する
+	      python-mode-hook
+	      
 	      ;; web-modeで利用する
 	      web-mode-hook
 
