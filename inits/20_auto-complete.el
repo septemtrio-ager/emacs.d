@@ -27,9 +27,10 @@
   ;; デフォルトの情報源を指定する
   (setq-default ac-sources
 		'(ac-source-dictionary
-		  ac-source-filename
+		  ;; ac-source-filename
 		  ac-mozc
-		  ac-source-words-in-same-mode-buffers))
+		  ac-source-words-in-same-mode-buffers
+		  ))
   
   :config
   ;; 補完機能の追加
@@ -48,7 +49,6 @@
 		  shell-mode
 		  markdown-mode
 		  text-mode
-		  web-mode
 		  octave-mode
 		  css-mode
 		  eshell-mode
