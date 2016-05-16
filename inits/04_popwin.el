@@ -17,6 +17,8 @@
   :config
   (popwin-mode 1)
 
+  (setq popwin:adjust-other-windows t)
+  
   ;; *quickrun* バッファをポップアップ表示させる
   (push '("*quickrun*") popwin:special-display-config)
 
@@ -62,5 +64,10 @@
   ;; R data view バッファをポップアップ表示させる
   ;; 動かない
   ;; (push '("R data view" :position right) popwin:special-display-config)
+
+  (push '(*Google Translate* :position bottom) popwin:special-display-config)
+
+  (setq popwin:special-display-config
+	'((magit-status-mode :position right :width 60)))
   
   )
