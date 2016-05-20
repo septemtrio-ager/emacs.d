@@ -65,35 +65,28 @@
   
   )
 
+;; =============================-=====================================
 
-;; ===================================================================
+;; 【参考】EmacsでPythonのDocstringCommentを自動生成する
+;; http://qiita.com/fujimisakari/items/6b541fbc9467eed5696c
 
-;; 【参考】Emacsの上にも3年
-;; http://ksknw.hatenablog.com/entry/2015/02/11/202320
+;; =============================-=====================================
 
-;; ===================================================================
+;; docstring comment
+(defun python-docstring-comment()
+  (interactive)
+  (let* ((begin-point (point-at-bol))
+         (end-point (point-at-eol))
+         (function-line (buffer-substring begin-point end-point))
+         (space (format "    %s" (replace-regexp-in-string "def.*" "" function-line))))
+    (goto-char end-point)
+    (insert "\n")
+    (insert (format "%s\"\"\"\n" space))
+    (when (string-match ".*(\\(.+\\)):" function-line)
+      (dolist (arg (split-string (match-string 1 function-line) ","))
+        (if (not (equal arg "self"))
+            (insert (format "%s:param TYPE %s:\n" space (replace-regexp-in-string "^\\s-+\\|\\s-+$" "" arg))))))
+    (insert (format "%s:rtype: TYPE\n" space))
+    (insert (format "%s\"\"\"" space))))
 
-;; elpy 色の設定 デフォルトは黄色でダサいのでauto-complete風に変更
-;; (setq company-minimum-prefix-length 1)
-;; (setq company-selection-wrap-around t)
-
-;; (custom-set-faces
-;;  '(company-scrollbar-bg ((t (:inherit company-tooltip :background "#c0c0c0"))))
-;;  '(company-scrollbar-fg ((t (:background "limegreen"))))
-;;  '(company-tooltip ((t (:background "#c0c0c0" :foreground "black"))))
-;;  '(company-tooltip-annotation ((t (:inherit company-tooltip :foreground "black"))))
-;;  '(company-tooltip-common ((t (:inherit company-tooltip :foreground "black"))))
-;;  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :foreground "black"))))
-;;  '(company-tooltip-selection ((t (:background "limegreen" :foreground "white"))))
-;;  )
-
-;; ===================================================================
-
-;; 【参考】EmacsでPython開発するための環境を整える
-;; http://nakazye.hatenablog.com/entry/2014/09/14/161154
-
-;; ===================================================================
-
-;; (defun python-shell-parse-command ()
-;;   "Return the string used to execute the inferior Python process."
-;;   "python3 -i")
+(define-key python-mode-map (kbd "C-c d") 'python-docstring-comment)
