@@ -23,6 +23,11 @@
   :init
   (use-package auto-complete)
   (global-auto-complete-mode t)
+  
+  :config
+  ;; 補完機能の追加
+  (add-to-list 'ac-dictionary-directories (expand-file-name "~/emacs.d/el-get/auto-complete/dict"))
+  (ac-config-default)
 
   ;; デフォルトの情報源を指定する
   (setq-default ac-sources
@@ -31,11 +36,6 @@
 		  ac-mozc
 		  ac-source-words-in-same-mode-buffers
 		  ))
-  
-  :config
-  ;; 補完機能の追加
-  (add-to-list 'ac-dictionary-directories (expand-file-name "~/emacs.d/el-get/auto-complete/dict"))
-  (ac-config-default)
   
   ;; C-n / C-p で選択できるようにする
   (setq ac-use-menu-map t)
@@ -89,5 +89,14 @@
   ;; =================================================================
   
   (ac-linum-workaround)
+
+  ;; =================================================================
+
+  ;; 【参考】Auto Complete でコメントや文字列リテラルでも補完を行う
+  ;; http://qiita.com/akisute3@github/items/87514346bf1c008f1ef6
+
+  ;; =================================================================
+
+  (setq ac-disable-faces nil)
   
   )
