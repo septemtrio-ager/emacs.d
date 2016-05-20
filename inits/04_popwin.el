@@ -65,9 +65,9 @@
   ;; 動かない
   ;; (push '("R data view" :position right) popwin:special-display-config)
 
-  (push '(*Google Translate* :position bottom) popwin:special-display-config)
+  (push '("*Google Translate*" :position bottom) popwin:special-display-config)
 
-  (setq popwin:special-display-config
-	'((magit-status-mode :position right :width 60)))
+  ;; (setq popwin:special-display-config
+  ;; 	'((magit-status-mode :position right :width 60)))
   
   )
