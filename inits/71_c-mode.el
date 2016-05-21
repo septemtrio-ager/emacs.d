@@ -13,7 +13,7 @@
 
 ;; BSDスタイルの設定では足りない設定を補う
 (el-get-bundle vs-set-c-style
-  :url "https://myoshida-rp.googlecode.com/svn/trunk/elisp/vs-set-c-style.el")
+  :url "https://raw.githubusercontent.com/shunk031/myoshida-rp/master/elisp/vs-set-c-style.el")
 
 (use-package vs-set-c-style
   :init
