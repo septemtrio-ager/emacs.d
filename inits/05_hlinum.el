@@ -9,7 +9,7 @@
 
 ;; ===================================================================
 
-(el-get-bundle hlinum)
+(el-get-bundle tom-tan/hlinum-mode)
 
 (use-package hlinum
   :config
