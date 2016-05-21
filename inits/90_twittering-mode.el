@@ -53,8 +53,8 @@
   ;; エラーが出たとき用。サーバーの証明書問題？なので証明書を検証しないようにする
   ;; (setq twittering-allow-insecure-server-cert t)
 
-  (set-face-bold 'twittering-username-face t)
-  (set-face-foreground 'twittering-uri-face "DeepSkyBlue3")
+  ;; (set-face-bold 'twittering-username-face t)
+  ;; (set-face-foreground 'twittering-url-face "DeepSkyBlue3")
   
   ;;アイコンを表示
   (setq twittering-icon-mode t)
