@@ -10,24 +10,36 @@
 
 ;; ===================================================================
 
-;; 新規ツイートをpostするときは
+;; 新規ツイートをpostするときは^
 ;; C-c C-s
 ;; で新しいpostを入力できる
 
 (el-get-bundle twittering-mode)
 
 (use-package twittering-mode
-  ;; :disabled t
+
   :defer t
   
+  ;; | キーバインド | 説明 
+  ;; |:------------:|-------------------------|
+  ;; | C-c C-s      | 新しいtweetを投稿       |
+  ;; | C-c r        | カーソル下のtweetに返信 |
+  ;; | C-c f        | カーソル下のtweetをfav  |
+    
   :init
   ;; "<"でバッファの先頭に移動する
   (bind-key "<" 'my-beginning-of-buffer twittering-mode-map)
+  
   ;; ">"でバッファの最後に移動する
   (bind-key ">" 'my-end-of-buffer twittering-mode-map)
+  
   ;; "C-c f"でカーソル下のTweetをFavoriteする
   (bind-key "C-c f" 'twittering-favorite twittering-mode-map)
-    ;; "?"でTwitteringModeのキーバインドを表示する
+  
+  ;; "C-c r"でカーソル下のTweeetに返信する
+  (bind-key "C-c r" 'twittering-enter twittering-mode-map)
+  
+  ;; "?"でTwitteringModeのキーバインドを表示する
   (bind-key "?" 'describe-bindings twittering-mode-map)
   
   :config
@@ -35,28 +47,29 @@
   ;; GnuPGを利用してアクセストークンを暗号化して保存する
   (setq twittering-use-master-password t)
   
-  ;; =================================================================
-  
-  ;; 【参考】twittering-mode でエラー
-  ;; http://wp.hebon.net/emacs/?tag=twittering-mode
-
-  ;; =================================================================
-  
-  ;; =================================================================
-  
-  ;; 【参考】 Mac OS X 10.10 (Yosemite) 上で twittering-mode を動かそうとしたら躓いたまとめ
-  ;; http://d.hatena.ne.jp/cointoss/20141104/1415029315?_ga=1.180673895.1536729082.1425645803
-  
-  ;; =================================================================
-  
-  ;; M-x twitしたあとに「Failed to retrieve a request token」という
-  ;; エラーが出たとき用。サーバーの証明書問題？なので証明書を検証しないようにする
-  ;; (setq twittering-allow-insecure-server-cert t)
-
-  ;; (set-face-bold 'twittering-username-face t)
-  ;; (set-face-foreground 'twittering-url-face "DeepSkyBlue3")
-  
   ;;アイコンを表示
   (setq twittering-icon-mode t)
   
+  ;; タイムラインの表示フォーマットを設定
+  (setq twittering-status-format
+  	(concat
+  	 ;; "%FIELD-IF-NONZERO[%r\n]{relpy-name}"
+	 
+	 "%FOLD[ ]{%FACE[bold]{%RT{↺ %S retweeted\n}}}"
+	 
+  	 "%FOLD{%i %FACE[bold]{%S} %FACE[font-lock-comment-face]{@%s} "
+	 
+  	 
+  	 "%FACE[font-lock-comment-face]{%@{}}\n"
+	 
+  	 "%FOLD[ ]{%T}}\n\n"
+
+  	 ;; "%FACE[font-lock-warning-face]{%FIELD-IF-NONZERO[✶%d ]{favorite_count}}"
+  	 ;; "%FACE[font-lock-warning-face]{%FIELD-IF-NONZERO[↺%d ]{retweet_count}}"
+
+	 "%FOLD[ ]{%FACE[font-lock-warning-face]{%FIELD-IF-NONZERO[✶%d ]{favorite_count}}%FACE[font-lock-warning-face]{%FIELD-IF-NONZERO[↺%d ]{retweet_count}}}"
+	 
+	 "from %f %r\n"
+	 
+  	 ))
   )
