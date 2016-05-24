@@ -5,6 +5,7 @@
 (el-get-bundle ace-jump-helm-line)
 
 (use-package ace-jump-helm-line
+  :disabled t
   :defer t
   :commands (ace-jump-helm-line--with-error-fallback
 	    ace-jump-helm-line-and-execute-action)
