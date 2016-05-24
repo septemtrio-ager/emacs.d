@@ -6,6 +6,8 @@
 	c-electric-delete-forward
 	c-electric-lt-gt
 	comment-or-uncomment-region
+	copy-region-as-kill
+	eshell-bol
 	gud-tooltip-mouse-motion
 	indent-for-tab-command
 	mozc-handle-event
