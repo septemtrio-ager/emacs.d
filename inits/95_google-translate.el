@@ -38,4 +38,14 @@
        (if asciip "en" "ja")
        (if asciip "ja" "en")
        string)))
+
+  ;;; 翻訳結果をkill-ringに保存するアドバイス
+  (defadvice google-translate-paragraph (before
+					 google-translate-paragraph-before)
+    (when (equal 'google-translate-translation-face (ad-get-arg 1))
+      (let ((text (ad-get-arg 0)))
+	(kill-new text nil))))
+
+  (ad-activate 'google-translate-paragraph)
+  
   )
