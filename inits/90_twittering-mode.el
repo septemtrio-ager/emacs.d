@@ -58,7 +58,6 @@
 	 "%FOLD[ ]{%FACE[bold]{%RT{↺ %S retweeted\n}}}"
 	 
   	 "%FOLD{%i %FACE[bold]{%S} %FACE[font-lock-comment-face]{@%s} "
-	 
   	 
   	 "%FACE[font-lock-comment-face]{%@{}}\n"
 	 
@@ -70,6 +69,8 @@
 	 "%FOLD[ ]{%FACE[font-lock-warning-face]{%FIELD-IF-NONZERO[✶%d ]{favorite_count}}%FACE[font-lock-warning-face]{%FIELD-IF-NONZERO[↺%d ]{retweet_count}}}"
 	 
 	 "from %f %r\n"
+
+	 "%FACE[font-lock-comment-face]{\n-----------------------------------------\n}"
 	 
   	 ))
   )
