@@ -20,10 +20,11 @@
   :config
   (setq recentf-max-saved-items 100)
   (setq recentf-exclude '(".recentf"))
-  (setq recentf-auto-cleanup 10)
+  (setq recentf-auto-cleanup 'never)
   (setq recentf-auto-save-timer (run-with-idle-timer 30 t 'recentf-save-list))
   (recentf-mode 1)
 
+  
   ;; =================================================================
 
   ;;【参考】recentf のホームディレクトリを "~" に置換
@@ -48,4 +49,23 @@
     (save-excursion
       (while (re-search-forward "\\(^  \\[[0-9]\\] \\|^  \\)\\(.*/\\)$" nil t nil)
 	(overlay-put (make-overlay (match-beginning 2) (match-end 2))
-		     'face `((:foreground ,"#F1266F")))))))
+		     'face `((:foreground ,"#F1266F"))))))
+
+  ;; =================================================================
+
+  ;; 【参考】エコーエリアや *Messages* バッファにメッセージを表示させたくない
+  ;; http://qiita.com/itiut@github/items/d917eafd6ab255629346
+
+  ;; =================================================================x
+  
+  (defmacro with-suppressed-message (&rest body)
+    "Suppress new messages temporarily in the echo area and the `*Messages*' buffer while BODY is evaluated."
+    (declare (indent 0))
+    (let ((message-log-max nil))
+      `(with-temp-message (or (current-message) "") ,@body)))
+
+  (run-with-idle-timer 30 t '(lambda ()
+			       (with-suppressed-message (recentf-save-list))))
+
+  
+  )
