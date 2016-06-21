@@ -1,5 +1,8 @@
 (setq el-get-lock-package-versions
-      '((hlinum-mode :checksum "22218c9883a2de6468bf6ad13864b50b44c93592")
+      '((eval-in-repl :checksum "615b4bea36f092fd41aac177511ed8065a3b6ea6")
+        (ein :checksum "b26c972ec89842ac21d4076b9d5719d26e7d5745")
+        (request :checksum "48a35969f7c41810d550e6cdf784cb86c5a05a20")
+        (hlinum-mode :checksum "22218c9883a2de6468bf6ad13864b50b44c93592")
         (multi-term :checksum "a2cf4b82f0b812c66f37f960ce1369673b635835")
         (google-translate :checksum "84d75daa644c0e73289fc428ff35acdc0943cbbb")
         (open-junk-file :checksum "f87b93ec26e92dc747da43499d0cbf5ab70fd8c2")
@@ -22,7 +25,7 @@
         (php-mode :checksum "a4bd678c4440317a200cce69918663186b139cc0")
         (virtualenvwrapper :checksum "e6b78e56c204ba6aea17c934e0a0a86b14bac832")
         (seq :checksum "1349714b20daed2e62a21ebdd5244acc0ccbef0c")
-        (avy :checksum "16370f92ec00f4e66da7a12fce300476934468da")
+        (avy :checksum "33af738ae777c01fd527a69fe088b52450bb427a")
         (imenu-anywhere :checksum "e2419b1558cecdbc8fe8a31806334b8ce2556622")
         (emacs-async :checksum "65219115a75fc91d68de8a624b2d39e7079ad736")
         (with-editor :checksum "b3631b8ef473a314a504321d0442b6a5ea481a99")
