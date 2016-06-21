@@ -9,7 +9,7 @@
 
 ;; ===================================================================
 
-(el-get-bundle eval-in-repl)
+(el-get-bundle shunk031/eval-in-repl)
 
 (use-package eval-in-repl-python
   :commands eir-eval-in-python)
