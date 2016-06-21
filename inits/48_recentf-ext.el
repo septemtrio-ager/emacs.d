@@ -9,6 +9,12 @@
 
 ;; ===================================================================
 
+(defmacro with-suppressed-message (&rest body)
+    "Suppress new messages temporarily in the echo area and the `*Messages*' buffer while BODY is evaluated."
+    (declare (indent 0))
+    (let ((message-log-max nil))
+      `(with-temp-message (or (current-message) "") ,@body)))
+
 (el-get-bundle recentf-ext)
 (use-package recentf-ext
   :defer t
@@ -19,9 +25,12 @@
   
   :config
   (setq recentf-max-saved-items 100)
-  (setq recentf-exclude '(".recentf"))
+  (setq recentf-save-file "~/emacs.d/recentf")
+  (setq recentf-exclude '("recentf"))
   (setq recentf-auto-cleanup 'never)
-  (setq recentf-auto-save-timer (run-with-idle-timer 30 t 'recentf-save-list))
+  ;; (setq recentf-auto-save-timer (run-with-idle-timer 30 t 'recentf-save-list))
+  (run-with-idle-timer 30 t '(lambda ()
+			       (with-suppressed-message (recentf-save-list))))
   (recentf-mode 1)
 
   
@@ -58,14 +67,9 @@
 
   ;; =================================================================x
   
-  (defmacro with-suppressed-message (&rest body)
-    "Suppress new messages temporarily in the echo area and the `*Messages*' buffer while BODY is evaluated."
-    (declare (indent 0))
-    (let ((message-log-max nil))
-      `(with-temp-message (or (current-message) "") ,@body)))
+  
 
-  (run-with-idle-timer 30 t '(lambda ()
-			       (with-suppressed-message (recentf-save-list))))
+  
 
   
   )
