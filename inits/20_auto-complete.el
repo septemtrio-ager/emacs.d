@@ -23,6 +23,8 @@
   :init
   (use-package auto-complete)
   (global-auto-complete-mode t)
+
+  :bind (("M-i" . auto-complete))
   
   :config
   ;; 補完機能の追加
