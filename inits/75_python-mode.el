@@ -58,9 +58,12 @@
   (remove-hook 'elpy-modules 'elpy-module-company)
   (remove-hook 'elpy-modules 'elpy-module-flymake)
   (add-hook 'elpy-mode-hook 'highlight-indentation-current-column-mode)
+  
   :config
   (elpy-enable)
-  (elpy-use-ipython)
+  (when (executable-find "ipython")
+    (elpy-use-ipython))
+  
   ;; (setq elpy-rpc-backend "jedi")
   
   )
@@ -90,3 +93,10 @@
     (insert (format "%s\"\"\"" space))))
 
 (define-key python-mode-map (kbd "C-c d") 'python-docstring-comment)
+
+
+
+(el-get-bundle ein)
+(use-package ein
+  :config
+  (setq ein:use-auto-complete t))
