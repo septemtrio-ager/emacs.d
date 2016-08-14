@@ -105,6 +105,10 @@
 (global-set-key (kbd "C-h") 'delete-backward-char)
 
 
+;; C-c C-vでview-mode
+(global-set-key (kbd "C-c C-v") 'view-mode)
+
+
 
 ;; ===================================================================
 
