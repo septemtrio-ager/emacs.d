@@ -40,6 +40,7 @@
 ;; el-get-lockを用いてバージョン固定したElispをダウンロードする
 (el-get-bundle tarao/el-get-lock)
 (el-get-lock)
+(add-to-list 'auto-mode-alist '("el-get.lock" . emacs-lisp-mode))
 
 
 
