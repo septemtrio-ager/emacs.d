@@ -1,6 +1,6 @@
 ;;
-;;; flycheck-pos-tip.elの設定
-;;
+;; setting for flycheck-pos-tip.el
+;; https://github.com/flycheck/flycheck-pos-tip
 
 ;; ===================================================================
 
