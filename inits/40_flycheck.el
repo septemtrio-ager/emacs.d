@@ -1,6 +1,6 @@
 ;;
-;;; flycheck.elの設定
-;;
+;; setting for flycheck.el
+;; https://github.com/flycheck/flycheck
 
 ;; ===================================================================
 
