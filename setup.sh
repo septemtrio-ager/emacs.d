@@ -66,7 +66,7 @@ if [ $? -eq 0 ]; then
     echo "You can run GFM preview script!"
     
 else
-    echo -n "\nSetting up GFM preview environment has been canceled.\n"
+    echo -e "\nSetting up GFM preview environment has been canceled.\n"
 fi
 
 
@@ -84,10 +84,10 @@ if [ $? -eq 0 ]; then
 	echo "You can use emacs-realtime-markdown-viewer."
 	cd $DOTEMACS
     else
-	echo -n "\nCan't find $EMACS_RTMV_DIR\n"
+	echo -e "\nCan't find $EMACS_RTMV_DIR\n"
     fi
 else
-    echo -n "\nSetting up has been canceled.\n"
+    echo -e "\nSetting up has been canceled.\n"
 fi
 
 
@@ -103,5 +103,5 @@ if [ $? -eq 0 ]; then
     # install ipython and dependency: matplotlib
     sudo pip install ipython matplotlib
 else
-    echo -n "\nSetting up has been canceled.\n"
+    echo -e "\nSetting up has been canceled.\n"
 fi
