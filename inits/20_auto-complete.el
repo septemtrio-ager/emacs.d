@@ -35,7 +35,7 @@
   (setq-default ac-sources
 		'(ac-source-dictionary
 		  ;; ac-source-filename
-		  ac-mozc
+		  ;; ac-mozc
 		  ac-source-words-in-same-mode-buffers
 		  ))
   
