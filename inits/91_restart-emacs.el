@@ -1,0 +1,8 @@
+;;
+;; setting for restart-emacs.el
+;;
+
+(el-get-bundle restart-emacs)
+
+(use-package restart-emacs
+  :bind ("C-x C-c" . restart-emacs))
