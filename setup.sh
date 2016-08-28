@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo '
 
@@ -48,6 +48,9 @@ echo "Created symbolic link of .emacs.d to home directory"
 
 ln -sfn ~/emacs.d/etc/aspell.conf ~/.aspell.conf
 echo "Created symbolic link of .aspell.conf to home directory"
+
+ln -sfn ~/emacs.d/etc/abbrev_defs ~/emacs.d/abbrev_defs
+echo "Created symbolic link of abbrev_defs"
 
 
 
