@@ -45,7 +45,7 @@
   (safe-diminish "php-completion" 'php-completion-mode "PHP-Comp")
   (safe-diminish "flyspell" 'flyspell-mode "FlyS")
   (safe-diminish "highlight-indentation" 'highlight-indentation-current-column-mode)
-  
+  (safe-diminish "ace-isearch" 'ace-isearch-mode)  
   
   ;; safe-diminishマクロがnilになってしまうので個別に設定
   ;; (diminish 'hs-minor-mode)
