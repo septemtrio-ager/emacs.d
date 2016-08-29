@@ -26,7 +26,8 @@
   :init
   (setq exec-path-from-shell-arguments '("-l"))
   :config
-  (exec-path-from-shell-initialize)
-  ;; (let ((envs '("PATH" "GEM_PATH" "GEM_HOME" "GOPATH" "PYTHONPATH")))
-  ;;   (exec-path-from-shell-copy-envs envs))
-  )
+  (progn
+    (setq exec-path-from-shell-arguments '("-l"))
+    (exec-path-from-shell-initialize)
+    (let ((envs '("PATH" "GEM_PATH" "GEM_HOME" "GOPATH" "PYTHONPATH")))
+      (exec-path-from-shell-copy-envs envs))))
