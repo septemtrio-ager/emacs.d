@@ -1,5 +1,6 @@
 (setq el-get-lock-package-versions
-      '((point-undo :checksum "b09bdcc64a0de08bae0838ef708c679dbc08f4c2")
+      '((showkey :checksum "c813fec310cc002fe10131f63d04078e75751ae4")
+        (point-undo :checksum "b09bdcc64a0de08bae0838ef708c679dbc08f4c2")
         (open-junk-file :checksum "f87b93ec26e92dc747da43499d0cbf5ab70fd8c2")
         (restart-emacs :checksum "be789b13ff6358e13a2b7d57224072fb1b108f09")
         (twittering-mode :checksum "97ed4410dd994c09081a7a12570adb34f356d87c")
@@ -42,7 +43,7 @@
         (ace-jump-mode :checksum "8351e2df4fbbeb2a4003f2fb39f46d33803f3dac")
         (expand-region :checksum "cfef9aab6a3e826124ac53409b5c7bd6defa3b2d")
         (eval-in-repl :checksum "615b4bea36f092fd41aac177511ed8065a3b6ea6")
-        (exec-path-from-shell :checksum "54c1d4a0c6e3cbf66e1399298d4cf1bc575020be")
+        (exec-path-from-shell :checksum "9700a076a932d4c8bc92d9e12f21978232056373")
         (tramp :checksum "249dd31d5a987e544faa1a983605effa3e472d73")
         (mozc-el-extensions :checksum "060797a6e570cf21c274edfcb14a26e710a5449e")
         (auto-complete :checksum "b0090a942f93824bcbe9a938217c665ea658eacd")
