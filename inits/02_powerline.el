@@ -36,6 +36,11 @@
   ;; mozc mode line indicator
   (defpowerline powerline-mozc-mode-line-indicator
     (mozc-mode-line-indicator-update))
+  
+  ;; pyenv active version indicator
+  (defpowerline powerline-pyenv--active-python-version
+    (if (string= major-mode "python-mode")
+	(format "[%s]" (pyenv--active-python-version))))
 
   ;; View mode
   (defpowerline powerline-view
@@ -109,7 +114,8 @@
                                 (powerline-raw global-mode-string face2 'r)
                                 ;; (powerline-which-func face2 'r)
 				;; (powerline-pyenv-version)
-                                (powerline-vc face2 'r)
+				(powerline-pyenv--active-python-version face2 'r)
+                                (powerline-vc face2 'r)           ;; gitのブランチ
                                 (powerline-arrow-right face2 face1 height)
                                 (powerline-raw " " face1)
                                 (powerline-narrow face1)

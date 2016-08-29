@@ -5,19 +5,7 @@
 ;; https://github.com/jorgenschaefer/elpy
 
 (el-get-bundle pyenv)
-
-(use-package pyenv
-  :init
-  ;; (add-hook python-mode-hook
-  ;; 	    (lambda ()
-  ;; 	      pyenv-use-global))
-  (add-hook 'python-mode-hook 'global-pyenv-mode)
-  :config
-  
-  (set-face-attribute
-   'pyenv-active-python-face nil
-   :foreground "white")
-  )
+(use-package pyenv)
 
 ;; ===================================================================
 
