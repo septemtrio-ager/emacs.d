@@ -1,6 +1,6 @@
 ;;
-;;; setting for exec-path-from-shell.el
-;;
+;; setting for exec-path-from-shell.el
+;; https://github.com/purcell/exec-path-from-shell
 
 ;; ===================================================================
 
@@ -22,38 +22,11 @@
 (el-get-bundle exec-path-from-shell)
 
 (use-package exec-path-from-shell
-  
   :if (memq window-system '(mac ns))
-  
+  :init
+  (setq exec-path-from-shell-arguments '("-l"))
   :config
-  (progn
-    (setq exec-path-from-shell-arguments '("-l"))
-    (exec-path-from-shell-initialize)
-    (let ((envs '("PATH" "GEM_PATH" "GEM_HOME" "GOPATH" "PYTHONPATH")))
-      (exec-path-from-shell-copy-envs envs))
-    
-    ))
-
-;;   ;; ===================================================================
-
-;;   ;; 【参考】Emacsでrbenvを使う環境変数PATHで手間取ったのでメモ
-;;   ;; http://blog.be-open.net/emacs/emacs-rbenv-path/
-
-;;   ;; ===================================================================
-
-;;   ;; (dolist (dir (list
-;;   ;; 		"/sbin"
-;;   ;; 		"/usr/sbin"
-;;   ;; 		"/bin"
-;;   ;; 		"/usr/bin"
-;;   ;; 		"/opt/local/bin"
-;;   ;; 		"/sw/bin"
-;;   ;; 		"/usr/local/bin"
-;;   ;; 		))
-    
-;;   ;;   ;; PATH と exec-path に同じ物を追加する
-;;   ;;   (when (and (file-exists-p dir) (not (member dir exec-path)))
-;;   ;;     (setenv "PATH" (concat dir ":" (getenv "PATH")))
-;;   ;;     (setq exec-path (append (list dir) exec-path))))
-  
-;;   )
+  (exec-path-from-shell-initialize)
+  ;; (let ((envs '("PATH" "GEM_PATH" "GEM_HOME" "GOPATH" "PYTHONPATH")))
+  ;;   (exec-path-from-shell-copy-envs envs))
+  )
