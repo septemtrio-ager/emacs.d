@@ -17,7 +17,6 @@
 (el-get-bundle tabbar)
 
 (use-package tabbar
-  
   :config
 
   ;; tabbarを有効にする
@@ -76,21 +75,9 @@
   (setq tabbar-buffer-list-function 'my-tabbar-buffer-list)
   
   ;; Ctrl-Tab, Ctrl-Shift-Tab でタブを切り替える
-  (dolist (func '(tabbar-mode tabbar-forward-tab tabbar-forward-group tabbar-backward-tab tabbar-backward-group))
-    (autoload func "tabbar" "Tabs at the top of buffers and easy control-tab navigation"))
-  (defmacro defun-prefix-alt (name on-no-prefix on-prefix &optional do-always)
-    `(defun ,name (arg)
-       (interactive "P")
-       ,do-always
-       (if (equal nil arg)
-	   ,on-no-prefix
-	 ,on-prefix)))
-  (defun-prefix-alt shk-tabbar-next (tabbar-forward-tab) (tabbar-forward-group) (tabbar-mode 1))
-  (defun-prefix-alt shk-tabbar-prev (tabbar-backward-tab) (tabbar-backward-group) (tabbar-mode 1))
-  ;; キーを指定する
-  (bind-key "<C-tab>" 'shk-tabbar-next)
-  (bind-key "<C-iso-lefttab>" 'shk-tabbar-prev)
-
+  (global-set-key (kbd "<C-tab>") 'tabbar-forward-tab)
+  (global-set-key (kbd "<C-iso-lefttab>") 'tabbar-backward-tab)
+  
   ;; ウインドウからはみ出たタブを省略して表示
   (setq tabbar-auto-scroll-flag nil)
 
@@ -248,14 +235,20 @@
    :foreground "#002b36"
    :box '(:line-width 1 :color "#002b36" :style nil)
    )
+
+  (set-face-attribute
+   'tabbar-selected-modified nil
+   :background "#2aa198"
+   :foreground "white"
+   :box '(:line-width 3 :color "#2aa198"))
   
-  ;; ;; tabbar-selected を太字で表示
+  ;; tabbar-selected を太字で表示
   (set-face-bold-p 'tabbar-selected t)
+
+  ;; tabbar-selected-modified を太字で表示
+  (set-face-bold-p 'tabbar-selected-modified t)
 
   ;; tabbar-modified を太字で表示
   (set-face-bold-p 'tabbar-modified t)
-
-  ;; ;; tabbar-unselected を太字で表示
-  ;; ;; (set-face-bold-p 'tabbar-unselected t)
   
   )

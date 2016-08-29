@@ -57,7 +57,7 @@
         (hlinum-mode :checksum "bc92bb8344af61929ffb0cb4df9d6b30d7df80d1")
         (popwin :checksum "95dea14c60019d6cccf9a3b33e0dec4e1f22c304")
         (undo-tree :checksum "a3e81b682053a81e082139300ef0a913a7a610a2")
-        (tabbar :checksum "ad4c9c20cf9090a5ebf77a5150f2bf98bdb4bded")
+        (tabbar :checksum "b6c285a7d59dcdb1f17716f0b60787922fa4be82")
         (powerline :checksum "cc05567a90d75367db47f9d836e672e09a5b7af3")
         (monokai-theme :checksum "53f0ba96f0417885e7d3955d8750de6763f99444")
         (sublime-themes :checksum "4648b68e96bfde26d6e4af9f919971eef2768e5f")
