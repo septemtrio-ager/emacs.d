@@ -77,7 +77,9 @@
 	  (full-ascii . "orchid")
 	  (half-katakana . "dark goldenrod")))
   
-  (use-package mozc-mode-line-indicator)
-  (use-package mozc-isearch
-    :disabled t)
   )
+
+(use-package mozc-mode-line-indicator)
+
+(use-package mozc-isearch
+    :disabled t)

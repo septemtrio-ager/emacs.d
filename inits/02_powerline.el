@@ -14,47 +14,12 @@
 (use-package powerline
   
   :config
-
   (powerline-default-theme)
 
   ;; モードラインを平面化する
   (set-face-attribute 'mode-line          nil :box nil)
   (set-face-attribute 'mode-line-inactive nil :box nil)
 
-  ;; ;; Linux Mint仕様
-  ;; (set-face-background 'mode-line         "#006400")   ; darkgreen
-  ;; (set-face-foreground 'mode-line         "#FFFFDC")   ; near-white
-  ;; (set-face-background 'powerline-active1 "#32CD32")   ; lime-green
-  ;; (set-face-foreground 'powerline-active1 "#272821")   ; near-black
-  ;; (set-face-background 'powerline-active2 "#CDC0B0")   ; sand
-  ;; (set-face-foreground 'powerline-active2 "#272821")   ; near-black
-
-  ;; ;; ハロウィン仕様
-  ;; (set-face-background 'mode-line         "#03001c")   ; very dark-blue
-  ;; (set-face-foreground 'mode-line         "#FFFFDC")   ; near-white
-  ;; (set-face-background 'powerline-active1 "#FE9600")   ; pure-orange
-  ;; (set-face-foreground 'powerline-active1 "#272821")   ; near-black
-  ;; (set-face-background 'powerline-active2 "#FFEE4A")   ; sand
-  ;; (set-face-foreground 'powerline-active2 "#272821")   ; near-black
-
-  ;; ;; クリスマス仕様
-  ;; (set-face-background 'mode-line         "#FF0000")   ; red
-  ;; (set-face-foreground 'mode-line         "#FFFFDC")   ; near-white
-  ;; (set-face-background 'powerline-active1 "#006400")   ; dark green
-  ;; (set-face-foreground 'powerline-active1 "#FFD700")   ; gold
-  ;; (set-face-background 'powerline-active2 "#FFFFDC")   ; near-white
-  ;; (set-face-foreground 'powerline-active2 "#FFFFDC")   ; near-black
-  
-  
-  ;; ;; inactive color
-  ;; (set-face-background 'mode-line-inactive  "#CCCC99") ; sand
-  ;; (set-face-foreground 'mode-line-inactive  "#272821") ; near-black
-  ;; (set-face-background 'powerline-inactive1 "#383838") ; near black
-  ;; (set-face-foreground 'powerline-inactive1 "#CCCCCC") ; light-gray
-  ;; (set-face-background 'powerline-inactive2 "#626262") ; dark-gray
-  ;; (set-face-foreground 'powerline-inactive2 "#CCCCCC") ; light-gray
-
-  
   ;; Solarizedテーマ仕様
   (setq powerline-color1 "#073642")
   (setq powerline-color2 "#002b36")
@@ -65,6 +30,12 @@
 		      :box nil)
   (set-face-attribute 'mode-line-inactive nil
 		      :box nil)
+  (set-face-attribute 'powerline-active1 nil
+		      :foreground "white")
+  
+  ;; mozc mode line indicator
+  (defpowerline powerline-mozc-mode-line-indicator
+    (mozc-mode-line-indicator-update))
 
   ;; View mode
   (defpowerline powerline-view
@@ -77,6 +48,12 @@
   ;; modified-p
   (defpowerline powerline-modified
     (if (buffer-modified-p) "Mod" ""))
+
+  ;; (defpowerline powerline-pyenv-version
+  ;;   (if (string= major-mode "python-mode")
+  ;; 	((pyenv--update-mode-line)
+  ;; 	 pyenv--modestring)
+  ;;     ))
 
   '( 
     ;; モードラインに現在の関数名を表示
@@ -107,30 +84,33 @@
                           (face2 (if active 'powerline-active2 'powerline-inactive2))
                           (height 20)
                           (lhs (list
+				
                                 (powerline-raw "%Z" nil 'l)
-				(powerline-modified)
-                                ;; (powerline-buffer-size nil 'l)
-                                (powerline-buffer-id nil 'l)
+				(powerline-modified)             ;; コードが変更されているかどうか
+
+                                (powerline-buffer-id nil 'l)     ;; バッファ名
 				
                                 (powerline-raw " ")
-                                (powerline-arrow-right mode-line face1 height)
+                                (powerline-arrow-left mode-line face1 height)
 				
                                 (when (boundp 'erc-modified-channels-object)
                                   (powerline-raw erc-modified-channels-object face1 'l))
-                                (powerline-major-mode face1 'l)
+                                (powerline-major-mode face1 'l)  ;; メジャーモード
                                 (powerline-process face1)
-                                (powerline-minor-modes face1 'l)
+                                (powerline-minor-modes face1 'l) ;; マイナーモード
                                 
 				(powerline-raw " " face1)
 				
-                                (powerline-arrow-right face1 face2 height)
+                                (powerline-arrow-left face1 face2 height)
+				(powerline-mozc-mode-line-indicator face2 'l)
                                 (powerline-view face2 'l)
                                 ))
                           (rhs (list
                                 (powerline-raw global-mode-string face2 'r)
                                 ;; (powerline-which-func face2 'r)
+				;; (powerline-pyenv-version)
                                 (powerline-vc face2 'r)
-                                (powerline-arrow-left face2 face1 height)
+                                (powerline-arrow-right face2 face1 height)
                                 (powerline-raw " " face1)
                                 (powerline-narrow face1)
                                 (powerline-count-lines-and-chars face1)
@@ -138,7 +118,7 @@
                                 (powerline-raw ":" face1)
                                 (powerline-raw "%3c" face1 'r)
                                 (powerline-raw (format "%6d" (point)) face1 'r)
-                                (powerline-arrow-left face1 mode-line height)
+                                (powerline-arrow-right face1 mode-line height)
                                 (powerline-raw " ")
                                 
                                 (powerline-raw " ")
