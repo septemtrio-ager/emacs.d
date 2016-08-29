@@ -26,6 +26,16 @@
   :init
   (add-hook 'python-mode-hook 'py-autopep8-enable-on-save))
 
+;; ===================================================================
+
+;; 2016/08/30現在
+;; "jedi:install-server"コマンドについて
+;; pyenvでpython3.5を使っている場合はjedi:install-serverコマンドを
+;; 実行するとエラーでインストールが完了しないみたい。
+;; 一旦python3.4に切り替えて再度実行すると正常に終了した。
+
+;; ===================================================================
+
 (el-get-bundle jedi)
 (use-package jedi
   :init
