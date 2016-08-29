@@ -39,6 +39,9 @@
 
   ;; いくつかのhelmコマンドを無効にする
   (add-to-list 'helm-completing-read-handlers-alist '(find-alternate-file . nil))
+  
+  ;; 候補選択時のディレイを無くす
+  (setq helm-exit-idle-delay 0)
 
   ;; helmミニバッファ内でkill-lineを使えるようにする
   (setq helm-delete-minibuffer-contents-from-point t)
