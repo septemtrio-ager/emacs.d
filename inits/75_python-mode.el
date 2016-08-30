@@ -5,7 +5,11 @@
 ;; https://github.com/jorgenschaefer/elpy
 
 (el-get-bundle pyenv)
-(use-package pyenv)
+(use-package pyenv
+  :config
+  ;; $PYTHONPATHをパスに追加
+  (pyenv--setup)
+  )
 
 ;; ===================================================================
 
@@ -42,6 +46,8 @@
   (add-hook 'python-mode-hook 'jedi:setup)
   :config
   (setq jedi:complete-on-dot t)
+  (setq jedi:server-args
+	'("--sys-path" "miniconda3-latest/envs/electricenv/lib/python3.5/site-packages"))
   )
 
 ;; ===================================================================
