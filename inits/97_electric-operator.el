@@ -25,6 +25,9 @@
 		  ;; ess-modeで利用する
 		  ess-mode-hook
 		  
+		  ;; arduino-modeで利用する
+		  arduino-mode-hook
+		  
 		  ))
     (add-hook hook #'electric-operator-mode))
   
@@ -47,5 +50,9 @@
    (cons "." nil)
    (cons "->" "->")
    (cons "=>" " => "))
+  
+  ;; arduino-modeにelectric-operator-prog-mode-rulesを適応
+  (apply #'electric-operator-add-rules-for-mode 'arduino-mode
+	 electric-operator-prog-mode-rules)
   
   )
