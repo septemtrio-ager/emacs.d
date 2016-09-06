@@ -21,4 +21,4 @@
 (use-package multiple-cursors
   :defer t
   :bind (("C-c m e" . mc/mark-more-like-this-extended)
-	 ("C-c m d" . mc/mark-all-like-this-dwim)))
+	 ("C-c m a" . mc/mark-all-like-this-dwim)))
