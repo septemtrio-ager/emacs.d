@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pip install autopep8 rope jedi flake8 importmagic yapf grip
+pip install autopep8 rope jedi flake8 importmagic yapf grip epc
