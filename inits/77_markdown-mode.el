@@ -14,7 +14,7 @@
 (use-package markdown-mode
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
-         ("\\.md\\'" . markdown-mode)
+         ("\\.md\\'" . gfm-mode)
          ("\\.markdown\\'" . markdown-mode))
   :init
   (add-hook 'markdown-mode-hook
