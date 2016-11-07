@@ -109,6 +109,9 @@
 (global-set-key (kbd "C-c C-v") 'view-mode)
 
 
+(global-set-key (kbd "M-`") nil)
+(global-set-key (kbd "M-`") 'toggle-input-method)
+
 
 ;; ===================================================================
 

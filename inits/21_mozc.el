@@ -27,7 +27,9 @@
   
   (add-hook 'mozc-mode-hook
 	    (lambda()
-	      (define-key mozc-mode-map (kbd "<zenkaku-hankaku>") 'toggle-input-method)))
+	      (define-key mozc-mode-map (kbd "<zenkaku-hankaku>") 'toggle-input-method)
+	      (define-key mozc-mode-map (kbd "M-`") 'toggle-input-method))
+	    )
   
   ;; minibuffer に入った時、IME を OFF にする
   (add-hook 'minibuffer-setup-hook
@@ -38,6 +40,7 @@
   
   :bind
   ("<zenkaku-hankaku>" . toggle-input-method)
+  ("M-`" . toggle-input-method)
 
   :config
   ;; helm でミニバッファの入力時に IME の状態を継承しない
