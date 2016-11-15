@@ -8,7 +8,7 @@
         (twittering-mode :checksum "97ed4410dd994c09081a7a12570adb34f356d87c")
         (markdown-mode :checksum "62d5b272c82070e1194470e14c568c784662f6ea")
         (web-mode :checksum "ffa0291164845904a12abd6e7007b61ea41b7ef1")
-        (ein :checksum "a9736311c86d6b8b1fe4ecd695cecaeff968db8c")
+        (ein :checksum "c1d4edd4e49dd292b1791e3782306b1376bf7577")
         (request :checksum "48a35969f7c41810d550e6cdf784cb86c5a05a20")
         (websocket :checksum "567555360443f5de0a6426c5e2d88ba037c33855")
         (elpy :checksum "c0a92332bb0c0e784d226c1fe3ade9d8b924ddbb")
