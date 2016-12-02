@@ -106,9 +106,10 @@
 
 
 ;; C-c C-vでview-mode
-(global-set-key (kbd "C-c C-v") 'view-mode)
+(global-set-key (kbd "C-c <escape>") 'view-mode)
 
 
+;; US配列時に日本語入力モードにする
 (global-set-key (kbd "M-`") nil)
 (global-set-key (kbd "M-`") 'toggle-input-method)
 
