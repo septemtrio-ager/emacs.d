@@ -28,7 +28,12 @@
   :commands py-autopep8-enable-on-save
   
   :init
-  (add-hook 'python-mode-hook 'py-autopep8-enable-on-save))
+  (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
+  :config
+  ;; py-autopep8で1行あたり最大200文字まで許容する
+  (setq py-autopep8-options '("--max-line-length="))
+  ;; flycheckのflake8で1行あたり最大200文字まで許容する
+  (setq flycheck-flake8-maximum-line-length 200))
 
 ;; ===================================================================
 
