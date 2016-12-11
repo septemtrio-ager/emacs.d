@@ -31,7 +31,7 @@
   (safe-diminish "helm" 'helm-mode)
   (safe-diminish "helm-multi-match" 'helm-migemo-mode)
   (safe-diminish "undo-tree" 'undo-tree-mode)
-  (safe-diminish "auto-complete" 'auto-complete-mode "[AC]")
+  ;;(safe-diminish "auto-complete" 'auto-complete-mode "[AC]")
   (safe-diminish "smooth-scroll" 'smooth-scroll-mode)
   (safe-diminish "magit-auto-revert-mode" 'magit-auto-revert-mode)
   (safe-diminish "rainbow-mode" 'rainbow-mode)

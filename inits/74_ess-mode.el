@@ -33,7 +33,7 @@
   (ess-toggle-underscore nil)
 
   ;; 補完機能を有効にする
-  (setq ess-use-auto-complete t)
+  ;; (setq ess-use-auto-complete t)
 
   ;; helm を使いたいので ido は邪魔
   (setq ess-use-ido nil)

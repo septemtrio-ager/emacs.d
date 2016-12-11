@@ -45,15 +45,15 @@
 
 ;; ===================================================================
 
-(el-get-bundle jedi)
-(use-package jedi
-  :init
-  (add-hook 'python-mode-hook 'jedi:setup)
-  :config
-  (setq jedi:complete-on-dot t)
-  (setq jedi:server-args
-	'("--sys-path" "miniconda3-latest/envs/electricenv/lib/python3.5/site-packages"))
-  )
+;; (el-get-bundle jedi)
+;; (use-package jedi
+;;   :init
+;;   (add-hook 'python-mode-hook 'jedi:setup)
+;;   :config
+;;   (setq jedi:complete-on-dot t)
+;;   (setq jedi:server-args
+;; 	'("--sys-path" "miniconda3-latest/envs/electricenv/lib/python3.5/site-packages"))
+;;   )
 
 ;; ===================================================================
 
@@ -66,7 +66,7 @@
 (el-get-bundle elpy)
 (use-package elpy
   :init
-  (remove-hook 'elpy-modules 'elpy-module-company)
+  ;;(remove-hook 'elpy-modules 'elpy-module-company)
   (remove-hook 'elpy-modules 'elpy-module-flymake)
   (add-hook 'elpy-mode-hook 'highlight-indentation-current-column-mode)
   
@@ -75,7 +75,7 @@
   (when (executable-find "ipython")
     (elpy-use-ipython))
   
-  ;; (setq elpy-rpc-backend "jedi")
+  (setq elpy-rpc-backend "jedi")
   
   )
 
@@ -107,7 +107,7 @@
 
 
 
-(el-get-bundle ein)
-(use-package ein
-  :config
-  (setq ein:use-auto-complete t))
+;; (el-get-bundle ein)
+;; (use-package ein
+;;   :config
+;;   (setq ein:use-auto-complete t))
