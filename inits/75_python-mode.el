@@ -8,7 +8,9 @@
 (use-package pyenv
   :config
   ;; $PYTHONPATHをパスに追加
-  (pyenv--setup)
+  ;; (pyenv--setup)
+  (add-hook 'python-mode-hook 'global-pyenv-mode)
+  (setq pyenv-show-active-python-in-modeline nil)
   )
 
 ;; ===================================================================
@@ -50,10 +52,7 @@
   :init
   (add-hook 'python-mode-hook 'jedi:setup)
   :config
-  (setq jedi:complete-on-dot t)
-  (setq jedi:server-args
-	'("--sys-path" "miniconda3-latest/envs/electricenv/lib/python3.5/site-packages"))
-  )
+  (setq jedi:complete-on-dot t))
 
 ;; ===================================================================
 
@@ -73,11 +72,7 @@
   :config
   (elpy-enable)
   (when (executable-find "ipython")
-    (elpy-use-ipython))
-  
-  ;; (setq elpy-rpc-backend "jedi")
-  
-  )
+    (elpy-use-ipython)))
 
 ;; =============================-=====================================
 
@@ -104,10 +99,3 @@
     (insert (format "%s\"\"\"" space))))
 
 (define-key python-mode-map (kbd "C-c d") 'python-docstring-comment)
-
-
-
-(el-get-bundle ein)
-(use-package ein
-  :config
-  (setq ein:use-auto-complete t))
