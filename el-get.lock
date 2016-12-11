@@ -29,7 +29,7 @@
         (magit :checksum "ec81268eb1c08c164ce363acca777e0fd96cc2dc")
         (with-editor :checksum "4929d430266925c1145adef9987e2acdb829395b")
         (emacs-async :checksum "8bc0678ebca97e7b1c6e78e75e03f8dfd502d63a")
-        (recentf-ext :checksum "495bfe07e8a759f1e6dfbd45e62ae2f72404ff79")
+        (recentf-ext :checksum "95f81dfac24d3f67002024f0a24e6b997bf6d647")
         (multiple-cursors :checksum "dfaf6215fced1eb81ce4b91e8a19a7346e94325e")
         (flycheck-pos-tip :checksum "5b3a203bbdb03e4f48d1654efecd71f44376e199")
         (pos-tip :checksum "92c6b81591b32a0fb3da65f6a514ddcce1d277c0")
