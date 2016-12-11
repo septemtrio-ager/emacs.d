@@ -39,8 +39,8 @@
   
   ;; pyenv active version indicator
   (defpowerline powerline-pyenv--active-python-version
-    (if (string= major-mode "python-mode")
-	(format "[%s]" (pyenv--active-python-version))))
+    (if (equal major-mode 'python-mode)
+  	(pyenv--active-python-version)))
 
   ;; View mode
   (defpowerline powerline-view
@@ -53,12 +53,6 @@
   ;; modified-p
   (defpowerline powerline-modified
     (if (buffer-modified-p) "Mod" ""))
-
-  ;; (defpowerline powerline-pyenv-version
-  ;;   (if (string= major-mode "python-mode")
-  ;; 	((pyenv--update-mode-line)
-  ;; 	 pyenv--modestring)
-  ;;     ))
 
   '( 
     ;; モードラインに現在の関数名を表示
@@ -112,8 +106,6 @@
                                 ))
                           (rhs (list
                                 (powerline-raw global-mode-string face2 'r)
-                                ;; (powerline-which-func face2 'r)
-				;; (powerline-pyenv-version)
 				(powerline-pyenv--active-python-version face2 'r)
                                 (powerline-vc face2 'r)           ;; gitのブランチ
                                 (powerline-arrow-right face2 face1 height)
