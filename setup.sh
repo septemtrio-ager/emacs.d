@@ -24,23 +24,8 @@ echo '
    
 '
 
-# Prepare some functions
-
-# To input "yes" or "no" to the user
-askYesOrNo() {
-    while true ; do
-	read -p "$1 (y/n)? " answer
-	case $answer in
-	    [yY] | [yY]es | YES )
-		return 0;;
-	    [nN] | [nN]o | NO )
-		return 1;;
-	    * ) echo "Please answer yes or no.";;
-	esac
-    done
-}
-
 readonly DOTEMACS=$HOME/.emacs.d
+readonly MARKDOWN_SCRIPT=/bin/markdown
 
 # Create some symbolic links to home directory
 ln -sfn ~/emacs.d ~/.emacs.d
@@ -52,53 +37,12 @@ echo "Created symbolic link of .aspell.conf to home directory"
 
 
 # Setup GFM preview environment
-askYesOrNo "
-Are you sure you want to \"setup GFM preview environment\"?"
-if [ $? -eq 0 ]; then
-    
+if [ -f $MARKDOWN_SCRIPT ]; then
+    echo 'GFM preview environment has already created.'
+else
     sudo ln -sfn ~/emacs.d/etc/markdown /bin/markdown
     echo "Created symbolic link of markdown to /bin/markdown"
-    
     sudo chmod +x /bin/markdown
+    sudo pip install grip
     echo "You can run GFM preview script!"
-    
-else
-    echo -e "\nSetting up GFM preview environment has been canceled.\n"
-fi
-
-
-
-# Setup emacs-realtime-markdown-viewer settings
-askYesOrNo "
-Are you sure you want to \"setup emacs-realtime-markdown-viewer settings\"?"
-if [ $? -eq 0 ]; then
-    
-    readonly EMACS_RTMV_DIR=~/.emacs.d/el-get/emacs-realtime-markdown-viewer
-
-    if [ -e $EMACS_RTMV_DIR ]; then
-	cd $EMACS_RTMV_DIR
-	cpanm --installdeps .
-	echo "You can use emacs-realtime-markdown-viewer."
-	cd $DOTEMACS
-    else
-	echo -e "\nCan't find $EMACS_RTMV_DIR\n"
-    fi
-else
-    echo -e "\nSetting up has been canceled.\n"
-fi
-
-
-
-# Setup Python development environment
-askYesOrNo "
-Are you sure you want to setup \"python development environment\"?"
-if [ $? -eq 0 ]; then
-    
-    # install the modules required for python development environment 
-    sudo pip install autopep8 rope jedi flake8 importmagic yapf
-    
-    # install ipython and dependency: matplotlib
-    sudo pip install ipython matplotlib
-else
-    echo -e "\nSetting up has been canceled.\n"
 fi
