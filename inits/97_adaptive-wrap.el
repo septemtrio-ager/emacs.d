@@ -37,6 +37,9 @@
 
 	      ;; gfm-modeで利用する
 	      gfm-mode-hook
+
+	      ;; yatex-modeで利用する
+	      yatex-mode-hook
 	      
 	      ))
     (add-hook hook 'adaptive-wrap-prefix-mode)))
