@@ -114,6 +114,11 @@
 (global-set-key (kbd "M-`") 'toggle-input-method)
 
 
+;; C-x C-p のmark-pageを使わないようにする
+(global-set-key (kbd "C-x C-p") nil)
+
+
+
 ;; ===================================================================
 
 ;; yank した瞬間にインデントする
