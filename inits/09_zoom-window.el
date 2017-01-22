@@ -12,6 +12,7 @@
 (el-get-bundle zoom-window)
 
 (use-package zoom-window
+  :disabled t
   :bind (("C-x 1" . my-zoom-window-zoom))
   :config
   (setq zoom-window-mode-line-color "#6C71C4")
@@ -19,6 +20,4 @@
   (defun my-zoom-window-zoom ()
     (interactive)
     (zoom-window-zoom)
-    (powerline-reset)
-    )
-  )
+    (powerline-reset)))
