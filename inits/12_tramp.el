@@ -14,3 +14,5 @@
   :config
   (setq tramp-default-method "ssh")
   )
+
+(el-get-bundle helm-tramp)

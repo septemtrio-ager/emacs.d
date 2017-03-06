@@ -26,7 +26,8 @@
 	 ("C-x C-r" . helm-recentf)
 	 ("M-y" . helm-show-kill-ring)
 	 ("C-c i" . helm-imenu)
-	 ("C-x b" . helm-for-files))
+	 ("C-x b" . helm-for-files)
+	 ("C-c s" . helm-tramp))
   
   :config
   (helm-mode 1)
