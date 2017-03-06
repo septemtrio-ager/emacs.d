@@ -44,7 +44,7 @@
 
 
 ;; eshellを起動( C-c s )
-(global-set-key (kbd"C-c s") 'eshell)
+;; (global-set-key (kbd"C-c s") 'eshell)
 
 
 ;; C-c c で compile コマンドを呼び出す
