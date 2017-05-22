@@ -58,6 +58,11 @@
 
 
 
+;; scratchバッファのメッセージを消す
+(setq initial-scratch-message "")
+
+
+
 ;; スクロールを1行ずつにする
 (setq scroll-conservatively 35
       scroll-margin 0
