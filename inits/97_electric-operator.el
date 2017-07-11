@@ -27,6 +27,9 @@
 		  
 		  ;; arduino-modeで利用する
 		  arduino-mode-hook
+
+		  ;; perl-modeで利用する
+		  perl-mode-hook
 		  
 		  ))
     (add-hook hook #'electric-operator-mode))

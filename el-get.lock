@@ -1,6 +1,8 @@
 (setq el-get-lock-package-versions
-      '((zoom-window :checksum "eefe36d26e04a9f89aad27671d1f06e9d4736ac6")
-        (showkey :checksum "f53c55e1224ce7fa9ab35bed0deb39dd56c0a51b")
+      '((showkey :checksum "292d7cb06df528db0d9f737018965e5dc29f7838")
+        (s :checksum "e61dee51474e61b777575b474459c582f3084f64")
+        (emacs-helm-tramp :checksum "65e1f3ab12caa206402fad381cc75c7e844f9452")
+        (zoom-window :checksum "eefe36d26e04a9f89aad27671d1f06e9d4736ac6")
         (diminish :checksum "73669b69e5f9a0c9261c5b53624329d0e24d1ed8")
         (arduino-mode :checksum "3e2bad4569ad26e929e6db2cbcff0d6d36812698")
         (point-undo :checksum "b09bdcc64a0de08bae0838ef708c679dbc08f4c2")

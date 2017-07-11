@@ -10,9 +10,5 @@
 ;; ===================================================================
 
 (use-package tramp
-  ;; :defer t
   :config
-  (setq tramp-default-method "ssh")
-  )
-
-(el-get-bundle helm-tramp)
+  (setq tramp-default-method "ssh"))
