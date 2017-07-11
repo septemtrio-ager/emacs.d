@@ -17,6 +17,7 @@
          ("\\.md\\'" . gfm-mode)
          ("\\.markdown\\'" . markdown-mode))
   :init
+  (setq initial-major-mode 'markdown-mode)
   (add-hook 'markdown-mode-hook
 	    '(lambda ()
 	       (electric-indent-local-mode -1)
