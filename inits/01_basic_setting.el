@@ -230,3 +230,20 @@ Otherwise indent whole buffer."
     (all-indent)))
 
 (bind-key "C-M-\\" 'electric-indent)
+
+
+
+;; ===================================================================
+
+;; 【参考】カーソル位置のURLをブラウザで開く
+;; http://tototoshi.hatenablog.com/entry/20100630/1277897703
+
+;; ===================================================================
+
+(defun browse-url-at-point ()
+  (interactive)
+  (let ((url-region (bounds-of-thing-at-point 'url)))
+    (when url-region
+      (browse-url (buffer-substring-no-properties (car url-region)
+                                                  (cdr url-region))))))
+(global-set-key "\C-c\C-o" 'browse-url-at-point)
