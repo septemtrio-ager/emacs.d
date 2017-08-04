@@ -1,5 +1,6 @@
 (setq el-get-lock-package-versions
-      '((showkey :checksum "292d7cb06df528db0d9f737018965e5dc29f7838")
+      '((google-translate :checksum "52d34c96b400b1b933c727933279f79256951b19")
+        (showkey :checksum "292d7cb06df528db0d9f737018965e5dc29f7838")
         (s :checksum "e61dee51474e61b777575b474459c582f3084f64")
         (emacs-helm-tramp :checksum "65e1f3ab12caa206402fad381cc75c7e844f9452")
         (zoom-window :checksum "eefe36d26e04a9f89aad27671d1f06e9d4736ac6")
